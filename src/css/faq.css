@@ -1,0 +1,30 @@
+.faq-section {
+  padding: 64px 0;
+}
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 40px;
+}
+
+.faq-list-item {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  text-align: start;
+  border-top: 2px solid var(--color-scheme-1-border);
+
+  &:last-child {
+    border-bottom: 2px solid var(--color-scheme-1-border);
+  }
+}
+
+.faq-title {
+  font-weight: 600;
+}
+
+.faq-acordion-btn {
+  border: none;
+  background: none;
+}
