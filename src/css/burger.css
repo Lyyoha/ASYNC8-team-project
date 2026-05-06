@@ -77,3 +77,9 @@
   visibility: visible;
   pointer-events: auto;
 }
+
+.burger-container.is-open,
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
