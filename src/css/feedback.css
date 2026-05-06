@@ -1,0 +1,12 @@
+.feedback-slider-btn {
+  border: 2px solid var(--color-scheme-1-border);
+  border-radius: 100px;
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  background: var(--color-scheme-1-foreground);
+}
+
+.feedback-slider-icon {
+  fill: var(--color-scheme-1-text);
+}
