@@ -63,6 +63,7 @@
   &:focus {
     border: 2px solid #080c0c;
     border-radius: 100px;
+    background: none;
   }
   &:active {
     border: 2px solid #080c0c;
