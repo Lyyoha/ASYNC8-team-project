@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/goit-sweet-workshop",
+    "build": "vite build --base=/ASYNC8-team-project/",
     "preview": "vite preview"
   },
   "devDependencies": {
