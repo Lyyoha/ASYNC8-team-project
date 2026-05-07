@@ -1,4 +1,3 @@
-
 import { refs } from "./refs";
 
 export const openBurger = () => {
@@ -10,9 +9,6 @@ export const closeBurger = () => {
   refs.burger.classList.remove("is-open");
   refs.body.classList.remove("scroll-lock");
 };
-var orderBackdrop = document.querySelector("[data-order-backdrop]");
-var orderModal = document.querySelector("[data-order-modal]");
-var orderCloseBtn = document.querySelector("[data-order-close]");
 
 // Відкрити order modal
 export const openOrderModal = () => {
@@ -44,10 +40,6 @@ document.addEventListener("keydown", (event) => {
 });
 
 // !!! PRODUCT MODAL HANDLERS !!! //
-
-var productBackdrop = document.querySelector("[data-product-backdrop]");
-var productModal = document.querySelector("[data-product-modal]");
-var productCloseBtn = document.querySelector("[data-product-close]");
 
 // Відкрити product modal
 export const openProductModal = () => {
