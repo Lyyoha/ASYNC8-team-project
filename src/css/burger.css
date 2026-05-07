@@ -17,7 +17,7 @@
   justify-content: space-between;
 }
 
-.burger-contant {
+.burger-content {
   padding-top: 16px;
   padding-bottom: 40px;
   margin-bottom: 393px;
@@ -26,14 +26,14 @@
   gap: 36px;
 }
 
-.menu {
+.burger-menu {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
   gap: 8px;
 }
-.menu-item {
+.burger-menu-item {
   font-family: var(--font-family);
   padding: 12px 0;
   font-weight: 400;
@@ -61,12 +61,12 @@
   color: #080c0c;
   &:hover,
   &:focus {
-    border: 2px solid #080c0c;
+    border: 1px solid #080c0c;
     border-radius: 100px;
     background: none;
   }
   &:active {
-    border: 2px solid #080c0c;
+    border: 1px solid #080c0c;
     border-radius: 100px;
     background: #f5b6b6;
   }
