@@ -60,7 +60,31 @@ footer {
   justify-content: center;
   gap: 12px;
   margin-bottom: 40px;
+
+  @media screen and (min-width: 1440px) {
+    gap: 0;
+  }
 }
+.footer-soc-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  min-width: 44px;
+  min-height: 44px;
+
+  @media screen and (min-width: 1440px) {
+    min-width: 24px;
+    min-height: 24px;
+  }
+}
+.footer-svg {
+  @media screen and (min-width: 1440px) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 .copypaste-container {
   display: flex;
   justify-content: center;
@@ -85,12 +109,4 @@ footer {
 
 .footer-nav-link:active {
   color: var(--color-wewak);
-}
-.footer-soc-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px;
-  min-width: 44px;
-  min-height: 44px;
 }
