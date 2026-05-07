@@ -69,6 +69,7 @@
   line-height: 1.5;
   font-family: var(--font-family);
   color: #080c0c;
+  cursor: pointer;
   &:hover,
   &:focus {
     border: 1px solid #080c0c;
