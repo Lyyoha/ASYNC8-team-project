@@ -78,8 +78,7 @@
   pointer-events: auto;
 }
 
-.burger-container.is-open,
-body {
+body.scroll-lock {
   overflow-y: hidden;
   overflow-x: hidden;
 }
