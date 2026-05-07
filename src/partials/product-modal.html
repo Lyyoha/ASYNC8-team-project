@@ -1,0 +1,24 @@
+<div class="backdrop product-backdrop" data-product-backdrop>
+  <div class="product-modal" data-product-modal>
+    <!-- CLOSE BUTTON -->
+    <button class="product-close-btn" data-product-close>
+      <svg width="20" height="20">
+        <use href="./img/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+
+    <!-- IMAGE -->
+    <img src="${image}" alt="${name}" class="product-img" />
+
+    <!-- TITLE -->
+    <h2 class="product-title">${name}</h2>
+
+    <!-- DESCRIPTION -->
+    <p class="product-desc">${description}</p>
+
+    <!-- ORDER BUTTON -->
+    <button class="order-btn" data-order-open data-dessert-id="${id}">
+      Перейти до замовлення
+    </button>
+  </div>
+</div>

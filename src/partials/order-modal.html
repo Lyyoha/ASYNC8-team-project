@@ -1,0 +1,52 @@
+<div class="backdrop order-backdrop" data-order-backdrop>
+  <div class="order-modal" data-order-modal>
+    <button class="order-close-btn" data-order-close>
+      <svg width="20" height="20">
+        <use href="./img/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+
+    <h2 class="order-title">Оформлення замовлення</h2>
+
+    <form class="order-form" data-order-form>
+      <!-- FLOATING INPUT: NAME -->
+      <div class="order-field">
+        <input
+          type="text"
+          id="order-name"
+          name="name"
+          class="order-input floating-input"
+          placeholder=" "
+          required
+        />
+        <label for="order-name" class="floating-label">Ім’я</label>
+      </div>
+
+      <!-- FLOATING INPUT: PHONE -->
+      <div class="order-field">
+        <input
+          type="tel"
+          id="order-phone"
+          name="phone"
+          class="order-input floating-input"
+          placeholder=" "
+          required
+        />
+        <label for="order-phone" class="floating-label">Телефон</label>
+      </div>
+
+      <!-- TEXTAREA -->
+      <label class="order-label">
+        <span class="order-label-text">Коментар</span>
+        <textarea
+          name="comment"
+          class="order-textarea"
+          rows="4"
+          required
+        ></textarea>
+      </label>
+
+      <button type="submit" class="order-submit-btn">Надіслати заявку</button>
+    </form>
+  </div>
+</div>
