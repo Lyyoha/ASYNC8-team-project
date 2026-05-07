@@ -50,3 +50,16 @@
   gap: 16px;
   align-items: center;
 }
+
+.menu-item:not(:last-child) {
+  &:hover,
+  &:focus {
+    border-bottom: 1px solid #080c0c;
+  }
+  &:active {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #f19898;
+    border: none;
+  }
+}
