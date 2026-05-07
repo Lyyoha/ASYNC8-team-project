@@ -1,6 +1,6 @@
 :root {
-  --font-family: 'Work Sans', sans-serif;
-  --second-family: 'Comfortaa', sans-serif;
+  --font-family: "Work Sans", sans-serif;
+  --second-family: "Comfortaa", sans-serif;
   --color-scheme-1-background: var(--color-ice-cold-lightest);
   --color-neutral-darkest: #080c0c;
   --color-scheme-1-border: var(--color-neutral-darkest);
