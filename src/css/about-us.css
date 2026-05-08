@@ -1,26 +1,58 @@
-.about-us-section-title {
-    margin-top: 64px;
-    margin-bottom: 24px;
-    text-align: center;
-    line-height: 120%;
-    letter-spacing: -0.01em;
-    font-family: var(--second-family);
-    font-weight: 700;
-    font-size: 36px;
+.about-us-section {
+  padding: 64px 0px;
 }
+.about-us-container {
+  @media screen and (min-width: 768px) {
+    position: relative;
+  }
+}
+.about-us-section-title {
+  margin-bottom: 24px;
+  text-align: center;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 36px;
 
+  @media screen and (min-width: 1440px) {
+    font-size: 48px;
+  }
+}
 .about-us-section-text {
-    margin-bottom: 40px;
-    text-align: center;
-    font-size: 18px;
+  max-width: 335px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 768px) {
+    max-width: 704px;
+  }
 }
 .about-us-list {
-    margin-bottom: 64px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 0px;
+  }
+}
+.about-us-item {
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .about-us-item {
+    width: 100%;
+  }
 }
 .about-us-image {
-    border-radius: 16px;
+  border-radius: 16px;
 }
+
+
