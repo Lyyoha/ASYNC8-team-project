@@ -1,3 +1,5 @@
+import 'css-star-rating/css/star-rating.css';
+
 const createRatingMarkup = rating => {
   const value = Math.floor(rating);
   const hasHalf = rating % 1 !== 0;
