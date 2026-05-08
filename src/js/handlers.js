@@ -1,5 +1,4 @@
 import { refs } from "./refs";
-import { onOrderFormSubmit } from "./order-form";
 
 export const openBurger = () => {
   refs.burger.classList.add("is-open");
@@ -26,14 +25,18 @@ export const closeOrderModal = () => {
 };
 
 // Закриття по кнопці
-refs.orderCloseBtn.addEventListener("click", closeOrderModal);
+if (refs.orderCloseBtn) {
+  refs.orderCloseBtn.addEventListener("click", closeOrderModal);
+}
 
 // Закриття по кліку на backdrop
-refs.orderBackdrop.addEventListener("click", (event) => {
-  if (event.target === refs.orderBackdrop) {
-    closeOrderModal();
-  }
-});
+if (refs.orderBackdrop) {
+  refs.orderBackdrop.addEventListener("click", (event) => {
+    if (event.target === refs.orderBackdrop) {
+      closeOrderModal();
+    }
+  });
+}
 
 // Закриття по Escape
 document.addEventListener("keydown", (event) => {
@@ -57,14 +60,17 @@ export const closeProductModal = () => {
 };
 
 // Закриття по кнопці
-refs.productCloseBtn.addEventListener("click", closeProductModal);
-
+if (refs.productCloseBtn) {
+  refs.productCloseBtn.addEventListener("click", closeProductModal);
+}
 // Закриття по кліку на backdrop
-refs.productBackdrop.addEventListener("click", (event) => {
-  if (event.target === refs.productBackdrop) {
-    closeProductModal();
-  }
-});
+if (refs.productBackdrop) {
+  refs.productBackdrop.addEventListener("click", (event) => {
+    if (event.target === refs.productBackdrop) {
+      closeProductModal();
+    }
+  });
+}
 
 // Закриття по Escape
 document.addEventListener("keydown", (event) => {
@@ -132,6 +138,3 @@ export function fillProductModal(d) {
   const orderBtn = document.querySelector("[data-order-open]");
   orderBtn.dataset.dessertId = d._id;
 }
-
-// підключати submit‑listener сюди, щоб не було циклічних імпортів
-import { onOrderFormSubmit } from "./order-form";
