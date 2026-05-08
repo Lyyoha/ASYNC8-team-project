@@ -5,16 +5,22 @@ const createRatingMarkup = rating => {
   const hasHalf = rating % 1 !== 0;
 
   return `
-    <div class="rating value-${value} ${hasHalf ? 'half' : ''} color-default">
+    <div class="rating value-${value} ${hasHalf ? 'half' : ''}">
       <div class="star-container">
         ${[1, 2, 3, 4, 5]
           .map(
             () => `
           <div class="star">
-            <i class="star-empty"></i>
-            <i class="star-half"></i>
-            <i class="star-filled"></i>
-          </div>
+            <svg class="star-empty" style="fill: var(--color-scheme-1-text)">
+                <use href="/img/sprite.svg#star-empty"></use>
+            </svg>
+             <svg class="star-half" style="fill: var(--color-scheme-1-text)">
+                <use href="/img/sprite.svg#star-half"></use>
+            </svg>
+            <svg class="star-filled" style="fill: var(--color-scheme-1-text)">
+                <use href="/img/sprite.svg#star-filled"></use>
+            </svg>
+        </div>
         `
           )
           .join('')}
