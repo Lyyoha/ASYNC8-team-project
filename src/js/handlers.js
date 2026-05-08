@@ -1,4 +1,5 @@
 import { refs } from "./refs";
+import { onOrderFormSubmit } from "./order-form";
 
 export const openBurger = () => {
   refs.burger.classList.add("is-open");
@@ -131,3 +132,6 @@ export function fillProductModal(d) {
   const orderBtn = document.querySelector("[data-order-open]");
   orderBtn.dataset.dessertId = d._id;
 }
+
+// підключати submit‑listener сюди, щоб не було циклічних імпортів
+import { onOrderFormSubmit } from "./order-form";
