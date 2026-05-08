@@ -31,12 +31,11 @@
   width: 48px;
   height: 48px;
   cursor: pointer;
-  background-color: inherit;
+  background-color: var(--color-scheme-1-foreground);
   &.swiper-button-disabled {
     opacity: 0.2;
     cursor: auto;
     pointer-events: none;
-    background-color: var(--color-ice-cold-lightest);
   }
 }
 
@@ -62,15 +61,22 @@
   .feedback-swiper-btn-prev {
     position: absolute;
     z-index: 10;
-    transform: translateY(-130%);
-    top: 50%;
-    left: -24px;
+    top: 226px;
+    left: 4px;
   }
   .feedback-swiper-btn-next {
     position: absolute;
     z-index: 10;
-    transform: translateY(-130%);
-    top: 50%;
-    right: -24px;
+    top: 226px;
+    right: 4px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .feedback-swiper-btn-prev {
+    left: 36px;
+  }
+  .feedback-swiper-btn-next {
+    right: 36px;
   }
 }
