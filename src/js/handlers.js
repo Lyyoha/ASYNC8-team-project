@@ -10,24 +10,26 @@ export const closeBurger = () => {
   refs.body.classList.remove("scroll-lock");
 };
 
+// ORDER MODAL
+
 // Відкрити order modal
 export const openOrderModal = () => {
-  orderBackdrop.classList.add("is-open");
-  document.body.style.overflow = "hidden";
+  refs.orderBackdrop.classList.add("is-open");
+  refs.body.style.overflow = "hidden";
 };
 
 // Закрити order modal
 export const closeOrderModal = () => {
-  orderBackdrop.classList.remove("is-open");
-  document.body.style.overflow = "";
+  refs.orderBackdrop.classList.remove("is-open");
+  refs.body.style.overflow = "";
 };
 
 // Закриття по кнопці
-orderCloseBtn.addEventListener("click", () => closeOrderModal());
+refs.orderCloseBtn.addEventListener("click", closeOrderModal);
 
 // Закриття по кліку на backdrop
-orderBackdrop.addEventListener("click", (event) => {
-  if (event.target === orderBackdrop) {
+refs.orderBackdrop.addEventListener("click", (event) => {
+  if (event.target === refs.orderBackdrop) {
     closeOrderModal();
   }
 });
@@ -39,26 +41,26 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// !!! PRODUCT MODAL HANDLERS !!! //
+// PRODUCT MODAL
 
 // Відкрити product modal
 export const openProductModal = () => {
-  productBackdrop.classList.add("is-open");
-  document.body.style.overflow = "hidden";
+  refs.productBackdrop.classList.add("is-open");
+  refs.body.style.overflow = "hidden";
 };
 
 // Закрити product modal
 export const closeProductModal = () => {
-  productBackdrop.classList.remove("is-open");
-  document.body.style.overflow = "";
+  refs.productBackdrop.classList.remove("is-open");
+  refs.body.style.overflow = "";
 };
 
 // Закриття по кнопці
-productCloseBtn.addEventListener("click", () => closeProductModal());
+refs.productCloseBtn.addEventListener("click", closeProductModal);
 
 // Закриття по кліку на backdrop
-productBackdrop.addEventListener("click", (event) => {
-  if (event.target === productBackdrop) {
+refs.productBackdrop.addEventListener("click", (event) => {
+  if (event.target === refs.productBackdrop) {
     closeProductModal();
   }
 });
@@ -70,30 +72,62 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// !!! OPEN ORDER MODAL FROM PRODUCT MODAL !!! //
+// OPEN ORDER MODAL FROM PRODUCT MODAL
 
-// Знаходимо всі кнопки "Перейти до замовлення"
-var orderOpenBtns = document.querySelectorAll("[data-order-open]");
-
-// Створюємо приховане поле для dessertId, якщо його немає
-var dessertIdInput = document.querySelector('[name="dessertId"]');
-
-if (!dessertIdInput) {
-  dessertIdInput = document.createElement("input");
-  dessertIdInput.type = "hidden";
-  dessertIdInput.name = "dessertId";
-  document.querySelector("[data-order-form]").appendChild(dessertIdInput);
+// Якщо прихованого поля dessertId немає — створюємо
+if (!refs.dessertIdInput) {
+  const hiddenInput = document.createElement("input");
+  hiddenInput.type = "hidden";
+  hiddenInput.name = "dessertId";
+  refs.orderForm.appendChild(hiddenInput);
+  refs.dessertIdInput = hiddenInput; // записуємо в refs
 }
 
-// Вішаємо слухачі на всі кнопки
-orderOpenBtns.forEach((btn) => {
+// Вішаємо слухачі на всі кнопки "Перейти до замовлення"
+refs.orderOpenBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    var id = btn.getAttribute("data-dessert-id");
+    const id = btn.getAttribute("data-dessert-id");
 
     // передаємо ID у форму
-    dessertIdInput.value = id;
+    refs.dessertIdInput.value = id;
 
     // відкриваємо order modal
     openOrderModal();
   });
 });
+
+// d --> dessert
+export function fillProductModal(d) {
+  // Картинка
+  const img = document.querySelector(".product-img");
+  img.src = d.image;
+  img.alt = d.name;
+
+  // Назва
+  document.querySelector(".product-title").textContent = d.name;
+
+  // Ціна
+  document.querySelector(".product-price").textContent = `${d.price} грн`;
+
+  // Рейтинг (зірочки)
+  const ratingContainer = document.querySelector(".product-rating");
+  ratingContainer.innerHTML = ""; // очищаємо
+
+  for (let i = 1; i <= 5; i++) {
+    const star = document.createElement("span");
+    star.textContent = i <= d.rate ? "★" : "☆";
+    star.style.fontSize = "16px";
+    star.style.color = "#080c0c";
+    ratingContainer.appendChild(star);
+  }
+
+  // Опис
+  document.querySelector(".product-desc").textContent = d.description;
+
+  // Склад
+  document.querySelector(".composition-value").textContent = d.composition;
+
+  // Передаємо ID у order modal
+  const orderBtn = document.querySelector("[data-order-open]");
+  orderBtn.dataset.dessertId = d._id;
+}

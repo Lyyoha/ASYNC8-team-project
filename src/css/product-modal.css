@@ -1,201 +1,143 @@
-/* !!! BACKDROP !!! */
-.order-backdrop {
+/* BACKDROP */
+.product-backdrop {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(0, 0, 0, 0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    z-index: 999;
     opacity: 0;
-    visibility: hidden;
     pointer-events: none;
-    transition: opacity 250ms ease, visibility 250ms ease;
+    transition: opacity 250ms ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-/* коли модалка відкрита */
-.order-backdrop.is-open {
+.product-backdrop.is-open {
     opacity: 1;
-    visibility: visible;
     pointer-events: auto;
 }
 
-/* !!! MODAL WINDOW !!! */
-.order-modal {
-    width: 100%;
-    max-width: 335px;
-    background: #ffffff;
+/* MODAL */
+.product-modal {
+    width: 335px;
+    background: #fff;
     border-radius: 20px;
-    padding: 32px 20px;
+    padding: 64px 24px;
     position: relative;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-/* !!! CLOSE BUTTON !!! */
-.order-close-btn {
+/* CLOSE BUTTON */
+.product-close-btn {
     position: absolute;
     top: 16px;
     right: 16px;
-    background: transparent;
+}
+
+/* IMAGE WRAPPER */
+.product-img-wrapper {
+    width: 295px;
+    height: 221px;
     border: none;
-    padding: 0;
-    cursor: pointer;
+    background: #fff;
+    box-shadow: none;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 0 auto;
 }
 
-.order-close-btn svg {
-    stroke: #080c0c;
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* !!! TITLE !!! */
-.order-title {
+/* TITLE */
+.product-title {
     font-family: "Comfortaa", sans-serif;
     font-weight: 700;
-    font-size: 36px;
+    font-size: 32px;
     line-height: 120%;
     letter-spacing: -0.01em;
-    text-align: center;
     color: #080c0c;
-    margin-bottom: 24px;
 }
 
-/* !!! FORM !!! */
-.order-form {
+/* PRICE */
+.product-price {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: -0.01em;
+    color: #080c0c;
+}
+
+/* RATING */
+.product-rating {
     display: flex;
-    flex-direction: column;
-    gap: 16px;
+    gap: 8px;
+    height: 15px;
 }
 
-/* LABEL */
-.order-label-text {
-    display: block;
-    margin-bottom: 8px;
+/* DESCRIPTION */
+.product-desc {
     font-family: "Work Sans", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 150%;
     color: #080c0c;
 }
 
-/* INPUT */
-.order-input {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid rgba(8, 12, 12, 0.1);
-    border-radius: 12px;
+/* COMPOSITION */
+.product-composition {
     font-family: "Work Sans", sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 150%;
-    color: rgba(8, 12, 12, 0.6);
-    outline: none;
+    color: #080c0c;
 }
 
-.order-input::placeholder {
-    color: rgba(8, 12, 12, 0.4);
+.composition-label {
+    font-weight: 700;
 }
 
-/* TEXTAREA */
-.order-textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid rgba(8, 12, 12, 0.1);
-    border-radius: 12px;
-    font-family: "Work Sans", sans-serif;
-    font-size: 16px;
-    line-height: 150%;
-    color: rgba(8, 12, 12, 0.6);
-    resize: none;
-    outline: none;
+.composition-value {
+    font-weight: 400;
 }
 
-.order-textarea::placeholder {
-    color: rgba(8, 12, 12, 0.4);
-}
-
-/* !!! SUBMIT BUTTON !!! */
-.order-submit-btn {
-    width: 100%;
-    max-width: 295px;
+/* ORDER BUTTON */
+.order-btn {
+    width: 295px;
     height: 44px;
     margin: 0 auto;
-    background: #f19898;
-    border: 1px solid #f19898;
     border-radius: 100px;
-    padding: 10px 24px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    border: 1px solid #f19898;
+    background: #f19898;
     font-family: "Work Sans", sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
-    color: #080c0c;
-
     cursor: pointer;
-    transition: background 200ms ease, border-color 200ms ease;
 }
 
-/* STATES */
-.order-submit-btn:hover,
-.order-submit-btn:focus {
-    background: #e38787;
-    border-color: #e38787;
-}
-
-.order-submit-btn:active {
-    background: #d06f6f;
-    border-color: #d06f6f;
-}
-
-/* !!! FLOATING INPUT !!! */
-
-.order-field {
-    position: relative;
-    width: 100%;
-}
-
-.floating-input {
-    padding: 14px 16px;
-    background: #fff;
-    border-radius: 12px;
-    border: 1px solid rgba(8, 12, 12, 0.1);
-
-    font-family: "Work Sans", sans-serif;
-    font-size: 16px;
-    line-height: 150%;
-    color: rgba(8, 12, 12, 0.6);
-
+/* HOVER / FOCUS */
+.order-btn:hover,
+.order-btn:focus {
+    background: transparent;
+    border: 1px solid #080c0c;
     outline: none;
 }
 
-.floating-input::placeholder {
-    color: transparent;
+/* ACTIVE */
+.order-btn:active {
+    background: #f5b6b6;
+    border: 1px solid #080c0c;
 }
 
-.floating-label {
-    position: absolute;
-    top: 50%;
-    left: 16px;
-    transform: translateY(-50%);
-
-    font-family: "Work Sans", sans-serif;
-    font-size: 16px;
-    line-height: 150%;
-    color: rgba(8, 12, 12, 0.6);
-
-    pointer-events: none;
-    transition: 0.2s ease;
-}
-
-/* ПІДНЯТИЙ СТАН */
-.floating-input:focus+.floating-label,
-.floating-input:not(:placeholder-shown)+.floating-label {
-    top: 6px;
-    font-size: 12px;
-    color: #080c0c;
+/* DISABLED */
+.order-btn:disabled {
+    background: #f19898;
+    border: 1px solid #f19898;
+    opacity: 0.3;
+    cursor: not-allowed;
 }

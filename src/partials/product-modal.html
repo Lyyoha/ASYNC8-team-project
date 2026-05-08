@@ -8,17 +8,29 @@
     </button>
 
     <!-- IMAGE -->
-    <img src="${image}" alt="${name}" class="product-img" />
+    <div class="product-img-wrapper">
+      <img src="" alt="dessert" class="product-img" />
+    </div>
 
     <!-- TITLE -->
-    <h2 class="product-title">${name}</h2>
+    <h2 class="product-title"></h2>
+
+    <!-- PRICE -->
+    <p class="product-price"></p>
+
+    <!-- RATING -->
+    <div class="product-rating"></div>
 
     <!-- DESCRIPTION -->
-    <p class="product-desc">${description}</p>
+    <p class="product-desc"></p>
+
+    <!-- COMPOSITION -->
+    <p class="product-composition">
+      <span class="composition-label">Склад:</span>
+      <span class="composition-value"></span>
+    </p>
 
     <!-- ORDER BUTTON -->
-    <button class="order-btn" data-order-open data-dessert-id="${id}">
-      Перейти до замовлення
-    </button>
+    <button class="order-btn" data-order-open>Перейти до замовлення</button>
   </div>
 </div>

@@ -1,4 +1,5 @@
-/* !!! BACKDROP !!! */
+/* !!! BACKDROP */
+
 .order-backdrop {
     position: fixed;
     top: 0;
@@ -17,14 +18,14 @@
     transition: opacity 250ms ease, visibility 250ms ease;
 }
 
-/* коли модалка відкрита */
 .order-backdrop.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
 }
 
-/* !!! MODAL WINDOW !!! */
+/* !!! MODAL WINDOW */
+
 .order-modal {
     width: 100%;
     max-width: 335px;
@@ -35,7 +36,8 @@
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* !!! CLOSE BUTTON !!! */
+/* !!! CLOSE BUTTON */
+
 .order-close-btn {
     position: absolute;
     top: 16px;
@@ -50,7 +52,8 @@
     stroke: #080c0c;
 }
 
-/* !!! TITLE !!! */
+/* !!! TITLE */
+
 .order-title {
     font-family: "Comfortaa", sans-serif;
     font-weight: 700;
@@ -62,7 +65,8 @@
     margin-bottom: 24px;
 }
 
-/* !!! FORM !!! */
+/* !!! FORM */
+
 .order-form {
     display: flex;
     flex-direction: column;
@@ -80,47 +84,113 @@
     color: #080c0c;
 }
 
-/* INPUT */
-.order-input {
+/* TEXT INPUT (Figma-perfect (хай Бог милує ))) */
+
+.form-input {
     width: 100%;
-    padding: 12px 14px;
-    border: 1px solid rgba(8, 12, 12, 0.1);
+    height: 40px;
+    padding: 8px 12px;
     border-radius: 12px;
+    border: 2px solid #080c0c;
+    background: transparent;
+
     font-family: "Work Sans", sans-serif;
+    font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    color: rgba(8, 12, 12, 0.6);
+    color: #080c0c;
+
     outline: none;
+    transition: border-color 0.2s ease;
 }
 
-.order-input::placeholder {
-    color: rgba(8, 12, 12, 0.4);
-}
-
-/* TEXTAREA */
-.order-textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid rgba(8, 12, 12, 0.1);
-    border-radius: 12px;
-    font-family: "Work Sans", sans-serif;
-    font-size: 16px;
-    line-height: 150%;
+.form-input::placeholder {
     color: rgba(8, 12, 12, 0.6);
+}
+
+/* Focus */
+.form-input:focus {
+    border-color: #080c0c;
+}
+
+/* Error */
+.form-input.error {
+    border-color: #d50000;
+    color: #d50000;
+}
+
+.form-input.error::placeholder {
+    color: #d50000;
+}
+
+/* Error text */
+.input-error-text {
+    margin-top: 4px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: #d50000;
+}
+
+/* TEXT AREA (Figma-perfect (fingers crossed яе то кажуть ))) */
+
+.form-textarea {
+    width: 100%;
+    height: 180px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #080c0c;
+    background: transparent;
     resize: none;
+
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #080c0c;
+
     outline: none;
+    transition: border-color 0.2s ease;
 }
 
-.order-textarea::placeholder {
-    color: rgba(8, 12, 12, 0.4);
+.form-textarea::placeholder {
+    color: rgba(8, 12, 12, 0.6);
 }
 
-/* !!! SUBMIT BUTTON !!! */
+/* Focus */
+.form-textarea:focus {
+    border-color: #080c0c;
+}
+
+/* Error */
+.form-textarea.error {
+    border-color: #d50000;
+    color: #d50000;
+}
+
+.form-textarea.error::placeholder {
+    color: #d50000;
+}
+
+/* Error text */
+.textarea-error-text {
+    margin-top: 4px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #d50000;
+}
+
+/* SUBMIT BUTTON (Figma-perfect (я дуже на це сподіваюсь))) */
+
 .order-submit-btn {
     width: 100%;
     max-width: 295px;
     height: 44px;
     margin: 0 auto;
+
     background: #f19898;
     border: 1px solid #f19898;
     border-radius: 100px;
@@ -137,22 +207,31 @@
     color: #080c0c;
 
     cursor: pointer;
-    transition: background 200ms ease, border-color 200ms ease;
+    transition: all 0.2s ease;
 }
 
-/* STATES */
+/* Hover / Focus */
 .order-submit-btn:hover,
 .order-submit-btn:focus {
-    background: #e38787;
-    border-color: #e38787;
+    background: transparent;
+    border: 2px solid #080c0c;
 }
 
+/* Active */
 .order-submit-btn:active {
-    background: #d06f6f;
-    border-color: #d06f6f;
+    background: #f5b6b6;
+    border: 2px solid #080c0c;
 }
 
-/* !!! FLOATING INPUT !!! */
+/* Disabled */
+.order-submit-btn:disabled {
+    background: #f19898;
+    border: 1px solid #f19898;
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* FLOATING INPUT (Figma-perfect (має бути))) */
 
 .order-field {
     position: relative;
@@ -160,6 +239,7 @@
 }
 
 .floating-input {
+    width: 100%;
     padding: 14px 16px;
     background: #fff;
     border-radius: 12px;
@@ -192,7 +272,7 @@
     transition: 0.2s ease;
 }
 
-/* ПІДНЯТИЙ СТАН */
+/* Піднятий стан */
 .floating-input:focus+.floating-label,
 .floating-input:not(:placeholder-shown)+.floating-label {
     top: 6px;
