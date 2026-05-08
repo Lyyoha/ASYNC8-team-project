@@ -33,8 +33,6 @@ const renderFeedbackList = async () => {
   try {
     const feedbackArr = await getAllFeedbacks();
 
-    console.log(feedbackArr);
-
     const feedbackCardsTemplate = feedbackArr
       .map(card => createFeedbackCard(card))
       .join('');

@@ -1,38 +1,49 @@
-.feedback-section {
-  font-family: var(--second-family);
-}
 .feedback-title {
+  font-family: var(--second-family);
   margin-bottom: 24px;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.2;
   letter-spacing: -0.01em;
   text-align: center;
-  color: var(--color-scheme-1-text);
 }
 
 .feedback-text {
   margin-bottom: 40px;
   font-size: 18px;
   text-align: center;
-  color: var(--color-scheme-1-text);
 }
 
 .js-feedback-list {
-  padding-bottom: 32px;
+  margin-bottom: 32px;
 }
 .js-feedback-list .feedback-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 335px;
   height: 208px;
   border: 2px solid var(--color-scheme-1-border);
   border-radius: 16px;
-  padding: 16px;
-  background: var(--color-scheme-1-foreground);
+  padding: 32px;
+}
+
+.feedback-item-description {
+  font-size: 18px;
+}
+
+.feedback-item-author {
+  font-weight: 600;
 }
 
 @media screen and (min-width: 768px) {
+  .js-feedback-list {
+    margin-bottom: 48px;
+  }
+
   .js-feedback-list .feedback-item {
     height: 233px;
+    padding: 16px;
   }
 }
 
