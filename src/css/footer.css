@@ -54,8 +54,17 @@ footer {
     font-weight: 600;
     font-size: 14px;
     line-height: 1.5;
-    padding: 15px 0;
+    padding: 15px 0 5px 0;
   }
+}
+.footer-nav-link:hover {
+  border-bottom: 1px solid #080c0c;
+}
+
+.footer-nav-link:active {
+  color: var(--color-wewak);
+  text-decoration: underline;
+  border: none;
 }
 .footer-soc-list {
   display: flex;
@@ -104,11 +113,4 @@ footer {
     width: 100%;
     text-align: center;
   }
-}
-.footer-nav-link:hover {
-  text-decoration: underline;
-}
-
-.footer-nav-link:active {
-  color: var(--color-wewak);
 }
