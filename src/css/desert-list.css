@@ -46,6 +46,10 @@
 
 .desert-list-title {
   margin: 0;
+
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
+    text-align: left;
+  }
 }
 
 .desert-list-subtitle {
@@ -108,16 +112,22 @@
   line-height: 1.5;
   color: var(--color-scheme-1-text);
   background-color: transparent;
-  border: 1px solid var(--color-scheme-1-border);
+  border: 2px solid var(--color-scheme-1-border);
   border-radius: 100px;
   padding: 10px 24px;
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 .desert-chip:hover,
 .desert-chip:focus-visible {
-  background-color: var(--color-ice-cold-light);
+  background-color: var(--color-wewak);
+}
+
+.desert-chip:active {
+  background-color: var(--color-wewak-dark);
 }
 
 .desert-chip.is-active {
@@ -155,11 +165,13 @@
   flex-direction: column;
   gap: 16px;
   padding: 16px;
-  background-color: var(--color-white);
+  background-color: var(--color-scheme-1-foreground);
   border: 1px solid var(--color-scheme-1-border);
   border-radius: 16px;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .desert-card:hover {
@@ -265,13 +277,18 @@ img.desert-card-img.is-loaded {
   border-radius: 100px;
   cursor: pointer;
   flex-shrink: 0;
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 .desert-card-arrow:hover,
 .desert-card-arrow:focus-visible {
-  background-color: var(--color-scheme-1-text);
-  color: var(--color-scheme-1-foreground);
+  background-color: var(--color-wewak);
+}
+
+.desert-card-arrow:active {
+  background-color: var(--color-wewak-dark);
 }
 
 .desert-card-arrow-icon {
@@ -332,10 +349,13 @@ img.desert-card-img.is-loaded {
   line-height: 1.5;
   color: var(--color-scheme-1-text);
   background-color: var(--color-wewak);
-  border: 1px solid var(--color-wewak);
+  border: 2px solid var(--color-wewak);
   border-radius: 100px;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    opacity 0.2s;
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
     max-width: 344px;
@@ -352,7 +372,13 @@ img.desert-card-img.is-loaded {
 
 .desert-load-more:hover,
 .desert-load-more:focus-visible {
-  opacity: 0.85;
+  background-color: transparent;
+  border-color: var(--color-scheme-1-border);
+}
+
+.desert-load-more:active {
+  background-color: var(--color-wewak-light);
+  border-color: var(--color-scheme-1-border);
 }
 
 .desert-load-more:disabled {
