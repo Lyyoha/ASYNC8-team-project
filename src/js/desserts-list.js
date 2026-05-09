@@ -5,6 +5,7 @@ import { getCategories, getDesserts } from './desserts-api';
 import {
   cardsTemplate,
   categoriesTemplate,
+  categoriesSelectTemplate,
   skeletonsTemplate,
 } from './render-function';
 
@@ -20,6 +21,7 @@ export async function initDesserts() {
   if (!refs.desertsList) return;
 
   refs.desertsCategories?.addEventListener('click', onCategoryClick);
+  refs.desertsCategoriesSelect?.addEventListener('change', onCategoryChange);
   refs.desertsLoadMore?.addEventListener('click', onLoadMore);
   refs.desertsList.addEventListener('click', onCardClick);
 
@@ -33,6 +35,10 @@ export async function initDesserts() {
 
     if (refs.desertsCategories) {
       refs.desertsCategories.innerHTML = categoriesTemplate(cats);
+    }
+
+    if (refs.desertsCategoriesSelect) {
+      refs.desertsCategoriesSelect.innerHTML = categoriesSelectTemplate(cats);
     }
 
     state.totalItems = first.totalItems;
@@ -51,17 +57,23 @@ export async function initDesserts() {
   }
 }
 
-async function onCategoryClick(e) {
+function onCategoryClick(e) {
   const btn = e.target.closest('.desert-chip');
   if (!btn) return;
 
   const id = btn.dataset.id || '';
+  setActiveCategory(id);
+}
+
+function onCategoryChange(e) {
+  const id = e.target.value || '';
+  setActiveCategory(id);
+}
+
+async function setActiveCategory(id) {
   if (id === state.category) return;
 
-  refs.desertsCategories
-    .querySelectorAll('.desert-chip')
-    .forEach(b => b.classList.remove('is-active'));
-  btn.classList.add('is-active');
+  syncActiveCategoryUI(id);
 
   state.category = id;
   state.page = 1;
@@ -88,6 +100,18 @@ async function onCategoryClick(e) {
 
     updateEmpty();
     notifyError(err);
+  }
+}
+
+function syncActiveCategoryUI(id) {
+  if (refs.desertsCategories) {
+    refs.desertsCategories
+      .querySelectorAll('.desert-chip')
+      .forEach(b => b.classList.toggle('is-active', b.dataset.id === id));
+  }
+
+  if (refs.desertsCategoriesSelect && refs.desertsCategoriesSelect.value !== id) {
+    refs.desertsCategoriesSelect.value = id;
   }
 }
 
