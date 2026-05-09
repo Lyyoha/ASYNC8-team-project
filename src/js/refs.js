@@ -22,4 +22,11 @@ export const refs = {
 
   // BUTTONS
   orderOpenBtns: document.querySelectorAll("[data-order-open]"),
+  wrapper: document.querySelector(".about-us-list"),
+  items: document.querySelectorAll(".about-us-item"),
+  desertsList: document.querySelector(".desert-cards"),
+  desertsCategories: document.querySelector(".desert-categories"),
+  desertsCategoriesSelect: document.querySelector(".desert-categories-select"),
+  desertsEmpty: document.querySelector(".desert-empty"),
+  desertsLoadMore: document.querySelector(".desert-load-more"),
 };

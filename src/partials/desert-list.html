@@ -1,7 +1,15 @@
-<section class="desert-list-section">
+<section class="desert-list">
   <div class="container">
-    <h2 class="desert-list-title">Наші десерти</h2>
-
-    <ul class="desert-list" data-desert-list></ul>
+    <div class="desert-list-header">
+      <div class="desert-list-heading">
+        <h2 class="heading-2 desert-list-title">Солодощі</h2>
+        <p class="desert-list-subtitle">Спробуйте наші смачні десерти, які вас здивують!</p>
+      </div>
+      <select class="desert-categories-select" aria-label="Категорії десертів"></select>
+    </div>
+    <ul class="desert-categories" aria-label="Категорії десертів"></ul>
+    <ul class="desert-cards"></ul>
+    <p class="desert-empty" hidden>Десертів у цій категорії поки немає.</p>
+    <button class="desert-load-more" type="button" hidden>Завантажити ще</button>
   </div>
 </section>
