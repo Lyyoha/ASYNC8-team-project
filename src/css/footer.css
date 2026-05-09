@@ -28,7 +28,7 @@ footer {
   display: block;
   width: 335px;
   height: 130px;
-  background: url("/img/footer-logo.svg") no-repeat left / contain;
+  background: url('/img/footer-logo.svg') no-repeat left / contain;
   margin: 0 auto;
   margin-bottom: 32px;
 }
@@ -50,15 +50,20 @@ footer {
   color: var(--color-scheme-3-text);
   padding: 15px;
 
+  @media screen and (min-width: 768px) {
+    padding: 15px 0 15px 0;
+  }
+
   @media screen and (min-width: 1440px) {
     font-weight: 600;
     font-size: 14px;
     line-height: 1.5;
-    padding: 15px 0 5px 0;
+    padding: 15px 0 15px 0;
   }
 }
 .footer-nav-link:hover {
   border-bottom: 1px solid #080c0c;
+  padding: 15px 0 5px 0;
 }
 
 .footer-nav-link:active {

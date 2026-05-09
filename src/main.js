@@ -10,6 +10,8 @@ new Accordion('.faq-list', {
   panelClass: 'faq-accordion',
 });
 
+initDesserts();
+
 // header
 
 refs.burgerBtn.addEventListener('click', openBurger);
