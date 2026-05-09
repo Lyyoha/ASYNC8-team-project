@@ -21,12 +21,11 @@ initDesserts();
 
 // header
 
-refs.burgerBtn.addEventListener("click", openBurger);
-refs.burgerBtnClose.addEventListener("click", closeBurger);
-refs.burgerMenuLink.addEventListener("click", closeBurger);
-refs.burgerMenuBtn.addEventListener("click", closeBurger);
-// order form submit
-refs.orderForm.addEventListener("submit", onOrderFormSubmit);
+refs.burgerBtn.addEventListener('click', openBurger);
+refs.burgerBtnClose.addEventListener('click', closeBurger);
+refs.burgerMenuLink.addEventListener('click', closeBurger);
+refs.burgerMenuBtn.addEventListener('click', closeBurger);
+refs.orderForm.addEventListener('submit', onOrderFormSubmit);
 
 // feedback
 
