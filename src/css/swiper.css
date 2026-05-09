@@ -1,4 +1,3 @@
-
 .feedback-swiper-control {
   display: flex;
   align-items: center;
@@ -11,9 +10,7 @@
 }
 
 .feedback-swiper-btn-next:hover,
-.feedback-swiper-btn-prev:hover,
-.feedback-swiper-btn-next:focus,
-.feedback-swiper-btn-prev:focus {
+.feedback-swiper-btn-prev:hover {
   background: var(--color-wewak);
 }
 
@@ -49,11 +46,11 @@
   position: static;
   text-align: start;
   padding: 10px;
-} /*Використання правил специфічності для перебиття стилів бібліотеки*/
+}
 
 .swiper-pagination .swiper-pagination-bullet-active {
   background: #000;
-} /*Використання правил специфічності для перебиття стилів бібліотеки*/
+}
 
 @media screen and (min-width: 768px) {
   .feedback-swiper-control .swiper-pagination {
@@ -79,12 +76,15 @@
   }
   .feedback-swiper-btn-next {
     right: 36px;
+  }
+}
 
 .about-us-section .about-us-container .swiper-button-prev,
 .about-us-section .about-us-container .swiper-button-next,
 .about-us-section .about-us-container .swiper-pagination {
   display: none;
 }
+
 @media screen and (min-width: 768px) {
   .about-us-slider {
     position: relative;
@@ -116,11 +116,10 @@
     right: -24px;
     left: auto;
   }
-   .about-us-container .swiper-button-prev:focus,
-  .about-us-container .swiper-button-next:focus {
+  .about-us-container .swiper-button-prev:hover,
+  .about-us-container .swiper-button-next:hover {
     background-color: #f19898;
   }
-
   .swiper-icon {
     stroke: var(--color-scheme-1-text);
     width: 24px;
@@ -133,11 +132,13 @@
     background-color: var(--color-scheme-1-text);
   }
 }
+
 .about-us-slider .swiper-pagination {
   position: relative;
   margin-top: 48px;
   text-align: center;
 }
+
 @media screen and (min-width: 1440px) {
   .about-us-slider {
     max-width: 1312px;
