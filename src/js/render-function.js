@@ -97,8 +97,7 @@ export function categoriesSelectTemplate(arr) {
 
   const rest = arr
     .map(
-      ({ _id, name }) =>
-        `<option value="${_id}">${escapeHtml(name)}</option>`
+      ({ _id, name }) => `<option value="${_id}">${escapeHtml(name)}</option>`
     )
     .join('');
 
@@ -119,4 +118,3 @@ export function skeletonsTemplate(count = 6) {
   `;
   return item.repeat(count);
 }
-
