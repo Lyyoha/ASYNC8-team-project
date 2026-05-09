@@ -11,7 +11,7 @@ import {
 
 const state = {
   page: 1,
-  limit: 9,
+  limit: 8,
   category: '',
   totalItems: 0,
   loaded: 0,
@@ -110,7 +110,10 @@ function syncActiveCategoryUI(id) {
       .forEach(b => b.classList.toggle('is-active', b.dataset.id === id));
   }
 
-  if (refs.desertsCategoriesSelect && refs.desertsCategoriesSelect.value !== id) {
+  if (
+    refs.desertsCategoriesSelect &&
+    refs.desertsCategoriesSelect.value !== id
+  ) {
     refs.desertsCategoriesSelect.value = id;
   }
 }
