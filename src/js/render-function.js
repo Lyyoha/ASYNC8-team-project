@@ -33,12 +33,25 @@ export function cardsTemplate(arr) {
 }
 
 export function categoriesTemplate(arr) {
-  const all = `<li><button type="button" class="desert-chip is-active" data-id="">Усі</button></li>`;
+  const all = `<li><button type="button" class="desert-chip is-active" data-id="">Всі десерти</button></li>`;
 
   const rest = arr
     .map(
       ({ _id, name }) =>
         `<li><button type="button" class="desert-chip" data-id="${_id}">${escapeHtml(name)}</button></li>`
+    )
+    .join('');
+
+  return all + rest;
+}
+
+export function categoriesSelectTemplate(arr) {
+  const all = `<option value="">Всі десерти</option>`;
+
+  const rest = arr
+    .map(
+      ({ _id, name }) =>
+        `<option value="${_id}">${escapeHtml(name)}</option>`
     )
     .join('');
 
