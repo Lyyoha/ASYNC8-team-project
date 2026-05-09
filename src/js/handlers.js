@@ -22,6 +22,12 @@ export const openOrderModal = () => {
 export const closeOrderModal = () => {
   refs.orderBackdrop.classList.remove("is-open");
   refs.body.style.overflow = "";
+
+  // очищаємо форму
+  refs.orderForm.reset();
+
+  // очищаємо textarea вручну
+  refs.orderForm.comment.value = "";
 };
 
 // Закриття по кнопці
@@ -93,12 +99,11 @@ if (!refs.dessertIdInput) {
 // Вішаємо слухачі на всі кнопки "Перейти до замовлення"
 refs.orderOpenBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    const id = btn.getAttribute("data-dessert-id");
+    const id = btn.dataset.dessertId;
 
-    // передаємо ID у форму
     refs.dessertIdInput.value = id;
 
-    // відкриваємо order modal
+    closeProductModal();
     openOrderModal();
   });
 });

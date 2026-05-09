@@ -15,7 +15,6 @@ export const onOrderFormSubmit = async (event) => {
     form.elements.name,
     form.elements.phone,
     form.elements.comment,
-    form.elements.dessertId,
   ];
 
   fields.forEach((field) => clearFieldError(field));
@@ -38,9 +37,10 @@ export const onOrderFormSubmit = async (event) => {
     isValid = false;
   }
 
+  // Перевірка dessertId
   if (!form.elements.dessertId.value.trim()) {
-    addFieldError(form.elements.comment, "Помилка: не передано ID десерту");
-    isValid = false;
+    errorToast("Помилка: не передано ID десерту");
+    return;
   }
 
   if (!isValid) return;
@@ -54,25 +54,18 @@ export const onOrderFormSubmit = async (event) => {
   };
 
   try {
-    // Disabled кнопки
     submitBtn.disabled = true;
 
-    // Відправка на бекенд
-    const response = await createOrder(order);
+    await createOrder(order);
 
-    // Успішний тост
     successToast("Ваше замовлення успішно відправлено!");
 
-    // Очищення форми
     form.reset();
-
-    // Закриття модалки
     closeOrderModal();
   } catch (err) {
     console.log(err);
     errorToast("Сталася помилка при створенні замовлення.");
   } finally {
-    // Повертаємо кнопку в нормальний стан
     submitBtn.disabled = false;
   }
 };
