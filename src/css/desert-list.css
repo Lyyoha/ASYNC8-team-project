@@ -121,9 +121,9 @@
 }
 
 .desert-chip.is-active {
-  background-color: var(--color-scheme-1-accent);
-  color: var(--color-scheme-1-foreground);
-  border-color: var(--color-scheme-1-accent);
+  background-color: var(--color-wewak-dark);
+  color: var(--color-scheme-1-text);
+  border-color: var(--color-wewak-dark);
 }
 
 .desert-cards {
@@ -295,9 +295,9 @@ img.desert-card-img.is-loaded {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
-  color: var(--color-scheme-1-foreground);
-  background-color: var(--color-scheme-1-accent);
-  border: 1px solid var(--color-scheme-1-accent);
+  color: var(--color-scheme-1-text);
+  background-color: var(--color-wewak);
+  border: 1px solid var(--color-wewak);
   border-radius: 100px;
   cursor: pointer;
   transition: opacity 0.2s;
