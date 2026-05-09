@@ -1,0 +1,63 @@
+.about-us-section .about-us-container .swiper-button-prev,
+.about-us-section .about-us-container .swiper-button-next,
+.about-us-section .about-us-container .swiper-pagination {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .about-us-slider {
+    position: relative;
+    max-width: 704px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about-us-section .about-us-container .swiper-button-prev,
+  .about-us-section .about-us-container .swiper-button-next {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--color-scheme-1-border);
+    border-radius: 100px;
+    width: 48px;
+    height: 48px;
+  }
+  .about-us-section .about-us-container .swiper-button-prev {
+    display: flex;
+    left: -24px;
+    right: auto;
+  }
+  .about-us-section .about-us-container .swiper-button-next {
+    display: flex;
+    right: -24px;
+    left: auto;
+  }
+   .about-us-container .swiper-button-prev:focus,
+  .about-us-container .swiper-button-next:focus {
+    background-color: #f19898;
+  }
+
+  .swiper-icon {
+    stroke: var(--color-scheme-1-text);
+    width: 24px;
+    height: 24px;
+  }
+  .about-us-section .about-us-container .swiper-pagination {
+    display: block;
+  }
+  .about-us-section .about-us-container .swiper-pagination-bullet {
+    background-color: var(--color-scheme-1-text);
+  }
+}
+.about-us-slider .swiper-pagination {
+  position: relative;
+  margin-top: 48px;
+  text-align: center;
+}
+@media screen and (min-width: 1440px) {
+  .about-us-slider {
+    max-width: 1312px;
+  }
+}
