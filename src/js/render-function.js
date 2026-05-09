@@ -36,3 +36,87 @@ export const createFeedbackCard = ({ _id, rate, description, author }) => {
   <h3 class="feedback-item-author">${author}</h3>
 </li>`;
 };
+
+const HTML_ENTITIES = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#39;',
+};
+
+function escapeHtml(value = '') {
+  return String(value).replace(/[&<>"']/g, char => HTML_ENTITIES[char]);
+}
+
+function cardTemplate({ _id, name, description, price, image, category }) {
+  const safeName = escapeHtml(name);
+  const safeDesc = escapeHtml(description);
+  const safeCat = escapeHtml(category?.name ?? '');
+
+  return `
+    <li class="desert-card" data-id="${_id}">
+      <img class="desert-card-img" src="${image}" alt="${safeName}" loading="lazy" />
+      <div class="desert-card-body">
+        <p class="desert-card-category">${safeCat}</p>
+        <h3 class="desert-card-title">${safeName}</h3>
+        <p class="desert-card-description">${safeDesc}</p>
+        <div class="desert-card-footer">
+          <p class="desert-card-price">${price} грн</p>
+          <button class="desert-card-arrow" type="button" aria-label="Переглянути ${safeName}">
+            <svg class="desert-card-arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </li>
+  `;
+}
+
+export function cardsTemplate(arr) {
+  return arr.map(cardTemplate).join('');
+}
+
+export function categoriesTemplate(arr) {
+  const all = `<li><button type="button" class="desert-chip is-active" data-id="">Всі десерти</button></li>`;
+
+  const rest = arr
+    .map(
+      ({ _id, name }) =>
+        `<li><button type="button" class="desert-chip" data-id="${_id}">${escapeHtml(name)}</button></li>`
+    )
+    .join('');
+
+  return all + rest;
+}
+
+export function categoriesSelectTemplate(arr) {
+  const all = `<option value="">Всі десерти</option>`;
+
+  const rest = arr
+    .map(
+      ({ _id, name }) =>
+        `<option value="${_id}">${escapeHtml(name)}</option>`
+    )
+    .join('');
+
+  return all + rest;
+}
+
+export function skeletonsTemplate(count = 6) {
+  const item = `
+    <li class="desert-card desert-card--skeleton">
+      <div class="desert-skeleton-thumb desert-skeleton-shimmer"></div>
+      <div class="desert-card-body">
+        <div class="desert-skeleton-line desert-skeleton-line--short desert-skeleton-shimmer"></div>
+        <div class="desert-skeleton-line desert-skeleton-line--title desert-skeleton-shimmer"></div>
+        <div class="desert-skeleton-line desert-skeleton-shimmer"></div>
+        <div class="desert-skeleton-line desert-skeleton-line--short desert-skeleton-shimmer"></div>
+      </div>
+    </li>
+  `;
+  return item.repeat(count);
+}
+
