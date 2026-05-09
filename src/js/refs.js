@@ -12,4 +12,4 @@ export const refs = {
   desertsCategoriesSelect: document.querySelector(".desert-categories-select"),
   desertsEmpty: document.querySelector(".desert-empty"),
   desertsLoadMore: document.querySelector(".desert-load-more"),
-
+};
