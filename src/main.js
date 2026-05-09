@@ -26,11 +26,9 @@ refs.burgerBtnClose.addEventListener('click', closeBurger);
 refs.burgerMenuLink.addEventListener('click', closeBurger);
 refs.burgerMenuBtn.addEventListener('click', closeBurger);
 
-console.log();
-
 // feedback
 
-let swiper = null;
+let feedbackSwiper = null;
 
 const renderFeedbackList = async () => {
   try {
@@ -42,24 +40,24 @@ const renderFeedbackList = async () => {
 
     refs.feedbackList.innerHTML = feedbackCardsTemplate;
 
-    initSwiper();
+    initFeedbackSwiper();
   } catch (error) {
     console.log(error);
   }
 };
 
-const initSwiper = async () => {
-  if (swiper) {
-    swiper.destroy(true, true);
+const initFeedbackSwiper = () => {
+  if (feedbackSwiper) {
+    feedbackSwiper.destroy(true, true);
   }
 
-  swiper = new Swiper('.feedback-swiper', {
+  feedbackSwiper = new Swiper('.feedback-swiper', {
     modules: [Navigation, Pagination],
     direction: 'horizontal',
     loop: false,
     spaceBetween: 24,
     pagination: {
-      el: '.swiper-pagination',
+      el: '.feedback-swiper-control .swiper-pagination',
       clickable: true,
     },
     navigation: {
@@ -83,13 +81,14 @@ const initSwiper = async () => {
 
 document.addEventListener('DOMContentLoaded', renderFeedbackList);
 
+// about-us swiper
+
 const mediaQuery = window.matchMedia('(min-width: 768px)');
-let swiper = null;
+let aboutSwiper = null;
+
 const toggleSwiper = () => {
-  if (mediaQuery.matches && !swiper) {
-    refs.wrapper.classList.add('swiper-wrapper');
-    refs.items.forEach(item => item.classList.add('swiper-slide'));
-    swiper = new Swiper('.swiper', {
+  if (mediaQuery.matches && !aboutSwiper) {
+    aboutSwiper = new Swiper('.about-us-slider .swiper', {
       modules: [Navigation, Pagination],
       slidesPerView: 2,
       spaceBetween: 24,
@@ -98,16 +97,15 @@ const toggleSwiper = () => {
         prevEl: '.swiper-button-prev',
       },
       pagination: {
-        el: '.swiper-pagination',
+        el: '.about-us-pagination',
         clickable: true,
       },
     });
-  } else if (!mediaQuery.matches && swiper) {
-    swiper.destroy(true, true);
-    swiper = null;
-    refs.wrapper.classList.remove('swiper-wrapper');
-    refs.items.forEach(item => item.classList.remove('swiper-slide'));
+  } else if (!mediaQuery.matches && aboutSwiper) {
+    aboutSwiper.destroy(true, true);
+    aboutSwiper = null;
   }
 };
+
 toggleSwiper();
 mediaQuery.addEventListener('change', toggleSwiper);
