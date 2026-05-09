@@ -65,6 +65,7 @@ body {
   line-height: 1.5;
   color: var(--color-scheme-1-text);
   position: relative;
+  background: var(--color-scheme-1-background);
 }
 
 .heading-2 {
