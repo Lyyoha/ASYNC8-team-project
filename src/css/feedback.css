@@ -1,5 +1,6 @@
 .feedback-section {
   padding: 64px 0;
+  background: var(--color-scheme-1-background);
 }
 
 .feedback-container {
