@@ -76,6 +76,8 @@
   }
   .feedback-swiper-btn-next {
     right: 36px;
+  }
+}
 
 .about-us-section .about-us-container .swiper-button-prev,
 .about-us-section .about-us-container .swiper-button-next,
@@ -114,8 +116,8 @@
     right: -24px;
     left: auto;
   }
-   .about-us-container .swiper-button-prev:focus,
-  .about-us-container .swiper-button-next:focus {
+  .about-us-container .swiper-button-prev:hover,
+  .about-us-container .swiper-button-next:hover {
     background-color: #f19898;
   }
   .swiper-icon {
