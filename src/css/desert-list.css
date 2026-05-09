@@ -15,7 +15,7 @@
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
     flex-direction: row;
-    align-items: center;
+    align-items: end;
     justify-content: space-between;
     gap: 16px;
   }
@@ -123,7 +123,6 @@
 .desert-chip.is-active {
   background-color: var(--color-wewak-dark);
   color: var(--color-scheme-1-text);
-  border-color: var(--color-wewak-dark);
 }
 
 .desert-cards {
