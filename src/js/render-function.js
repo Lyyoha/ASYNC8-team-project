@@ -97,8 +97,7 @@ export function categoriesSelectTemplate(arr) {
 
   const rest = arr
     .map(
-      ({ _id, name }) =>
-        `<option value="${_id}">${escapeHtml(name)}</option>`
+      ({ _id, name }) => `<option value="${_id}">${escapeHtml(name)}</option>`
     )
     .join('');
 
@@ -120,3 +119,32 @@ export function skeletonsTemplate(count = 6) {
   return item.repeat(count);
 }
 
+export const createCardMarkup = ({
+  _id,
+  image,
+  category,
+  name,
+  description,
+  price,
+}) => `
+    <li class="swiper-slide" data-id="${_id}">
+      <article class="product-card">
+        <div class="img-thumb">
+          <img src="${image}" alt="${name}" loading="lazy" />
+        </div>
+        <div class="card-content">
+          <p class="category">${category.name}</p>
+          <h3 class="name">${name}</h3>
+          <p class="description">${description}</p>
+          <div class="card-footer">
+            <span class="price">${price} грн</span>
+            <button type="button" class="order-link-btn" aria-label="Детальна інформація">
+              <svg width="20" height="20">
+                <use href="../img/sprite.svg#arrow_outward"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </article>
+    </li>
+  `;

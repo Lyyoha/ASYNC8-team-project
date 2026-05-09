@@ -8,8 +8,11 @@ export const getAllFeedbacks = async () => {
   return data.feedbacks;
 };
 
-
-export async function getDesserts({ page = 1, limit = 9, category = null } = {}) {
+export async function getDesserts({
+  page = 1,
+  limit = 9,
+  category = null,
+} = {}) {
   const params = { page, limit };
   if (category) params.category = category;
   const { data } = await axios.get('/desserts', { params });
@@ -26,3 +29,13 @@ export async function getDessertById(id) {
   return data;
 }
 
+export const getPopularProdacts = async () => {
+  const { data } = await axios.get(`/desserts`, {
+    params: {
+      type: 'popular',
+    },
+  });
+
+  console.log('Дані отримано:', data);
+  return data;
+};
