@@ -1,3 +1,85 @@
+
+.feedback-swiper-control {
+  display: flex;
+  align-items: center;
+}
+
+.feedback-swiper-nav {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.feedback-swiper-btn-next:hover,
+.feedback-swiper-btn-prev:hover,
+.feedback-swiper-btn-next:focus,
+.feedback-swiper-btn-prev:focus {
+  background: var(--color-wewak);
+}
+
+.feedback-swiper-btn-next:active,
+.feedback-swiper-btn-prev:active {
+  background: var(--color-wewak-dark);
+}
+
+.feedback-swiper-btn-next,
+.feedback-swiper-btn-prev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-scheme-1-border);
+  border-radius: 100px;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: var(--color-scheme-1-foreground);
+  &.swiper-button-disabled {
+    opacity: 0.2;
+    cursor: auto;
+    pointer-events: none;
+  }
+}
+
+.feedback-swiper-icon {
+  display: block;
+  stroke: var(--color-scheme-1-text);
+}
+
+.feedback-swiper-control .swiper-pagination {
+  position: static;
+  text-align: start;
+  padding: 10px;
+} /*Використання правил специфічності для перебиття стилів бібліотеки*/
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  background: #000;
+} /*Використання правил специфічності для перебиття стилів бібліотеки*/
+
+@media screen and (min-width: 768px) {
+  .feedback-swiper-control .swiper-pagination {
+    text-align: center;
+  }
+  .feedback-swiper-btn-prev {
+    position: absolute;
+    z-index: 10;
+    top: 226px;
+    left: 4px;
+  }
+  .feedback-swiper-btn-next {
+    position: absolute;
+    z-index: 10;
+    top: 226px;
+    right: 4px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .feedback-swiper-btn-prev {
+    left: 36px;
+  }
+  .feedback-swiper-btn-next {
+    right: 36px;
+
 .about-us-section .about-us-container .swiper-button-prev,
 .about-us-section .about-us-container .swiper-button-next,
 .about-us-section .about-us-container .swiper-pagination {
