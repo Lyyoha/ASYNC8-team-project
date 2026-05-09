@@ -241,6 +241,42 @@ img.desert-card-img.is-loaded {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  flex: 1;
+}
+
+.desert-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.desert-card-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  color: var(--color-scheme-1-text);
+  background-color: transparent;
+  border: 2px solid var(--color-scheme-1-border);
+  border-radius: 100px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.desert-card-arrow:hover,
+.desert-card-arrow:focus-visible {
+  background-color: var(--color-scheme-1-text);
+  color: var(--color-scheme-1-foreground);
+}
+
+.desert-card-arrow-icon {
+  display: block;
 }
 
 .desert-card-category {
