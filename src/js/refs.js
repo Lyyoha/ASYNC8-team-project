@@ -7,6 +7,7 @@ export const refs = {
   burgerMenuBtn: document.querySelector(".button-menu"),
   desertsList: document.querySelector(".desert-cards"),
   desertsCategories: document.querySelector(".desert-categories"),
+  desertsCategoriesSelect: document.querySelector(".desert-categories-select"),
   desertsEmpty: document.querySelector(".desert-empty"),
   desertsLoadMore: document.querySelector(".desert-load-more"),
 };
