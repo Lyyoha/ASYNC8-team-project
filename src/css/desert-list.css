@@ -90,6 +90,134 @@
   }
 }
 
+/* Choices.js — custom selector for desert categories */
+.category-select.choices {
+  width: 100%;
+  margin: 0;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-scheme-1-text);
+}
+
+.category-select.choices.is-open {
+  z-index: 5;
+}
+
+.category-select .choices__inner {
+  min-height: 40px;
+  padding: 7px 44px 7px 12px;
+  background-color: transparent;
+  border: 1px solid var(--color-scheme-1-border);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.category-select.is-open .choices__inner {
+  border-color: var(--color-scheme-1-border);
+  border-radius: 8px;
+}
+
+.category-select.is-flipped.is-open .choices__inner {
+  border-radius: 8px;
+}
+
+.category-select.choices[data-type*='select-one']::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  border: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: transform 0.2s;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23080c0c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")
+    no-repeat center / 24px 24px;
+}
+
+.category-select.choices[data-type*='select-one'].is-open::after {
+  margin: 0;
+  border: 0;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.category-select .choices__list--single {
+  padding: 0;
+}
+
+.category-select .choices__list--single .choices__item {
+  color: var(--color-scheme-1-text);
+}
+
+.category-select .choices__list--dropdown,
+.category-select .choices__list[aria-expanded] {
+  margin-top: 4px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-scheme-1-border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px var(--opacity-neutral-darkest-10);
+  overflow: hidden;
+  word-break: normal;
+}
+
+.category-select .choices__list--dropdown .choices__list,
+.category-select .choices__list[aria-expanded] .choices__list {
+  max-height: 280px;
+}
+
+.category-select .choices__list--dropdown .choices__item,
+.category-select .choices__list[aria-expanded] .choices__item {
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-scheme-1-text);
+  background-color: transparent;
+}
+
+.category-select
+  .choices__list--dropdown
+  .choices__item--selectable.is-highlighted,
+.category-select
+  .choices__list[aria-expanded]
+  .choices__item--selectable.is-highlighted {
+  background-color: var(--color-ice-cold-light);
+  color: var(--color-scheme-1-text);
+}
+
+.category-select
+  .choices__list--dropdown
+  .choices__item--selectable[aria-selected='true'],
+.category-select
+  .choices__list[aria-expanded]
+  .choices__item--selectable[aria-selected='true'] {
+  background-color: var(--color-wewak-dark);
+  color: var(--color-scheme-1-text);
+}
+
+.category-select.choices[data-type*='select-one']:focus-within .choices__inner {
+  outline: 2px solid var(--color-wewak-dark);
+  outline-offset: 2px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .category-select.choices {
+    width: 256px;
+    flex-shrink: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .category-select.choices {
+    display: none;
+  }
+}
+
 .desert-categories {
   list-style: none;
   padding: 0;

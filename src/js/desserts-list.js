@@ -1,5 +1,6 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import 'choices.js/public/assets/styles/choices.min.css';
 import { refs } from './refs';
 import { getCategories, getDesserts } from './desserts-api';
 import {
@@ -8,6 +9,10 @@ import {
   categoriesSelectTemplate,
   skeletonsTemplate,
 } from './render-function';
+import {
+  initCategorySelect,
+  setCategorySelectValue,
+} from './category-select';
 
 const state = {
   page: 1,
@@ -17,11 +22,12 @@ const state = {
   loaded: 0,
 };
 
+let categorySelectInstance = null;
+
 export async function initDesserts() {
   if (!refs.desertsList) return;
 
   refs.desertsCategories?.addEventListener('click', onCategoryClick);
-  refs.desertsCategoriesSelect?.addEventListener('change', onCategoryChange);
   refs.desertsLoadMore?.addEventListener('click', onLoadMore);
   refs.desertsList.addEventListener('click', onCardClick);
 
@@ -39,6 +45,10 @@ export async function initDesserts() {
 
     if (refs.desertsCategoriesSelect) {
       refs.desertsCategoriesSelect.innerHTML = categoriesSelectTemplate(cats);
+      categorySelectInstance = initCategorySelect(
+        refs.desertsCategoriesSelect,
+        { onChange: setActiveCategory }
+      );
     }
 
     state.totalItems = first.totalItems;
@@ -65,19 +75,14 @@ function onCategoryClick(e) {
   setActiveCategory(id);
 }
 
-function onCategoryChange(e) {
-  const id = e.target.value || '';
-  setActiveCategory(id);
-}
-
 async function setActiveCategory(id) {
   if (id === state.category) return;
-
-  syncActiveCategoryUI(id);
 
   state.category = id;
   state.page = 1;
   state.loaded = 0;
+
+  syncActiveCategoryUI(id);
 
   showSkeletons();
   refs.desertsLoadMore.hidden = true;
@@ -111,10 +116,11 @@ function syncActiveCategoryUI(id) {
   }
 
   if (
+    categorySelectInstance &&
     refs.desertsCategoriesSelect &&
     refs.desertsCategoriesSelect.value !== id
   ) {
-    refs.desertsCategoriesSelect.value = id;
+    setCategorySelectValue(categorySelectInstance, id);
   }
 }
 
