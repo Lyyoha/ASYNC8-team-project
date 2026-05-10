@@ -28,3 +28,13 @@ export async function getDessertById(id) {
   const { data } = await axios.get(`/desserts/${id}`);
   return data;
 }
+
+export const getPopularProdacts = async () => {
+  const { data } = await axios.get(`/desserts`, {
+    params: {
+      type: 'popular',
+    },
+  });
+
+  return data;
+};
