@@ -149,7 +149,11 @@ function onCardClick(e) {
   const id = card.dataset.id;
   if (!id) return;
 
-  document.dispatchEvent(new CustomEvent('dessert:open', { detail: { id } }));
+  iziToast.info({
+    title: 'Скоро',
+    message: `Деталі десерту: ${id}`,
+    position: 'topRight',
+  });
 }
 
 function showSkeletons() {
