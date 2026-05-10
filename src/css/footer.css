@@ -1,0 +1,121 @@
+footer {
+  background: var(--color-scheme-3-background);
+  padding-top: 48px;
+  padding-bottom: 0;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.footer-content {
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.footer-logo-soc-container {
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    align-items: center;
+    gap: 152px;
+  }
+}
+.footer-logo-link svg {
+  width: 100%;
+  max-width: 335px;
+  height: auto;
+}
+.footer-logo-link {
+  display: block;
+  width: 335px;
+  height: 130px;
+  background: url('/img/footer-logo.svg') no-repeat left / contain;
+  margin: 0 auto;
+  margin-bottom: 32px;
+}
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 32px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+.footer-nav-link {
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--color-scheme-3-text);
+  padding: 15px;
+
+  @media screen and (min-width: 768px) {
+    padding: 15px 0 15px 0;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 15px 0 15px 0;
+  }
+}
+.footer-nav-link:hover {
+  border-bottom: 1px solid #080c0c;
+  padding: 15px 0 5px 0;
+}
+
+.footer-nav-link:active {
+  color: var(--color-wewak);
+  text-decoration: underline;
+  border: none;
+}
+.footer-soc-list {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 1440px) {
+    gap: 0;
+  }
+}
+.footer-soc-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  min-width: 44px;
+  min-height: 44px;
+
+  @media screen and (min-width: 1440px) {
+    min-width: 24px;
+    min-height: 24px;
+  }
+}
+.footer-svg {
+  @media screen and (min-width: 1440px) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.copypaste-container {
+  display: flex;
+  justify-content: center;
+}
+.copypaste-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-scheme-3-text);
+  padding-top: 32px;
+  padding-bottom: 48px;
+  border-top: 2px solid var(--color-scheme-3-border);
+
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    text-align: center;
+  }
+}

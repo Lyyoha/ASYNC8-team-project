@@ -1,0 +1,156 @@
+.hero {
+  background-image:
+    linear-gradient(
+      var(--opacity-neutral-darkest-50),
+      var(--opacity-neutral-darkest-50)
+    ),
+    url('../img/hero/hero-mobile.jpg');
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: var(--color-neutral-lighter);
+
+  padding-top: 155.5px;
+  padding-bottom: 155.5px;
+  text-align: center;
+  color: var(--color-white);
+}
+
+@media (min-resolution: 192dpi) {
+  .hero {
+    background-image:
+      linear-gradient(
+        var(--opacity-neutral-darkest-50),
+        var(--opacity-neutral-darkest-50)
+      ),
+      url('../img/hero/hero-mobile@2x.jpg');
+  }
+}
+
+.hero-title {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+}
+
+.hero-description {
+  text-align: center;
+  color: var(--color-white);
+  font-size: 18px;
+  width: 100%;
+  max-width: 335px;
+  margin-bottom: 32px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: var(--color-wewak);
+  border: 1px solid var(--color-wewak);
+  border-radius: 100px;
+  padding: 10px 24px;
+  width: 100%;
+  max-width: 335px;
+  height: 44px;
+  font-weight: 500;
+  color: var(--color-neutral-darkest);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-button:hover,
+.hero-button:focus {
+  border: 2px solid var(--color-neutral-darkest);
+  background-color: var(--color-white);
+  cursor: pointer;
+}
+
+.hero-button:active {
+  background: var(--color-wewak-light);
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    background-image:
+      linear-gradient(
+        var(--opacity-neutral-darkest-50),
+        var(--opacity-neutral-darkest-50)
+      ),
+      url('../img/hero/hero-tablet.jpg');
+
+    padding: 325px 32px;
+  }
+
+  @media (min-resolution: 192dpi) {
+    .hero {
+      background-image:
+        linear-gradient(
+          var(--opacity-neutral-darkest-50),
+          var(--opacity-neutral-darkest-50)
+        ),
+        url('../img/hero/hero-tablet@2x.jpg');
+    }
+  }
+
+  .hero-title {
+    font-size: 40px;
+    max-width: 535px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+  }
+
+  .hero-description {
+    font-size: 18px;
+  }
+
+  .hero-button {
+    width: 219px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hero {
+    background-image:
+      linear-gradient(
+        var(--opacity-neutral-darkest-50),
+        var(--opacity-neutral-darkest-50)
+      ),
+      url('../img/hero/hero-desktop.jpg');
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 306px;
+    padding-bottom: 306px;
+  }
+
+  @media (min-resolution: 192dpi) {
+    .hero {
+      background-image:
+        linear-gradient(
+          var(--opacity-neutral-darkest-50),
+          var(--opacity-neutral-darkest-50)
+        ),
+        url('../img/hero/hero-desktop@2x.jpg');
+    }
+  }
+
+  .hero-title {
+    max-width: 768px;
+    margin-bottom: 24px;
+    font-size: 56px;
+  }
+
+  .hero-description {
+    max-width: 768px;
+    font-size: 18px;
+  }
+}
