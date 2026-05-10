@@ -7,7 +7,7 @@ const DEFAULTS = {
   allowHTML: false,
   position: 'bottom',
   classNames: {
-    containerOuter: 'choices category-select',
+    containerOuter: ['choices', 'category-select'],
   },
 };
 
