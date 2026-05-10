@@ -116,14 +116,23 @@
     right: -24px;
     left: auto;
   }
+  .about-us-section .about-us-container .swiper-button-prev svg,
+  .about-us-section .about-us-container .swiper-button-next svg {
+    fill: var(--color-scheme-1-text);
+    width: 24px;
+    height: 24px;
+  }
   .about-us-container .swiper-button-prev:hover,
   .about-us-container .swiper-button-next:hover {
     background-color: #f19898;
   }
+  .about-us-container .swiper-button-prev:active,
+  .about-us-container .swiper-button-next:active {
+    background-color: #f19898;
+  }
+
   .swiper-icon {
     stroke: var(--color-scheme-1-text);
-    width: 24px;
-    height: 24px;
   }
   .about-us-section .about-us-container .swiper-pagination {
     display: block;
