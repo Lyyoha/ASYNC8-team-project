@@ -18,7 +18,13 @@ new Accordion('.faq-list', {
   triggerClass: 'faq-acordion-btn',
   panelClass: 'faq-accordion',
 });
-initDesserts();
+
+import { initProductModal } from './js/product-modal';
+document.addEventListener('DOMContentLoaded', () => {
+  initDesserts();
+
+  initProductModal();
+});
 
 // header
 
@@ -96,9 +102,9 @@ let feedbackSwiper = null;
 
 const renderFeedbackList = async () => {
   try {
-    const feedbackArr = await getAllFeedbacks();
+    const { feedbacks } = await getAllFeedbacks();
 
-    const feedbackCardsTemplate = feedbackArr
+    const feedbackCardsTemplate = feedbacks
       .map(card => createFeedbackCard(card))
       .join('');
 

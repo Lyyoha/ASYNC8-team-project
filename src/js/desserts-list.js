@@ -1,13 +1,16 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import { refs } from './refs';
-import { getCategories, getDesserts } from './desserts-api';
+import { getCategories, getDessertById, getDesserts } from './desserts-api';
 import {
   cardsTemplate,
   categoriesTemplate,
   categoriesSelectTemplate,
   skeletonsTemplate,
 } from './render-function';
+import { fillProductModal } from './handlers';
+import { openProductModal } from './product-modal';
+// import { initDessertCardListeners } from './render-function.js';
 
 const state = {
   page: 1,
@@ -143,17 +146,18 @@ async function onLoadMore() {
 }
 
 function onCardClick(e) {
+  // Якщо натиснули на стрілку або на SVG всередині стрілки
+  const openBtn = e.target.closest('[data-open]');
   const card = e.target.closest('.desert-card');
+
   if (!card || card.classList.contains('desert-card--skeleton')) return;
 
   const id = card.dataset.id;
   if (!id) return;
 
-  iziToast.info({
-    title: 'Скоро',
-    message: `Деталі десерту: ${id}`,
-    position: 'topRight',
-  });
+  openProductModal();
+
+  fillProductModal(getDessertById(id));
 }
 
 function showSkeletons() {
@@ -168,8 +172,10 @@ function renderCards(arr, mode) {
 
   if (mode === 'replace') {
     refs.desertsList.innerHTML = html;
+    // initDessertCardListeners();
   } else {
     refs.desertsList.insertAdjacentHTML('beforeend', html);
+    // initDessertCardListeners();
   }
 
   wireImageFade();

@@ -2,11 +2,10 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://deserts-store.b.goit.study/api';
 
-export const getAllFeedbacks = async () => {
-  const { data } = await axios.get('/feedbacks?limit=10&page=1');
-
-  return data.feedbacks;
-};
+export async function fetchDessertById(id) {
+  const { data } = await axios.get(`/desserts/${id}`);
+  return data;
+}
 
 export async function getDesserts({
   page = 1,
@@ -38,3 +37,8 @@ export const getPopularProdacts = async () => {
 
   return data;
 };
+// !!! FEEDBACKS
+export async function getAllFeedbacks() {
+  const { data } = await axios.get('/feedbacks');
+  return data;
+}

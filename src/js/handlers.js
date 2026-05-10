@@ -54,36 +54,36 @@ document.addEventListener('keydown', event => {
 // PRODUCT MODAL
 
 // Відкрити product modal
-export const openProductModal = () => {
-  refs.productBackdrop.classList.add('is-open');
-  refs.body.style.overflow = 'hidden';
-};
+// // export const openProductModal = () => {
+//   refs.productBackdrop.classList.add("is-open");
+//   refs.body.style.overflow = "hidden";
+// };
 
-// Закрити product modal
-export const closeProductModal = () => {
-  refs.productBackdrop.classList.remove('is-open');
-  refs.body.style.overflow = '';
-};
+// // Закрити product modal
+// export const closeProductModal = () => {
+//   refs.productBackdrop.classList.remove("is-open");
+//   refs.body.style.overflow = "";
+// };
 
 // Закриття по кнопці
-if (refs.productCloseBtn) {
-  refs.productCloseBtn.addEventListener('click', closeProductModal);
-}
-// Закриття по кліку на backdrop
-if (refs.productBackdrop) {
-  refs.productBackdrop.addEventListener('click', event => {
-    if (event.target === refs.productBackdrop) {
-      closeProductModal();
-    }
-  });
-}
+// if (refs.productCloseBtn) {
+//   refs.productCloseBtn.addEventListener('click', closeProductModal);
+// }
+// // Закриття по кліку на backdrop
+// if (refs.productBackdrop) {
+//   refs.productBackdrop.addEventListener('click', event => {
+//     if (event.target === refs.productBackdrop) {
+//       closeProductModal();
+//     }
+//   });
+// }
 
 // Закриття по Escape
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') {
-    closeProductModal();
-  }
-});
+// document.addEventListener("keydown", (event) => {
+//   if (event.key === "Escape") {
+//     closeProductModal();
+//   }
+// });
 
 // OPEN ORDER MODAL FROM PRODUCT MODAL
 
@@ -103,8 +103,8 @@ refs.orderOpenBtns.forEach(btn => {
 
     refs.dessertIdInput.value = id;
 
-    closeProductModal();
-    openOrderModal();
+    // closeProductModal();
+    // openOrderModal();
   });
 });
 

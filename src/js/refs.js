@@ -37,3 +37,5 @@ export const refs = {
   desertsLoadMore: document.querySelector('.desert-load-more'),
   popularList: document.querySelector('.swiper-wrapper'),
 };
+
+console.log(refs.orderForm);
