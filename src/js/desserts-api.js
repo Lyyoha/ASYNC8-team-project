@@ -36,6 +36,5 @@ export const getPopularProdacts = async () => {
     },
   });
 
-  console.log('Дані отримано:', data);
   return data;
 };
