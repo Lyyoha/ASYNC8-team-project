@@ -3,6 +3,11 @@
 }
 
 .popular-title {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
   text-align: left;
   margin-bottom: 32px;
 }
@@ -17,7 +22,8 @@
   padding: 16px;
   border: 1px solid var(--color-scheme-1-border);
   border-radius: 16px;
-  width: 335px;
+  max-width: 335px;
+
   height: 433px;
 }
 
@@ -59,7 +65,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* padding-top: 12px; */
 }
 
 .price {
@@ -120,15 +125,15 @@
   background-color: var(--color-scheme-1-text);
 }
 
-.popular-controls .nav-wrapper .swiper-button-prev svg,
-.popular-controls .nav-wrapper .swiper-button-next svg {
+.popular-controls .nav-wrapper .popular-swiper-button-prev svg,
+.popular-controls .nav-wrapper .popular-swiper-button-next svg {
   width: 24px;
   height: 24px;
   fill: var(--color-neutral-darkest);
 }
 
-.popular-controls .nav-wrapper .swiper-button-prev,
-.popular-controls .nav-wrapper .swiper-button-next {
+.popular-controls .nav-wrapper .popular-swiper-button-prev,
+.popular-controls .nav-wrapper .popular-swiper-button-next {
   position: static;
   display: flex;
   align-items: center;
@@ -144,18 +149,22 @@
 }
 
 .order-link-btn:hover,
-.popular-controls .nav-wrapper .swiper-button-prev:hover,
-.popular-controls .nav-wrapper .swiper-button-next:hover {
+.popular-controls .nav-wrapper .popular-swiper-button-prev:hover,
+.popular-controls .nav-wrapper .popular-swiper-button-next:hover {
   background: var(--color-wewak);
 }
 .order-link-btn:active,
-.popular-controls .nav-wrapper .swiper-button-prev:active,
-.popular-controls .nav-wrapper .swiper-button-next:active {
+.popular-controls .nav-wrapper .popular-swiper-button-prev:active,
+.popular-controls .nav-wrapper .popular-swiper-button-next:active {
   background: var(--color-wewak-dark);
 }
 
-.popular-controls .nav-wrapper .swiper-button-prev.swiper-button-disabled,
-.popular-controls .nav-wrapper .swiper-button-next.swiper-button-disabled {
+.popular-controls
+  .nav-wrapper
+  .popular-swiper-button-prev.swiper-button-disabled,
+.popular-controls
+  .nav-wrapper
+  .popular-swiper-button-next.swiper-button-disabled {
   opacity: 0.2;
   cursor: not-allowed;
   pointer-events: none;
@@ -163,7 +172,7 @@
 
 @media (min-width: 768px) {
   .product-card {
-    width: 344px;
+    min-width: 344px;
     height: 440px;
   }
   .img-thumb {
@@ -176,7 +185,7 @@
     padding: 80px 0;
   }
   .product-card {
-    width: 421px;
+    min-width: 421px;
     height: 498px;
   }
   .img-thumb {

@@ -1,4 +1,5 @@
 import 'css-star-rating/css/star-rating.css';
+import { refs } from './refs';
 
 const createRatingMarkup = rating => {
   const value = Math.floor(rating);
@@ -148,3 +149,24 @@ export const createCardMarkup = ({
       </article>
     </li>
   `;
+
+export const renderPopularSection = async () => {
+  try {
+    const data = await fetchPopularProducts();
+
+    if (!data || !data.desserts || data.desserts.length === 0) {
+      refs.popularList.innerHTML =
+        '<p>На жаль, популярні товари зараз недоступні.</p>';
+      return;
+    }
+
+    const markup = data.desserts.map(createCardMarkup).join('');
+    refs.popularList.innerHTML = markup;
+
+    initSwiper();
+  } catch (error) {
+    console.error('Помилка рендерингу секції:', error);
+    refs.popularList.innerHTML =
+      '<p>Сталася помилка при завантаженні даних.</p>';
+  }
+};
