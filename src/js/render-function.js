@@ -66,7 +66,7 @@ function cardTemplate({ _id, name, description, price, image, category }) {
           <p class="desert-card-price">${price} грн</p>
           <button class="desert-card-arrow" type="button" aria-label="Переглянути ${safeName}">
             <svg class="desert-card-arrow-icon" width="24" height="24">
-              <use href="/img/sprite.svg#desert-card-arrow"></use>
+              <use href="/img/sprite.svg#arrow_outward"></use>
             </svg>
           </button>
         </div>

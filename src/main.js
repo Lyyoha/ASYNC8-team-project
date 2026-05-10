@@ -33,7 +33,6 @@ const fetchPopularProducts = async () => {
   try {
     const data = await getPopularProdacts();
 
-    console.log('Дані отримано:', data);
     return data;
   } catch (error) {
     console.error('Помилка запиту:', error);
