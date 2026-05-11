@@ -139,6 +139,10 @@
     border: 2px solid #f19898;
 }
 .order-input:focus {
+    border-color: #f19898;
+}
+
+.order-input:not(:placeholder-shown) {
     border-color: #080c0c;
 }
 
@@ -177,6 +181,10 @@
 }
 
 .order-textarea:focus {
+    border-color: #f19898;
+}
+
+.order-textarea:not(:placeholder-shown) {
     border-color: #080c0c;
 }
 
