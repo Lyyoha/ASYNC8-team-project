@@ -49,7 +49,7 @@ export const onOrderFormSubmit = async event => {
   }
 
   const phoneValue = form.elements.phone.value.trim();
-  const phoneRegex = /^\+?[\d\s\-\(\)]{7,15}$/;
+  const phoneRegex = /^\+?[\d\s\-\(\)]{7,12}$/;
 
   if (!phoneValue) {
     addFieldError(form.elements.phone, "Поле обов'язкове");
