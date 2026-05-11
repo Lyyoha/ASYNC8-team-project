@@ -153,10 +153,7 @@ const initFeedbackSwiper = () => {
     },
   });
 };
-document.addEventListener('DOMContentLoaded', () => {
-  initDesserts();
-  initProductModal();
-});
+
 // about-us swiper
 
 const mediaQuery = window.matchMedia('(min-width: 768px)');
