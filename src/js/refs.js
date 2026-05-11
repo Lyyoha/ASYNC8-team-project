@@ -11,7 +11,7 @@ export const refs = {
   burger: document.querySelector('.burger-container'),
   burgerBtn: document.querySelector('.burger-icon'),
   burgerBtnClose: document.querySelector('.btn-close'),
-  burgerMenuLink: document.querySelector('.menu-link'),
+  burgerMenuLink: document.querySelectorAll('.burger-menu-link'),
   burgerMenuBtn: document.querySelector('.button-menu'),
 
   // ORDER MODAL

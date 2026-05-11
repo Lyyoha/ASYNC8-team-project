@@ -1,4 +1,6 @@
 import 'css-star-rating/css/star-rating.css';
+import { refs } from './refs';
+import spriteUrl from '../img/sprite.svg';
 
 const createRatingMarkup = rating => {
   const value = Math.floor(rating);
@@ -12,13 +14,13 @@ const createRatingMarkup = rating => {
             () => `
           <div class="star">
             <svg class="star-empty" style="fill: var(--color-scheme-1-text)">
-                <use href="/img/sprite.svg#star-empty"></use>
+               <use href="${spriteUrl}#star-empty"></use>
             </svg>
              <svg class="star-half" style="fill: var(--color-scheme-1-text)">
-                <use href="/img/sprite.svg#star-half"></use>
+                <use href="${spriteUrl}#star-half"></use>
             </svg>
             <svg class="star-filled" style="fill: var(--color-scheme-1-text)">
-                <use href="/img/sprite.svg#star-filled"></use>
+                <use href="${spriteUrl}#star-filled"></use>
             </svg>
         </div>
         `
@@ -64,9 +66,14 @@ function cardTemplate({ _id, name, description, price, image, category }) {
         <div class="desert-card-footer">
           <p class="desert-card-price">${price} грн</p>
           <button class="desert-card-arrow" type="button" aria-label="Переглянути ${safeName}">
+<<<<<<< 015-Create-a-mobile-version-of-the-Dessert-Details-Modal
             <svg class="desert-card-arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>
+=======
+            <svg class="desert-card-arrow-icon" width="24" height="24">
+              <use href="${spriteUrl}#arrow_outward"></use>
+>>>>>>> dev
             </svg>
           </button>
         </div>
@@ -140,7 +147,7 @@ export const createCardMarkup = ({
             <span class="price">${price} грн</span>
             <button type="button" class="order-link-btn" aria-label="Детальна інформація">
               <svg width="20" height="20">
-                <use href="../img/sprite.svg#arrow_outward"></use>
+                <use href="${spriteUrl}#arrow_outward"></use>
               </svg>
             </button>
           </div>

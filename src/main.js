@@ -15,7 +15,7 @@ import { getPopularProdacts } from './js/desserts-api';
 
 new Accordion('.faq-list', {
   elementClass: 'faq-list-item',
-  triggerClass: 'faq-acordion-btn',
+  triggerClass: 'faq-list-item-thumb',
   panelClass: 'faq-accordion',
 });
 
@@ -31,7 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 refs.burgerBtn.addEventListener('click', openBurger);
 refs.burgerBtnClose.addEventListener('click', closeBurger);
-refs.burgerMenuLink.addEventListener('click', closeBurger);
+refs.burgerMenuLink.forEach(link =>
+  link.addEventListener('click', closeBurger)
+);
 refs.burgerMenuBtn.addEventListener('click', closeBurger);
 
 //
