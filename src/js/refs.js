@@ -5,8 +5,8 @@ export const refs = {
   burger: document.querySelector('.burger-container'),
   burgerBtn: document.querySelector('.burger-icon'),
   burgerBtnClose: document.querySelector('.btn-close'),
-  burgerMenuLink: document.querySelectorAll('.burger-menu-link'),
   burgerMenuBtn: document.querySelectorAll('.button-menu'),
+  burgerMenuLink: document.querySelectorAll('.burger-menu-link'),
   feedbackList: document.querySelector('.js-feedback-list'),
 
   // ORDER MODAL
