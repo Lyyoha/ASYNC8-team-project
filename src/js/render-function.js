@@ -61,8 +61,11 @@ function cardTemplate({ _id, name, description, price, image, category }) {
       <img class="desert-card-img" src="${image}" alt="${safeName}" loading="lazy" />
       <div class="desert-card-body">
         <p class="desert-card-category">${safeCat}</p>
+        <div>
         <h3 class="desert-card-title">${safeName}</h3>
         <p class="desert-card-description">${safeDesc}</p>
+        </div>
+      </div>
         <div class="desert-card-footer">
           <p class="desert-card-price">${price} грн</p>
           <button class="desert-card-arrow" type="button" aria-label="Переглянути ${safeName}">
@@ -71,7 +74,7 @@ function cardTemplate({ _id, name, description, price, image, category }) {
             </svg>
           </button>
         </div>
-      </div>
+
     </li>
   `;
 }

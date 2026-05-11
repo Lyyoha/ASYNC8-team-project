@@ -356,7 +356,8 @@
 .desert-card {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  /* gap: 16px; */
+
   padding: 16px;
   background-color: var(--color-scheme-1-foreground);
   border: 1px solid var(--color-scheme-1-border);
@@ -365,11 +366,6 @@
   transition:
     transform 0.2s,
     box-shadow 0.2s;
-}
-
-.desert-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px var(--opacity-neutral-darkest-10);
 }
 
 .desert-card-img {
@@ -444,8 +440,9 @@ img.desert-card-img.is-loaded {
 .desert-card-body {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
   flex: 1;
+  margin-top: 16px;
 }
 
 .desert-card-footer {
@@ -454,7 +451,7 @@ img.desert-card-img.is-loaded {
   justify-content: space-between;
   gap: 8px;
   margin-top: auto;
-  padding-top: 8px;
+  padding-top: 29px;
 }
 
 .desert-card-arrow {
