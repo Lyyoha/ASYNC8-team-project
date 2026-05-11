@@ -1,0 +1,56 @@
+<div class="backdrop order-backdrop" data-order-backdrop>
+  <div class="order-modal" data-order-modal>
+    <!-- CLOSE -->
+    <button class="order-close-btn" data-order-close>
+      <svg width="20" height="20">
+        <use href="./img/sprite.svg#close"></use>
+      </svg>
+    </button>
+
+    <h2 class="order-title">Оформлення замовлення</h2>
+
+    <form class="order-form" data-order-form>
+      <!-- NAME -->
+      <div class="order-field">
+        <label class="order-label" for="order-name">Ім'я*</label>
+        <input
+          id="order-name"
+          type="text"
+          name="name"
+          class="order-input"
+          placeholder="Вікторія"
+          autocomplete="name"
+        />
+      </div>
+
+      <!-- PHONE -->
+      <div class="order-field">
+        <label class="order-label" for="order-phone">Телефон*</label>
+        <input
+          id="order-phone"
+          type="tel"
+          name="phone"
+          class="order-input"
+          placeholder="38 0__ _______"
+          autocomplete="tel"
+        />
+      </div>
+
+      <!-- COMMENT -->
+      <div class="order-field">
+        <label class="order-label" for="order-comment">Коментар*</label>
+        <textarea
+          id="order-comment"
+          name="comment"
+          class="order-textarea"
+          placeholder="Ваш коментар"
+        ></textarea>
+      </div>
+
+      <!-- HIDDEN dessertId -->
+      <input type="hidden" name="dessertId" />
+
+      <button type="submit" class="order-submit-btn">Надіслати заявку</button>
+    </form>
+  </div>
+</div>

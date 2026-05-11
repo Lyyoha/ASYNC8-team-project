@@ -1,0 +1,248 @@
+/* ─── Backdrop ─── */
+.product-backdrop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.product-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ─── Modal ─── */
+.product-modal {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 48px;
+  border-radius: 16px;
+  padding: 64px 20px;
+  width: 100%;
+  max-width: 335px;
+  background: #f5fdfd;
+  position: relative;
+  transform: scale(0.96);
+  transition: transform 0.2s ease;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.product-backdrop.is-open .product-modal {
+  transform: scale(1);
+}
+
+/* ─── Close button ─── */
+.product-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #080c0c;
+  transition: opacity 0.15s;
+}
+
+.product-close-btn:hover {
+  opacity: 0.6;
+}
+
+/* ─── Inner wrapper ─── */
+.product-modal-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* ─── Image ─── */
+.product-img-wrapper {
+  width: 100%;
+  height: 221px;
+  overflow: hidden;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── Content ─── */
+.product-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* ─── Title ─── */
+.product-title {
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  color: #080c0c;
+}
+
+/* ─── Price ─── */
+.product-price {
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: -0.01em;
+  color: #080c0c;
+}
+
+/* ─── Rating ─── */
+.product-rating {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 2px;
+  height: 15px;
+}
+
+/* ─── Description ─── */
+.product-desc {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #080c0c;
+  width: 100%;
+}
+
+/* ─── Composition ─── */
+.product-composition {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 4px;
+  width: 100%;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  line-height: 150%;
+  color: #080c0c;
+}
+
+.composition-label {
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.composition-value {
+  font-weight: 400;
+}
+
+/* ─── Order button wrapper ─── */
+.order-btn-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* ─── Order button ─── */
+.order-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 8px;
+  border: 1px solid #f19898;
+  border-radius: 100px;
+  padding: 10px 24px;
+  width: 100%;
+  max-width: 310px;
+  height: 44px;
+  background: #f19898;
+  cursor: pointer;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #080c0c;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.order-btn:hover {
+  background: #ef8585;
+  border-color: #ef8585;
+}
+
+.order-btn:active {
+  background: #e87070;
+  border-color: #e87070;
+  transform: scale(0.99);
+}
+
+/* !!! ПЛАНШЕТ (768px – 1439px) !!! */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .product-modal {
+    max-width: 704px;
+    padding: 64px 32px;
+  }
+
+  .product-img-wrapper {
+    height: 480px;
+  }
+}
+
+/* !!! ДЕСКТОП (1440px+) !!! */
+@media screen and (min-width: 1440px) {
+  .product-modal {
+    max-width: 1312px;
+    padding: 64px;
+  }
+
+  .product-modal-inner {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .product-img-wrapper {
+    width: 580px;
+    height: 435px;
+    flex-shrink: 0;
+  }
+
+  .product-content {
+    flex: 1;
+  }
+
+  .order-btn {
+    max-width: 310px;
+  }
+}

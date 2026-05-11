@@ -18,7 +18,14 @@ new Accordion('.faq-list', {
   triggerClass: 'faq-list-item-thumb',
   panelClass: 'faq-accordion',
 });
-initDesserts();
+
+import { initProductModal } from './js/product-modal';
+import { onOrderFormSubmit } from './js/order-form';
+document.addEventListener('DOMContentLoaded', () => {
+  initDesserts();
+
+  initProductModal();
+});
 
 // header
 
@@ -98,9 +105,9 @@ let feedbackSwiper = null;
 
 const renderFeedbackList = async () => {
   try {
-    const feedbackArr = await getAllFeedbacks();
+    const { feedbacks } = await getAllFeedbacks();
 
-    const feedbackCardsTemplate = feedbackArr
+    const feedbackCardsTemplate = feedbacks
       .map(card => createFeedbackCard(card))
       .join('');
 
@@ -111,7 +118,7 @@ const renderFeedbackList = async () => {
     console.log(error);
   }
 };
-
+renderFeedbackList();
 const initFeedbackSwiper = () => {
   if (feedbackSwiper) {
     feedbackSwiper.destroy(true, true);
@@ -146,8 +153,10 @@ const initFeedbackSwiper = () => {
     },
   });
 };
-document.addEventListener('DOMContentLoaded', renderFeedbackList);
-
+document.addEventListener('DOMContentLoaded', () => {
+  initDesserts();
+  initProductModal();
+});
 // about-us swiper
 
 const mediaQuery = window.matchMedia('(min-width: 768px)');
@@ -176,3 +185,9 @@ const toggleSwiper = () => {
 
 toggleSwiper();
 mediaQuery.addEventListener('change', toggleSwiper);
+
+if (refs.orderForm) {
+  refs.orderForm.addEventListener('submit', onOrderFormSubmit);
+} else if (refs.submitBtn) {
+  refs.submitBtn.addEventListener('click', onOrderFormSubmit);
+}
