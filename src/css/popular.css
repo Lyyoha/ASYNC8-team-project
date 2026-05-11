@@ -193,5 +193,6 @@
   }
   .description {
     margin-bottom: 29px;
+    min-height: 40px;
   }
 }
