@@ -18,10 +18,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- iziToast CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css"
+    />
     <script type="module" crossorigin src="/ASYNC8-team-project/index.js"></script>
     <link rel="modulepreload" crossorigin href="/ASYNC8-team-project/assets/vendor-96xp1dn3.js">
     <link rel="stylesheet" crossorigin href="/ASYNC8-team-project/assets/vendor-CnGd8_0P.css">
-    <link rel="stylesheet" crossorigin href="/ASYNC8-team-project/assets/index-DvhMFWkY.css">
+    <link rel="stylesheet" crossorigin href="/ASYNC8-team-project/assets/index-BOLKv5by.css">
   </head>
   <body>
     <section class="header-section">
@@ -36,7 +41,7 @@
       </div>
 
       <svg width="24" height="24" class="burger-icon">
-        <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#menu"></use>
+        <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#menu"></use>
       </svg>
     </div>
 
@@ -110,7 +115,7 @@
             aria-label="Попередній слайд"
           >
             <svg width="24" height="24">
-              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#arrow_back"></use>
+              <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#arrow_back"></use>
             </svg>
           </button>
 
@@ -120,7 +125,7 @@
             aria-label="Наступний слайд"
           >
             <svg width="24" height="24">
-              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#arrow_forward"></use>
+              <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#arrow_forward"></use>
             </svg>
           </button>
         </div>
@@ -134,16 +139,126 @@
     <div class="desert-list-header">
       <div class="desert-list-heading">
         <h2 class="heading-2 desert-list-title">Солодощі</h2>
-        <p class="desert-list-subtitle">Спробуйте наші смачні десерти, які вас здивують!</p>
+        <p class="desert-list-subtitle">
+          Спробуйте наші смачні десерти, які вас здивують!
+        </p>
       </div>
-      <select class="desert-categories-select" aria-label="Категорії десертів"></select>
+      <select
+        class="desert-categories-select"
+        aria-label="Категорії десертів"
+      ></select>
     </div>
     <ul class="desert-categories" aria-label="Категорії десертів"></ul>
     <ul class="desert-cards"></ul>
     <p class="desert-empty" hidden>Десертів у цій категорії поки немає.</p>
-    <button class="desert-load-more" type="button" hidden>Завантажити ще</button>
+    <button class="desert-load-more" type="button" hidden>
+      Завантажити ще
+    </button>
   </div>
 </section>
+
+      <div class="backdrop order-backdrop" data-order-backdrop>
+  <div class="order-modal" data-order-modal>
+    <!-- CLOSE -->
+    <button class="order-close-btn" data-order-close>
+      <svg width="20" height="20">
+        <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#close"></use>
+      </svg>
+    </button>
+
+    <h2 class="order-title">Оформлення замовлення</h2>
+
+    <form class="order-form" data-order-form>
+      <!-- NAME -->
+      <div class="order-field">
+        <label class="order-label" for="order-name">Ім'я*</label>
+        <input
+          id="order-name"
+          type="text"
+          name="name"
+          class="order-input"
+          placeholder="Вікторія"
+          autocomplete="name"
+        />
+      </div>
+
+      <!-- PHONE -->
+      <div class="order-field">
+        <label class="order-label" for="order-phone">Телефон*</label>
+        <input
+          id="order-phone"
+          type="tel"
+          name="phone"
+          class="order-input"
+          placeholder="38 0__ _______"
+          autocomplete="tel"
+        />
+      </div>
+
+      <!-- COMMENT -->
+      <div class="order-field">
+        <label class="order-label" for="order-comment">Коментар*</label>
+        <textarea
+          id="order-comment"
+          name="comment"
+          class="order-textarea"
+          placeholder="Ваш коментар"
+        ></textarea>
+      </div>
+
+      <!-- HIDDEN dessertId -->
+      <input type="hidden" name="dessertId" />
+
+      <button type="submit" class="order-submit-btn">Надіслати заявку</button>
+    </form>
+  </div>
+</div>
+
+      <div class="backdrop product-backdrop" data-product-backdrop>
+  <div class="product-modal" data-product-modal>
+    <!-- CLOSE BUTTON -->
+    <button class="product-close-btn" data-product-close>
+      <svg width="20" height="20">
+        <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#close"></use>
+      </svg>
+    </button>
+
+    <div class="product-modal-inner">
+      <!-- IMAGE -->
+      <div class="product-img-wrapper">
+        <img src="" alt="dessert" class="product-img" />
+      </div>
+
+      <!-- CONTENT -->
+      <div class="product-content">
+        <!-- TITLE -->
+        <h2 class="product-title"></h2>
+
+        <!-- PRICE -->
+        <p class="product-price"></p>
+
+        <!-- RATING -->
+        <div class="product-rating"></div>
+
+        <!-- DESCRIPTION -->
+        <p class="product-desc"></p>
+
+        <!-- COMPOSITION -->
+        <p class="product-composition">
+          <span class="composition-label">Склад:</span>
+          <span class="composition-value"></span>
+        </p>
+
+        <!-- ORDER BUTTON WRAPPER -->
+        <div class="order-btn-wrapper">
+          <button class="order-btn" data-order-open data-dessert-id="">
+            Перейти до замовлення
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
       <section id="about-us" class="about-us-section">
   <div class="container about-us-container">
@@ -159,7 +274,7 @@
     <div class="about-us-slider">
       <button class="swiper-button-prev">
         <svg class="swiper-icon" width="24" height="24">
-          <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#arrow_back"></use>
+          <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#arrow_back"></use>
         </svg>
       </button>
       <div class="swiper">
@@ -241,7 +356,7 @@
       <div class="swiper-pagination about-us-pagination"></div>
       <button class="swiper-button-next">
         <svg class="swiper-icon" width="24" height="24">
-          <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#arrow_forward"></use>
+          <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#arrow_forward"></use>
         </svg>
       </button>
     </div>
@@ -272,7 +387,7 @@
                 aria-hidden="true"
                 class="feedback-swiper-icon"
               >
-                <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#arrow_back"></use>
+                <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#arrow_back"></use>
               </svg>
             </button>
             <button
@@ -285,7 +400,7 @@
                 aria-hidden="true"
                 class="feedback-swiper-icon"
               >
-                <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#arrow_forward"></use>
+                <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#arrow_forward"></use>
           </svg>
             </button>
           </div>
@@ -303,7 +418,7 @@
           <p class="faq-item-title">1. Які способи оплати ви приймаєте?</p>
           <button type="button" class="faq-acordion-btn">
             <svg width="32" height="32">
-              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+              <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#keyboard_arrow_down"></use>
             </svg>
           </button>
         </div>
@@ -318,7 +433,7 @@
           <p class="faq-item-title">2. Чи є у вас доставка?</p>
           <button type="button" class="faq-acordion-btn">
             <svg width="32" height="32">
-              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+              <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#keyboard_arrow_down"></use>
             </svg>
           </button>
         </div>
@@ -333,7 +448,7 @@
           <p class="faq-item-title">3. Як швидко здійснюється доставка?</p>
           <button type="button" class="faq-acordion-btn">
             <svg width="32" height="32">
-              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+              <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#keyboard_arrow_down"></use>
             </svg>
           </button>
         </div>
@@ -350,7 +465,7 @@
           </p>
           <button type="button" class="faq-acordion-btn">
             <svg width="32" height="32">
-              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+              <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#keyboard_arrow_down"></use>
             </svg>
           </button>
         </div>
@@ -367,7 +482,7 @@
           </p>
           <button type="button" class="faq-acordion-btn">
             <svg width="32" height="32">
-              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+              <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#keyboard_arrow_down"></use>
             </svg>
           </button>
         </div>
@@ -384,7 +499,7 @@
           </p>
           <button type="button" class="faq-acordion-btn">
             <svg width="32" height="32">
-              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+              <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#keyboard_arrow_down"></use>
             </svg>
           </button>
         </div>
@@ -401,7 +516,7 @@
           </p>
           <button type="button" class="faq-acordion-btn">
             <svg width="32" height="32">
-              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+              <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#keyboard_arrow_down"></use>
             </svg>
           </button>
         </div>
@@ -418,7 +533,7 @@
           </p>
           <button type="button" class="faq-acordion-btn">
             <svg width="32" height="32">
-              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+              <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#keyboard_arrow_down"></use>
             </svg>
           </button>
         </div>
@@ -435,7 +550,7 @@
           </p>
           <button type="button" class="faq-acordion-btn">
             <svg width="32" height="32">
-              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+              <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#keyboard_arrow_down"></use>
             </svg>
           </button>
         </div>
@@ -452,7 +567,7 @@
           </p>
           <button type="button" class="faq-acordion-btn">
             <svg width="32" height="32">
-              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+              <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#keyboard_arrow_down"></use>
             </svg>
           </button>
         </div>
@@ -505,7 +620,7 @@
             aria-label="Follow us on Facebook"
           >
             <svg class="footer-svg" width="32" height="32">
-              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#Facebook"></use>
+              <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#Facebook"></use>
             </svg>
           </a>
         </li>
@@ -518,7 +633,7 @@
             aria-label="Follow us on Instagram"
           >
             <svg class="footer-svg" width="32" height="32">
-              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#Instagram"></use>
+              <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#Instagram"></use>
             </svg>
           </a>
         </li>
@@ -532,7 +647,7 @@
             aria-label="Visit our YouTube channel"
           >
             <svg class="footer-svg" width="32" height="32">
-              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#Youtube"></use>
+              <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#Youtube"></use>
             </svg>
           </a>
         </li>
@@ -558,7 +673,7 @@
       </div>
 
       <svg width="24" height="24" class="btn-close">
-        <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#close"></use>
+        <use href="/ASYNC8-team-project/assets/sprite-CL5jNEbh.svg#close"></use>
       </svg>
     </div>
     <div class="burger-content">
@@ -590,6 +705,10 @@
     </div>
   </div>
 </section>
+
+
+    <!-- iziToast JS -->
+    <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
 
   </body>
 </html>
