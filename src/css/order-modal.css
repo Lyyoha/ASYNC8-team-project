@@ -134,6 +134,10 @@
     color: rgba(8, 12, 12, 0.6);
 }
 
+.order-input:hover {
+    border-color: #f19898;
+}
+
 .order-input:focus {
     border-color: #080c0c;
 }
@@ -168,6 +172,10 @@
     color: rgba(8, 12, 12, 0.6);
 }
 
+.order-textarea:hover {
+    border-color: #f19898;
+}
+
 .order-textarea:focus {
     border-color: #080c0c;
 }
@@ -194,7 +202,7 @@
 
 .order-submit-btn {
     width: 100%;
-    max-width: 295px;
+    max-width: 344px;
     height: 44px;
     margin: 0 auto;
 
@@ -233,9 +241,7 @@
     cursor: not-allowed;
 }
 
-/* ================================================
-   ПЛАНШЕТ (768px – 1439px)
-   ================================================ */
+/* !!! ПЛАНШЕТ (768px – 1439px) !!! */
 @media screen and (min-width: 768px) and (max-width: 1439px) {
     .order-modal {
         max-width: 704px;
@@ -252,9 +258,7 @@
     }
 }
 
-/* ================================================
-   ДЕСКТОП (1440px+)
-   ================================================ */
+/* !!! ДЕСКТОП (1440px+) !!! */
 @media screen and (min-width: 1440px) {
     .order-modal {
         max-width: 768px;
