@@ -42,3 +42,7 @@ export async function getAllFeedbacks() {
   const { data } = await axios.get('/feedbacks');
   return data;
 }
+
+export const postOrderForm = async data => {
+  return axios.post('/orders', data);
+};

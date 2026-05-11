@@ -1,4 +1,5 @@
 import { refs } from './refs';
+import { clearFieldError } from './validation';
 
 export const openBurger = () => {
   refs.burger.classList.add('is-open');
@@ -10,121 +11,106 @@ export const closeBurger = () => {
   refs.body.classList.remove('scroll-lock');
 };
 
-// ORDER MODAL
+// ─── ORDER MODAL ───
 
-// Відкрити order modal
+function resetOrderForm() {
+  if (!refs.orderForm) return;
+
+  // Скидаємо значення полів
+  refs.orderForm.reset();
+
+  // Очищаємо помилки з усіх полів форми
+  const fields = [
+    refs.orderForm.elements.name,
+    refs.orderForm.elements.phone,
+    refs.orderForm.elements.comment,
+  ];
+  fields.forEach(field => {
+    if (field) clearFieldError(field);
+  });
+}
+
 export const openOrderModal = () => {
   refs.orderBackdrop.classList.add('is-open');
   refs.body.style.overflow = 'hidden';
 };
 
-// Закрити order modal
 export const closeOrderModal = () => {
   refs.orderBackdrop.classList.remove('is-open');
   refs.body.style.overflow = '';
-
-  // очищаємо форму
-  refs.orderForm.reset();
-
-  // очищаємо textarea вручну
-  refs.orderForm.comment.value = '';
+  resetOrderForm();
 };
 
-// Закриття по кнопці
 if (refs.orderCloseBtn) {
   refs.orderCloseBtn.addEventListener('click', closeOrderModal);
 }
 
-// Закриття по кліку на backdrop
 if (refs.orderBackdrop) {
   refs.orderBackdrop.addEventListener('click', event => {
-    if (event.target === refs.orderBackdrop) {
-      closeOrderModal();
-    }
+    if (event.target === refs.orderBackdrop) closeOrderModal();
   });
 }
 
-// Закриття по Escape
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape') {
-    closeOrderModal();
+    if (refs.orderBackdrop?.classList.contains('is-open')) closeOrderModal();
+    if (refs.productBackdrop?.classList.contains('is-open'))
+      closeProductModal();
   }
 });
 
-// PRODUCT MODAL
+// ─── PRODUCT MODAL ───
 
-// Відкрити product modal
-// // export const openProductModal = () => {
-//   refs.productBackdrop.classList.add("is-open");
-//   refs.body.style.overflow = "hidden";
-// };
+export const openProductModal = () => {
+  refs.productBackdrop.classList.add('is-open');
+  refs.body.style.overflow = 'hidden';
+};
 
-// // Закрити product modal
-// export const closeProductModal = () => {
-//   refs.productBackdrop.classList.remove("is-open");
-//   refs.body.style.overflow = "";
-// };
+export const closeProductModal = () => {
+  refs.productBackdrop.classList.remove('is-open');
+  refs.body.style.overflow = '';
+};
 
-// Закриття по кнопці
-// if (refs.productCloseBtn) {
-//   refs.productCloseBtn.addEventListener('click', closeProductModal);
-// }
-// // Закриття по кліку на backdrop
-// if (refs.productBackdrop) {
-//   refs.productBackdrop.addEventListener('click', event => {
-//     if (event.target === refs.productBackdrop) {
-//       closeProductModal();
-//     }
-//   });
-// }
+if (refs.productCloseBtn) {
+  refs.productCloseBtn.addEventListener('click', closeProductModal);
+}
 
-// Закриття по Escape
-// document.addEventListener("keydown", (event) => {
-//   if (event.key === "Escape") {
-//     closeProductModal();
-//   }
-// });
+if (refs.productBackdrop) {
+  refs.productBackdrop.addEventListener('click', event => {
+    if (event.target === refs.productBackdrop) closeProductModal();
+  });
+}
 
-// OPEN ORDER MODAL FROM PRODUCT MODAL
+// ─── OPEN ORDER FROM PRODUCT ───
 
-// Якщо прихованого поля dessertId немає — створюємо
 if (!refs.dessertIdInput) {
   const hiddenInput = document.createElement('input');
   hiddenInput.type = 'hidden';
   hiddenInput.name = 'dessertId';
   refs.orderForm.appendChild(hiddenInput);
-  refs.dessertIdInput = hiddenInput; // записуємо в refs
+  refs.dessertIdInput = hiddenInput;
 }
 
-// Вішаємо слухачі на всі кнопки "Перейти до замовлення"
 refs.orderOpenBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    const id = btn.dataset.dessertId;
-
-    refs.dessertIdInput.value = id;
-
-    // closeProductModal();
-    // openOrderModal();
+    refs.dessertIdInput.value = btn.dataset.dessertId;
+    closeProductModal();
+    openOrderModal();
   });
 });
 
-// d --> dessert
+// ─── FILL PRODUCT MODAL ───
+
 export function fillProductModal(d) {
-  // Картинка
   const img = document.querySelector('.product-img');
   img.src = d.image;
   img.alt = d.name;
 
-  // Назва
   document.querySelector('.product-title').textContent = d.name;
-
-  // Ціна
   document.querySelector('.product-price').textContent = `${d.price} грн`;
 
-  // Рейтинг (зірочки)
   const ratingContainer = document.querySelector('.product-rating');
-  ratingContainer.innerHTML = ''; // очищаємо
-
+  ratingContainer.innerHTML = '';
   for (let i = 1; i <= 5; i++) {
     const star = document.createElement('span');
     star.textContent = i <= d.rate ? '★' : '☆';
@@ -133,13 +119,9 @@ export function fillProductModal(d) {
     ratingContainer.appendChild(star);
   }
 
-  // Опис
   document.querySelector('.product-desc').textContent = d.description;
-
-  // Склад
   document.querySelector('.composition-value').textContent = d.composition;
 
-  // Передаємо ID у order modal
   const orderBtn = document.querySelector('[data-order-open]');
   orderBtn.dataset.dessertId = d._id;
 }

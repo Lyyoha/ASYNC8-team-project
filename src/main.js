@@ -20,6 +20,7 @@ new Accordion('.faq-list', {
 });
 
 import { initProductModal } from './js/product-modal';
+import { onOrderFormSubmit } from './js/order-form';
 document.addEventListener('DOMContentLoaded', () => {
   initDesserts();
 
@@ -148,8 +149,10 @@ const initFeedbackSwiper = () => {
     },
   });
 };
-document.addEventListener('DOMContentLoaded', renderFeedbackList);
-
+document.addEventListener('DOMContentLoaded', () => {
+  initDesserts();
+  initProductModal();
+});
 // about-us swiper
 
 const mediaQuery = window.matchMedia('(min-width: 768px)');
@@ -178,3 +181,9 @@ const toggleSwiper = () => {
 
 toggleSwiper();
 mediaQuery.addEventListener('change', toggleSwiper);
+
+if (refs.orderForm) {
+  refs.orderForm.addEventListener('submit', onOrderFormSubmit);
+} else if (refs.submitBtn) {
+  refs.submitBtn.addEventListener('click', onOrderFormSubmit);
+}

@@ -27,6 +27,7 @@ export async function initDesserts() {
   refs.desertsCategoriesSelect?.addEventListener('change', onCategoryChange);
   refs.desertsLoadMore?.addEventListener('click', onLoadMore);
   refs.desertsList.addEventListener('click', onCardClick);
+  refs.desertsListPopular?.addEventListener('click', onCardClickPopular);
 
   showSkeletons();
 
@@ -145,7 +146,7 @@ async function onLoadMore() {
   }
 }
 
-function onCardClick(e) {
+async function onCardClick(e) {
   // Якщо натиснули на стрілку або на SVG всередині стрілки
   const openBtn = e.target.closest('[data-open]');
   const card = e.target.closest('.desert-card');
@@ -154,10 +155,32 @@ function onCardClick(e) {
 
   const id = card.dataset.id;
   if (!id) return;
+  try {
+    const dessert = await getDessertById(id);
+    fillProductModal(dessert);
+    openProductModal();
+  } catch (err) {
+    console.error('Помилка завантаження десерту:', err);
+  }
+}
 
-  openProductModal();
+async function onCardClickPopular(e) {
+  const button = e.target.closest('.order-link-btn');
+  if (!button) return;
 
-  fillProductModal(getDessertById(id));
+  const card = button.closest('li[data-id]');
+  if (!card) return;
+
+  const id = card.dataset.id;
+  if (!id) return;
+
+  try {
+    const dessert = await getDessertById(id);
+    fillProductModal(dessert);
+    openProductModal();
+  } catch (err) {
+    console.error('Помилка відкриття модалки:', err);
+  }
 }
 
 function showSkeletons() {

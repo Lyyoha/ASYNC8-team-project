@@ -1,5 +1,6 @@
 <div class="backdrop order-backdrop" data-order-backdrop>
   <div class="order-modal" data-order-modal>
+    <!-- CLOSE -->
     <button class="order-close-btn" data-order-close>
       <svg width="20" height="20">
         <use href="./img/sprite.svg#icon-close"></use>
@@ -14,10 +15,11 @@
         <input
           type="text"
           name="name"
-          class="order-input floating-input"
+          class="floating-input"
           placeholder=" "
+          autocomplete="name"
         />
-        <label class="floating-label">Ім’я</label>
+        <label class="floating-label">Ім'я</label>
       </div>
 
       <!-- PHONE -->
@@ -25,22 +27,27 @@
         <input
           type="tel"
           name="phone"
-          class="order-input floating-input"
+          class="floating-input"
           placeholder=" "
+          autocomplete="tel"
         />
         <label class="floating-label">Телефон</label>
       </div>
 
       <!-- COMMENT -->
-      <label class="order-label">
-        <span class="order-label-text">Коментар</span>
-        <textarea name="comment" class="order-textarea"></textarea>
-      </label>
+      <div class="order-field">
+        <textarea
+          name="comment"
+          class="floating-textarea"
+          placeholder=" "
+        ></textarea>
+        <label class="floating-label">Коментар</label>
+      </div>
 
       <!-- HIDDEN dessertId -->
       <input type="hidden" name="dessertId" />
 
-      <button type="submit" class="order-submit-btn">Замовити</button>
+      <button type="submit" class="order-submit-btn">Надіслати заявку</button>
     </form>
   </div>
 </div>

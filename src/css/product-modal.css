@@ -1,21 +1,16 @@
-/* BACKDROP */
+/* ─── Backdrop ─── */
 .product-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 250ms ease;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  padding-block: 64px;
-  padding-inline: 20px;
-
-  width: 375px;
-  height: 839px;
+  position: fixed;
+  inset: 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
 }
 
 .product-backdrop.is-open {
@@ -23,81 +18,88 @@
   pointer-events: auto;
 }
 
-/* MODAL OUTER */
+/* ─── Modal ─── */
 .product-modal {
-  width: 335px;
-  background: #f5fdfd;
-  border-radius: 16px;
-
   display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-/* INNER CONTAINER (padding 64/20, gap 48) */
-.product-modal-inner {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-
-  padding-block: 64px;
-  padding-inline: 20px;
-
+  flex-direction: column;
   gap: 48px;
-
-  width: 335px;
-  height: 711px;
+  border-radius: 16px;
+  padding: 64px 20px;
+  width: 100%;
+  max-width: 335px;
+  background: #f5fdfd;
+  position: relative;
+  transform: scale(0.96);
+  transition: transform 0.2s ease;
+  overflow-y: auto;
+  max-height: 100vh;
 }
 
-/* CLOSE BUTTON */
+.product-backdrop.is-open .product-modal {
+  transform: scale(1);
+}
+
+/* ─── Close button ─── */
 .product-close-btn {
   position: absolute;
   top: 16px;
   right: 16px;
-
   width: 32px;
   height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #080c0c;
+  transition: opacity 0.15s;
 }
 
-/* IMAGE WRAPPER */
-.product-img-wrapper {
+.product-close-btn:hover {
+  opacity: 0.6;
+}
+
+/* ─── Inner wrapper ─── */
+.product-modal-inner {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
 
-  width: 295px;
+/* ─── Image ─── */
+.product-img-wrapper {
+  width: 100%;
   height: 221px;
-
-  border: 1px solid #000;
-  background: #fff;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 8px;
+  flex-shrink: 0;
 }
 
 .product-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-/* CONTENT WRAPPER */
+/* ─── Content ─── */
 .product-content {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-
-  width: 295px;
-  height: 583px;
-
+  justify-content: flex-start;
+  flex-direction: column;
   gap: 24px;
-  /* vertical gap between objects */
+  width: 100%;
 }
 
-/* TITLE */
+/* ─── Title ─── */
 .product-title {
   font-family: 'Comfortaa', sans-serif;
   font-weight: 700;
@@ -107,7 +109,7 @@
   color: #080c0c;
 }
 
-/* PRICE */
+/* ─── Price ─── */
 .product-price {
   font-family: 'Comfortaa', sans-serif;
   font-weight: 700;
@@ -117,38 +119,34 @@
   color: #080c0c;
 }
 
-/* RATING */
+/* ─── Rating ─── */
 .product-rating {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
-  gap: 8px;
-
-  width: 95px;
+  gap: 2px;
   height: 15px;
 }
 
-/* DESCRIPTION */
+/* ─── Description ─── */
 .product-desc {
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
   color: #080c0c;
+  width: 100%;
 }
 
-/* COMPOSITION */
+/* ─── Composition ─── */
 .product-composition {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: row;
   gap: 4px;
-
-  width: 295px;
-  height: 21px;
-
+  width: 100%;
   font-family: 'Work Sans', sans-serif;
   font-size: 14px;
   line-height: 150%;
@@ -157,66 +155,97 @@
 
 .composition-label {
   font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .composition-value {
   font-weight: 400;
 }
 
-/* ORDER BUTTON WRAPPER */
+/* ─── Order button wrapper ─── */
 .order-btn-wrapper {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-
-  width: 295px;
-  height: 52px;
+  gap: 24px;
+  width: 100%;
 }
 
-/* ORDER BUTTON */
+/* ─── Order button ─── */
 .order-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   gap: 8px;
-
-  width: 295px;
-  height: 44px;
-
-  padding-block: 10px;
-  padding-inline: 24px;
-
-  border-radius: 100px;
   border: 1px solid #f19898;
+  border-radius: 100px;
+  padding: 10px 24px;
+  width: 100%;
+  height: 44px;
   background: #f19898;
-
+  cursor: pointer;
   font-family: 'Work Sans', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
-  cursor: pointer;
+  color: #080c0c;
+  transition: background 0.15s, border-color 0.15s;
 }
 
-/* HOVER / FOCUS */
-.order-btn:hover,
-.order-btn:focus {
-  background: transparent;
-  border: 1px solid #080c0c;
-  outline: none;
+.order-btn:hover {
+  background: #ef8585;
+  border-color: #ef8585;
 }
 
-/* ACTIVE */
 .order-btn:active {
-  background: #f5b6b6;
-  border: 1px solid #080c0c;
+  background: #e87070;
+  border-color: #e87070;
+  transform: scale(0.99);
 }
 
-/* DISABLED */
-.order-btn:disabled {
-  background: #f19898;
-  border: 1px solid #f19898;
-  opacity: 0.3;
-  cursor: not-allowed;
+/* ================================================
+   ПЛАНШЕТ (768px – 1439px)
+   ================================================ */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .product-modal {
+    max-width: 704px;
+    padding: 64px 32px;
+  }
+
+  .product-img-wrapper {
+    height: 480px;
+  }
+}
+
+/* ================================================
+   ДЕСКТОП (1440px+)
+   ================================================ */
+@media screen and (min-width: 1440px) {
+  .product-modal {
+    max-width: 1312px;
+    padding: 64px;
+  }
+
+  .product-modal-inner {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .product-img-wrapper {
+    width: 580px;
+    height: 435px;
+    flex-shrink: 0;
+  }
+
+  .product-content {
+    flex: 1;
+  }
+
+  .order-btn {
+    width: 295px;
+  }
 }

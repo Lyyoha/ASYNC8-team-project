@@ -20,6 +20,7 @@ export const refs = {
   orderCloseBtn: document.querySelector('[data-order-close]'),
   orderForm: document.querySelector('[data-order-form]'),
   dessertIdInput: document.querySelector('[name="dessertId"]'),
+  submitBtn: document.querySelector('.order-submit-btn'),
 
   // PRODUCT MODAL
   productBackdrop: document.querySelector('[data-product-backdrop]'),
@@ -32,10 +33,9 @@ export const refs = {
   items: document.querySelectorAll('.about-us-item'),
   desertsList: document.querySelector('.desert-cards'),
   desertsCategories: document.querySelector('.desert-categories'),
+  desertsListPopular: document.querySelector('#popular-list'),
   desertsCategoriesSelect: document.querySelector('.desert-categories-select'),
   desertsEmpty: document.querySelector('.desert-empty'),
   desertsLoadMore: document.querySelector('.desert-load-more'),
   popularList: document.querySelector('.swiper-wrapper'),
 };
-
-console.log(refs.orderForm);

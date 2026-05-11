@@ -1,40 +1,32 @@
 export function addFieldError(fieldEl, message) {
-  // Додаємо клас помилки
-  fieldEl.classList.add("error");
+  // Знаходимо батьківський .order-field (для floating полів)
+  const wrapper = fieldEl.closest('.order-field') ?? fieldEl.parentElement;
 
-  // Якщо помилка вже існує — не створюємо другу
-  if (
-    fieldEl.nextElementSibling?.classList.contains("input-error-text") ||
-    fieldEl.nextElementSibling?.classList.contains("textarea-error-text")
-  ) {
+  // Додаємо клас помилки на інпут
+  fieldEl.classList.add('error');
+
+  // Якщо помилка вже є в wrapper — не дублюємо
+  if (wrapper.querySelector('.input-error-text, .textarea-error-text')) {
     return;
   }
 
-  // Створюємо елемент тексту помилки
-  const errorText = document.createElement("p");
+  // Створюємо елемент помилки
+  const errorText = document.createElement('p');
   errorText.textContent = message;
+  errorText.classList.add(
+    fieldEl.tagName === 'TEXTAREA' ? 'textarea-error-text' : 'input-error-text'
+  );
 
-  // Вибираємо правильний клас
-  if (fieldEl.tagName === "TEXTAREA") {
-    errorText.classList.add("textarea-error-text");
-  } else {
-    errorText.classList.add("input-error-text");
-  }
-
-  // Додаємо після поля
-  fieldEl.insertAdjacentElement("afterend", errorText);
+  // Додаємо в кінець wrapper-а (після інпута І label)
+  wrapper.appendChild(errorText);
 }
 
 export function clearFieldError(fieldEl) {
-  fieldEl.classList.remove("error");
+  fieldEl.classList.remove('error');
 
-  const next = fieldEl.nextElementSibling;
-
-  if (
-    next &&
-    (next.classList.contains("input-error-text") ||
-      next.classList.contains("textarea-error-text"))
-  ) {
-    next.remove();
-  }
+  const wrapper = fieldEl.closest('.order-field') ?? fieldEl.parentElement;
+  const errorEl = wrapper.querySelector(
+    '.input-error-text, .textarea-error-text'
+  );
+  if (errorEl) errorEl.remove();
 }

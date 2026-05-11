@@ -66,6 +66,11 @@ export async function openProductModalById(id) {
 // !!! ІНІЦІАЛІЗАЦІЯ
 export function initProductModal() {
   refs.productCloseBtn.addEventListener('click', closeProductModal);
+
+  if (!refs.productCloseBtn || !refs.productBackdrop || !refs.productModal) {
+    return;
+  }
+
   refs.productBackdrop.addEventListener('click', onBackdropClick);
   window.addEventListener('keydown', onEscKey);
 

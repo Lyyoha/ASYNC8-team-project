@@ -1,21 +1,19 @@
-/* !!! BACKDROP */
+/* BACKDROP */
 
 .order-backdrop {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(0, 0, 0, 0.25);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0px;
+    padding: 20px;
     z-index: 999;
+
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 250ms ease, visibility 250ms ease;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
 .order-backdrop.is-open {
@@ -24,7 +22,7 @@
     pointer-events: auto;
 }
 
-/* !!! MODAL WINDOW */
+/* MODAL */
 
 .order-modal {
     width: 100%;
@@ -34,9 +32,16 @@
     padding: 32px 20px;
     position: relative;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+
+    transform: scale(0.96);
+    transition: transform 0.2s ease;
 }
 
-/* !!! CLOSE BUTTON */
+.order-backdrop.is-open .order-modal {
+    transform: scale(1);
+}
+
+/* CLOSE BUTTON */
 
 .order-close-btn {
     position: absolute;
@@ -46,13 +51,21 @@
     border: none;
     padding: 0;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.15s;
+}
+
+.order-close-btn:hover {
+    opacity: 0.6;
 }
 
 .order-close-btn svg {
     stroke: #080c0c;
 }
 
-/* !!! TITLE */
+/* TITLE */
 
 .order-title {
     font-family: "Comfortaa", sans-serif;
@@ -65,7 +78,7 @@
     margin-bottom: 24px;
 }
 
-/* !!! FORM */
+/* FORM */
 
 .order-form {
     display: flex;
@@ -73,29 +86,24 @@
     gap: 16px;
 }
 
-/* LABEL */
-.order-label-text {
-    display: block;
-    margin-bottom: 8px;
-    font-family: "Work Sans", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    color: #080c0c;
+/* FLOATING FIELD WRAPPER */
+
+.order-field {
+    position: relative;
+    width: 100%;
+    padding-bottom: 20px;
 }
 
-/* TEXT INPUT (Figma-perfect (хай Бог милує ))) */
+/* FLOATING INPUT */
 
-.form-input {
+.floating-input {
     width: 100%;
-    height: 40px;
-    padding: 8px 12px;
+    padding: 22px 16px 8px;
+    background: #fff;
     border-radius: 12px;
-    border: 2px solid #080c0c;
-    background: transparent;
+    border: 1px solid rgba(8, 12, 12, 0.1);
 
     font-family: "Work Sans", sans-serif;
-    font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     color: #080c0c;
@@ -104,28 +112,108 @@
     transition: border-color 0.2s ease;
 }
 
-.form-input::placeholder {
-    color: rgba(8, 12, 12, 0.6);
+.floating-input::placeholder {
+    color: transparent;
 }
 
-/* Focus */
-.form-input:focus {
+.floating-input:focus {
     border-color: #080c0c;
 }
 
-/* Error */
-.form-input.error {
+/* FLOATING TEXTAREA */
+
+.floating-textarea {
+    width: 100%;
+    height: 120px;
+    padding: 22px 16px 8px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid rgba(8, 12, 12, 0.1);
+    resize: none;
+
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #080c0c;
+
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.floating-textarea::placeholder {
+    color: transparent;
+}
+
+.floating-textarea:focus {
+    border-color: #080c0c;
+}
+
+/* FLOATING LABEL */
+
+.floating-label {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: rgba(8, 12, 12, 0.6);
+
+    pointer-events: none;
+    transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+.floating-textarea~.floating-label {
+    top: 16px;
+    transform: none;
+}
+
+/* Піднятий стан label */
+
+.floating-input:focus+.floating-label,
+.floating-input:not(:placeholder-shown)+.floating-label {
+    top: 8px;
+    transform: none;
+    font-size: 11px;
+    color: rgba(8, 12, 12, 0.6);
+}
+
+.floating-textarea:focus+.floating-label,
+.floating-textarea:not(:placeholder-shown)+.floating-label {
+    top: 6px;
+    font-size: 11px;
+    color: rgba(8, 12, 12, 0.6);
+}
+
+/* ERROR стан */
+
+.floating-input.error,
+.floating-textarea.error {
     border-color: #d50000;
+    color: #080c0c;
+}
+
+.floating-input.error+.floating-label,
+.floating-textarea.error+.floating-label {
+    top: 8px;
+    transform: none;
+    font-size: 11px;
     color: #d50000;
 }
 
-.form-input.error::placeholder {
-    color: #d50000;
+.floating-textarea.error+.floating-label {
+    top: 6px;
 }
 
-/* Error text */
-.input-error-text {
-    margin-top: 4px;
+/* ERROR TEXT */
+
+.input-error-text,
+.textarea-error-text {
+    position: absolute;
+    bottom: 2px;
+    left: 0;
     font-family: "Work Sans", sans-serif;
     font-weight: 400;
     font-size: 12px;
@@ -133,57 +221,7 @@
     color: #d50000;
 }
 
-/* TEXT AREA (Figma-perfect (fingers crossed яе то кажуть ))) */
-
-.form-textarea {
-    width: 100%;
-    height: 180px;
-    padding: 12px;
-    border-radius: 12px;
-    border: 2px solid #080c0c;
-    background: transparent;
-    resize: none;
-
-    font-family: "Work Sans", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    color: #080c0c;
-
-    outline: none;
-    transition: border-color 0.2s ease;
-}
-
-.form-textarea::placeholder {
-    color: rgba(8, 12, 12, 0.6);
-}
-
-/* Focus */
-.form-textarea:focus {
-    border-color: #080c0c;
-}
-
-/* Error */
-.form-textarea.error {
-    border-color: #d50000;
-    color: #d50000;
-}
-
-.form-textarea.error::placeholder {
-    color: #d50000;
-}
-
-/* Error text */
-.textarea-error-text {
-    margin-top: 4px;
-    font-family: "Work Sans", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    color: #d50000;
-}
-
-/* SUBMIT BUTTON (Figma-perfect (я дуже на це сподіваюсь))) */
+/* SUBMIT BUTTON */
 
 .order-submit-btn {
     width: 100%;
@@ -207,75 +245,55 @@
     color: #080c0c;
 
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background 0.2s ease, border-color 0.2s ease;
 }
 
-/* Hover / Focus */
-.order-submit-btn:hover,
-.order-submit-btn:focus {
-    background: transparent;
-    border: 2px solid #080c0c;
+.order-submit-btn:hover {
+    background: #ef8585;
+    border-color: #ef8585;
 }
 
-/* Active */
 .order-submit-btn:active {
-    background: #f5b6b6;
-    border: 2px solid #080c0c;
+    background: #e87070;
+    border-color: #e87070;
+    transform: scale(0.99);
 }
 
-/* Disabled */
 .order-submit-btn:disabled {
-    background: #f19898;
-    border: 1px solid #f19898;
     opacity: 0.3;
     cursor: not-allowed;
 }
 
-/* FLOATING INPUT (Figma-perfect (має бути))) */
+/* !!! ПЛАНШЕТ (768px – 1439px) !!! */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+    .order-modal {
+        max-width: 704px;
+        padding: 64px 32px;
+    }
 
-.order-field {
-    position: relative;
-    width: 100%;
+    .order-title {
+        font-size: 36px;
+        margin-bottom: 48px;
+    }
+
+    .order-submit-btn {
+        max-width: 100%;
+    }
 }
 
-.floating-input {
-    width: 100%;
-    padding: 14px 16px;
-    background: #fff;
-    border-radius: 12px;
-    border: 1px solid rgba(8, 12, 12, 0.1);
+/* !!! ДЕСКТОП (1440px+) !!! */
+@media screen and (min-width: 1440px) {
+    .order-modal {
+        max-width: 768px;
+        padding: 64px;
+    }
 
-    font-family: "Work Sans", sans-serif;
-    font-size: 16px;
-    line-height: 150%;
-    color: rgba(8, 12, 12, 0.6);
+    .order-title {
+        font-size: 48px;
+        margin-bottom: 48px;
+    }
 
-    outline: none;
-}
-
-.floating-input::placeholder {
-    color: transparent;
-}
-
-.floating-label {
-    position: absolute;
-    top: 50%;
-    left: 16px;
-    transform: translateY(-50%);
-
-    font-family: "Work Sans", sans-serif;
-    font-size: 16px;
-    line-height: 150%;
-    color: rgba(8, 12, 12, 0.6);
-
-    pointer-events: none;
-    transition: 0.2s ease;
-}
-
-/* Піднятий стан */
-.floating-input:focus+.floating-label,
-.floating-input:not(:placeholder-shown)+.floating-label {
-    top: 6px;
-    font-size: 12px;
-    color: #080c0c;
+    .order-submit-btn {
+        max-width: 295px;
+    }
 }

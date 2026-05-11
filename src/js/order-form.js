@@ -1,14 +1,36 @@
-import { createOrder } from "./order-api";
-import { addFieldError, clearFieldError } from "./validation";
-import { successToast, errorToast } from "./toast";
-import { closeOrderModal } from "./handlers";
-import { refs } from "./refs";
+import { addFieldError, clearFieldError } from './validation';
+import { successToast, errorToast } from './toast';
+import { closeOrderModal } from './handlers';
+import { refs } from './refs';
+import { postOrderForm } from './desserts-api';
 
-export const onOrderFormSubmit = async (event) => {
+function attachLiveValidation(form) {
+  const fields = [
+    form.elements.name,
+    form.elements.phone,
+    form.elements.comment,
+  ];
+
+  fields.forEach(field => {
+    field.addEventListener('input', () => {
+      if (field.classList.contains('error')) {
+        clearFieldError(field);
+      }
+    });
+  });
+}
+
+export const onOrderFormSubmit = async event => {
   event.preventDefault();
 
-  const form = event.target;
-  const submitBtn = form.querySelector(".order-submit-btn");
+  const form =
+    event.currentTarget instanceof HTMLFormElement
+      ? event.currentTarget
+      : document.querySelector('.order-form');
+  if (!form) return;
+
+  const dessertIdField =
+    form.elements.dessertId || form.querySelector('[name="dessertId"]');
 
   // Очищаємо попередні помилки
   const fields = [
@@ -16,10 +38,9 @@ export const onOrderFormSubmit = async (event) => {
     form.elements.phone,
     form.elements.comment,
   ];
+  fields.forEach(field => clearFieldError(field));
 
-  fields.forEach((field) => clearFieldError(field));
-
-  // Перевіряємо обов'язкові поля
+  // Валідація
   let isValid = true;
 
   if (!form.elements.name.value.trim()) {
@@ -37,35 +58,32 @@ export const onOrderFormSubmit = async (event) => {
     isValid = false;
   }
 
-  // Перевірка dessertId
-  if (!form.elements.dessertId.value.trim()) {
-    errorToast("Помилка: не передано ID десерту");
-    return;
-  }
-
   if (!isValid) return;
 
-  // Формуємо об'єкт замовлення
   const order = {
     name: form.elements.name.value.trim(),
     phone: form.elements.phone.value.trim(),
     comment: form.elements.comment.value.trim(),
-    dessertId: form.elements.dessertId.value.trim(),
+    dessertId: dessertIdField?.value.trim(),
   };
 
   try {
-    submitBtn.disabled = true;
-
-    await createOrder(order);
-
-    successToast("Ваше замовлення успішно відправлено!");
-
+    await postOrderForm(order);
+    successToast('Ваше замовлення успішно відправлено!');
     form.reset();
     closeOrderModal();
   } catch (err) {
-    console.log(err);
-    errorToast("Сталася помилка при створенні замовлення.");
-  } finally {
-    submitBtn.disabled = false;
+    console.error('Order submission failed:', err.response?.data || err);
+    errorToast('Сталася помилка при створенні замовлення.');
+    closeOrderModal();
   }
 };
+
+// Ініціалізація — викликай це після того як форма є в DOM
+export function initOrderForm() {
+  const form = refs.orderForm;
+  if (!form) return;
+
+  form.addEventListener('submit', onOrderFormSubmit);
+  attachLiveValidation(form);
+}
