@@ -1,128 +1,595 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/ASYNC8-team-project/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/ASYNC8-team-project/assets/favicon-Cwh0T6BW.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+      integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script type="module" crossorigin src="/ASYNC8-team-project/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/ASYNC8-team-project/assets/styles-DvPDDfy5.css">
+    <link rel="modulepreload" crossorigin href="/ASYNC8-team-project/assets/vendor-96xp1dn3.js">
+    <link rel="stylesheet" crossorigin href="/ASYNC8-team-project/assets/vendor-CnGd8_0P.css">
+    <link rel="stylesheet" crossorigin href="/ASYNC8-team-project/assets/index-n4bJ27OB.css">
   </head>
   <body>
-    <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="/ASYNC8-team-project/assets/sprite-E8vg0sBb.svg#logo"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
+    <section class="header-section">
+  <div class="container header_container">
+    <div class="mobile-menu">
+      <div class="logo">
+        <a href="index.html">
+          <svg height="63" width="150">
+            <use href="/ASYNC8-team-project/assets/logo-B7vVQ8nt.svg"></use>
+          </svg>
+        </a>
+      </div>
+
+      <svg width="24" height="24" class="burger-icon">
+        <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#menu"></use>
+      </svg>
+    </div>
+
+    <div class="menu-content">
+      <div class="logo">
+        <a href="/index.html">
+          <svg height="63" width="150">
+            <use href="/ASYNC8-team-project/assets/logo-B7vVQ8nt.svg"></use></svg
+        ></a>
+      </div>
+      <ul class="menu">
+        <li class="menu-item">
+          <a href="#desert-list" class="menu-link">
+            <p class="menu-text">Солодощі</p>
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
+        <li class="menu-item">
+          <a href="#about-us" class="menu-link">
+            <p class="menu-text">Про нас</p>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#feedback" class="menu-link">
+            <p class="menu-text">Відгуки</p>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#faq" class="menu-link">
+            <p class="menu-text">Часті питання</p>
+          </a>
+        </li>
+        <li class="menu-item">
+          <button class="button-menu">
+            <a href="#desert-list"> <p>До покупок</p></a>
+          </button>
         </li>
       </ul>
-    </nav>
-  </div>
-</header>
-
-
-    <main>
-      <!-- Loads the specified .html file -->
-      <section class="vite-promo">
-  <div class="container">
-    <div class="vite-promo-thumb">
-      <a
-        class="vite-promo-link"
-        href="https://vitejs.dev/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Link to Vite official website"
-        title="Vite.js  build tool"
-      >
-        <!-- Path to images as from index.html file -->
-        <img
-          class="pic"
-          src="/ASYNC8-team-project/assets/vite-logo-9o_aqrTe.png"
-          alt="Vite logo"
-          width="640"
-          height="640"
-        />
-      </a>
     </div>
-    <h1 class="main-title">
-      <span class="main-title-gradient">Vite</span>
-      Template by
-      <a
-        class="main-title-link"
-        href="https://github.com/goitacademy/vanilla-app-template"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT
-      </a>
-    </h1>
   </div>
 </section>
 
-      <article class="badges">
+    <main>
+      <!-- Loads the specified .html file -->
+      <section class="hero">
   <div class="container">
-    <ul class="badges-list">
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/vite-plugin-html-inject"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          HTML Inject
-        </a>
+    <div class="hero-content">
+      <h1 class="hero-title">Ласкаво просимо до Солодкої Майстерні</h1>
+      <p class="hero-description">
+        Відкрийте для себе наші неперевершені десерти, приготовані з любов'ю та
+        увагою до деталей. Кожен шматочок — це справжнє свято смаку!
+      </p>
+      <a href="#feedback" class="hero-button">Що про нас думають</a>
+    </div>
+  </div>
+</section>
+
+      <section class="popular-products section">
+  <div class="container">
+    <h2 class="popular-title">Наші бестселлери</h2>
+
+    <div class="swiper popular-swiper">
+      <ul class="swiper-wrapper" id="popular-list"></ul>
+
+      <div class="popular-controls">
+        <div class="popular-pagination"></div>
+
+        <div class="nav-wrapper">
+          <button
+            type="button"
+            class="popular-swiper-button-prev"
+            aria-label="Попередній слайд"
+          >
+            <svg width="24" height="24">
+              <use href="../img/sprite.svg#arrow_back"></use>
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            class="popular-swiper-button-next"
+            aria-label="Наступний слайд"
+          >
+            <svg width="24" height="24">
+              <use href="../img/sprite.svg#arrow_forward"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="desert-list" id="desert-list">
+  <div class="container">
+    <div class="desert-list-header">
+      <div class="desert-list-heading">
+        <h2 class="heading-2 desert-list-title">Солодощі</h2>
+        <p class="desert-list-subtitle">Спробуйте наші смачні десерти, які вас здивують!</p>
+      </div>
+      <select class="desert-categories-select" aria-label="Категорії десертів"></select>
+    </div>
+    <ul class="desert-categories" aria-label="Категорії десертів"></ul>
+    <ul class="desert-cards"></ul>
+    <p class="desert-empty" hidden>Десертів у цій категорії поки немає.</p>
+    <button class="desert-load-more" type="button" hidden>Завантажити ще</button>
+  </div>
+</section>
+
+      <section id="about-us" class="about-us-section">
+  <div class="container about-us-container">
+    <div class="about-us-thumb">
+      <h2 class="heading-2">Про нас</h2>
+      <p class="about-us-section-text">
+        У нашій 'Солодкій Майстерні' ми створюємо неповторні солодкі шедеври, що
+        приносять радість та задоволення. Наша місія — пропонувати високоякісні
+        десерти, які поєднують у собі вишуканий смак, свіжі інгредієнти та
+        естетичний вигляд.
+      </p>
+    </div>
+    <div class="about-us-slider">
+      <button class="swiper-button-prev">
+        <svg class="swiper-icon" width="24" height="24">
+          <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#arrow_back"></use>
+        </svg>
+      </button>
+      <div class="swiper">
+        <ul class="swiper-wrapper about-us-list">
+          <li class="swiper-slide about-us-item">
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcset="/ASYNC8-team-project/assets/about-gallery-1-desktop-CQae1ogy.jpg 1x, /ASYNC8-team-project/assets/about-gallery-1-desktop@2x-a6rzRpf-.jpg 2x"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="/ASYNC8-team-project/assets/about-gallery-1-tablet-Bi8DhM7B.jpg 1x, /ASYNC8-team-project/assets/about-gallery-1-tablet@2x-B6SefVn2.jpg 2x"
+              />
+              <img
+                class="about-us-image"
+                srcset="/ASYNC8-team-project/assets/about-gallery-1-mobile-CdgNpZtU.jpg 1x, /ASYNC8-team-project/assets/about-gallery-1-mobile@2x-Bckevoxc.jpg 2x"
+                src="/ASYNC8-team-project/assets/about-gallery-1-mobile-CdgNpZtU.jpg"
+                alt="filling-the-cookies"
+              />
+            </picture>
+          </li>
+          <li class="swiper-slide about-us-item">
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcset="/ASYNC8-team-project/assets/about-gallery-2-desktop-Ceg79gue.jpg 1x, /ASYNC8-team-project/assets/about-gallery-2-desktop@2x-B38TKkB4.jpg 2x"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="/ASYNC8-team-project/assets/about-gallery-2-tablet-CI-Ucz7d.jpg 1x, /ASYNC8-team-project/assets/about-gallery-2-tablet@2x-DJEhOOjC.jpg 2x"
+              />
+              <img
+                class="about-us-image"
+                srcset="/ASYNC8-team-project/assets/about-gallery-2-mobile-NV3thDVp.jpg 1x, /ASYNC8-team-project/assets/about-gallery-2-mobile@2x-DtEOh9XQ.jpg 2x"
+                src="/ASYNC8-team-project/assets/about-gallery-2-mobile-NV3thDVp.jpg"
+                alt="chefs-discussing-the-recepies"
+              />
+            </picture>
+          </li>
+          <li class="swiper-slide about-us-item">
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcset="/ASYNC8-team-project/assets/about-gallery-3-desktop-Dj4U9Wlx.jpg 1x, /ASYNC8-team-project/assets/about-gallery-3-desktop@2x-DkLGBBFd.jpg 2x"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="/ASYNC8-team-project/assets/about-gallery-3-tablet-Ci-4HXzD.jpg 1x, /ASYNC8-team-project/assets/about-gallery-3-tablet@2x-DbhocG-s.jpg 2x"
+              />
+              <img
+                class="about-us-image"
+                srcset="/ASYNC8-team-project/assets/about-gallery-3-mobile-D0qLp74l.jpg 1x, /ASYNC8-team-project/assets/about-gallery-3-mobile@2x-DDCZoUTM.jpg 2x"
+                src="/ASYNC8-team-project/assets/about-gallery-3-mobile-D0qLp74l.jpg"
+                alt="showcase-with-sweets"
+              />
+            </picture>
+          </li>
+          <li class="swiper-slide about-us-item">
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcset="/ASYNC8-team-project/assets/about-gallery-4-desktop-BuyVDCa6.jpg 1x, /ASYNC8-team-project/assets/about-gallery-4-desktop@2x-BUy3fzJa.jpg 2x"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="/ASYNC8-team-project/assets/about-gallery-4-tablet-B5APWlcz.jpg 1x, /ASYNC8-team-project/assets/about-gallery-4-tablet@2x-DUDUQkQw.jpg 2x"
+              />
+              <img
+                class="about-us-image"
+                srcset="/ASYNC8-team-project/assets/about-gallery-4-mobile-Dj6a6YAR.jpg 1x, /ASYNC8-team-project/assets/about-gallery-4-mobile@2x-DiwNUmWa.jpg 2x"
+                src="/ASYNC8-team-project/assets/about-gallery-4-mobile-Dj6a6YAR.jpg"
+                alt="a-girl-eating-the-cake"
+              />
+            </picture>
+          </li>
+        </ul>
+      </div>
+      <div class="swiper-pagination about-us-pagination"></div>
+      <button class="swiper-button-next">
+        <svg class="swiper-icon" width="24" height="24">
+          <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#arrow_forward"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+      <section class="feedback-section" id="feedback">
+  <div class="container feedback-container">
+    <h2 class="feedback-title">Відгуки клієнтів</h2>
+    <p class="feedback-text">
+      Дізнайтеся, що кажуть наші задоволені клієнти...
+    </p>
+      <div class="swiper feedback-swiper">
+        <ul class="swiper-wrapper js-feedback-list">
+        </ul>
+ 
+      </div>
+             <div class="feedback-swiper-control">
+          <div class="swiper-pagination"></div>
+          <div class="feedback-swiper-nav">
+            <button
+              class="feedback-swiper-btn-prev"
+              aria-label="Попередній слайд"
+            >
+              <svg
+                width="24"
+                height="24"
+                aria-hidden="true"
+                class="feedback-swiper-icon"
+              >
+                <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#arrow_back"></use>
+              </svg>
+            </button>
+            <button
+              class="feedback-swiper-btn-next"
+              aria-label="Наступний слайд"
+            >
+              <svg
+                width="24"
+                height="24"
+                aria-hidden="true"
+                class="feedback-swiper-icon"
+              >
+                <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#arrow_forward"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+    </ul>
+  </div>
+</section>
+
+      <section id="faq" class="faq-section">
+  <div class="container faq-container">
+    <h2 class="heading-2">Часті питання</h2>
+    <ul class="faq-list">
+      <li class="faq-list-item">
+        <div class="faq-list-item-thumb">
+          <p class="faq-item-title">1. Які способи оплати ви приймаєте?</p>
+          <button type="button" class="faq-acordion-btn">
+            <svg width="32" height="32">
+              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </div>
+        <p class="faq-accordion">
+          Ми приймаємо оплату онлайн банківськими картками Visa та Mastercard,
+          через платіжні системи Apple Pay та Google Pay, а також готівкою
+          кур'єру при отриманні замовлення.
+        </p>
       </li>
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/vite-plugin-full-reload"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Full Reload
-        </a>
+      <li class="faq-list-item">
+        <div class="faq-list-item-thumb">
+          <p class="faq-item-title">2. Чи є у вас доставка?</p>
+          <button type="button" class="faq-acordion-btn">
+            <svg width="32" height="32">
+              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </div>
+        <p class="faq-accordion">
+          Так, ми здійснюємо доставку по всьому місту. Вартість та умови
+          доставки залежать від вашого району, деталі можна уточнити при
+          оформленні замовлення.
+        </p>
       </li>
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/postcss-sort-media-queries"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Sort Media Queries
-        </a>
+      <li class="faq-list-item">
+        <div class="faq-list-item-thumb">
+          <p class="faq-item-title">3. Як швидко здійснюється доставка?</p>
+          <button type="button" class="faq-acordion-btn">
+            <svg width="32" height="32">
+              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </div>
+        <p class="faq-accordion">
+          Зазвичай доставка займає від 60 до 90 хвилин з моменту підтвердження
+          замовлення. У пікові години час доставки може бути збільшений, про що
+          ми вас обов'язково повідомимо.
+        </p>
+      </li>
+      <li class="faq-list-item">
+        <div class="faq-list-item-thumb">
+          <p class="faq-item-title">
+            4. Чи можна забрати замовлення самостійно?
+          </p>
+          <button type="button" class="faq-acordion-btn">
+            <svg width="32" height="32">
+              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </div>
+        <p class="faq-accordion">
+          Так, ви можете забрати своє замовлення самостійно за адресою [Вказати
+          адресу самовивозу] у робочі години магазину.
+        </p>
+      </li>
+      <li class="faq-list-item">
+        <div class="faq-list-item-thumb">
+          <p class="faq-item-title">
+            5. Чи пропонуєте ви десерти для людей з особливими дієтичними
+            потребами (безглютенові, безлактозні, веганські)?
+          </p>
+          <button type="button" class="faq-acordion-btn">
+            <svg width="32" height="32">
+              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </div>
+        <p class="faq-accordion">
+          Ми постійно розширюємо наш асортимент. Наразі у нас є обмежений вибір
+          безглютенових та безлактозних десертів. Будь ласка, перегляньте наш
+          каталог або зв'яжіться з нами для отримання детальної інформації.
+        </p>
+      </li>
+      <li class="faq-list-item">
+        <div class="faq-list-item-thumb">
+          <p class="faq-item-title">
+            6. Як я можу зробити замовлення на індивідуальний торт?
+          </p>
+          <button type="button" class="faq-acordion-btn">
+            <svg width="32" height="32">
+              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </div>
+        <p class="faq-accordion">
+          Для замовлення індивідуального торта, будь ласка, зв'яжіться з нашим
+          менеджером за телефоном [Вказати номер телефону] або залиште заявку на
+          сайті. Ми обговоримо всі деталі дизайну, начинки та терміни виконання.
+        </p>
+      </li>
+      <li class="faq-list-item">
+        <div class="faq-list-item-thumb">
+          <p class="faq-item-title">
+            7. Чи можна змінити або скасувати замовлення після його оформлення?
+          </p>
+          <button type="button" class="faq-acordion-btn">
+            <svg width="32" height="32">
+              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </div>
+        <p class="faq-accordion">
+          Якщо вам потрібно змінити або скасувати замовлення, будь ласка,
+          негайно зв'яжіться з нами за телефоном. Можливість внесення змін
+          залежить від етапу, на якому знаходиться ваше замовлення.
+        </p>
+      </li>
+      <li class="faq-list-item">
+        <div class="faq-list-item-thumb">
+          <p class="faq-item-title">
+            8. Який термін зберігання ваших десертів?
+          </p>
+          <button type="button" class="faq-acordion-btn">
+            <svg width="32" height="32">
+              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </div>
+        <p class="faq-accordion">
+          Термін зберігання десертів залежить від їхнього типу та інгредієнтів.
+          Зазвичай десерти рекомендується вживати протягом 24-72 годин. Точна
+          інформація про термін зберігання вказана на упаковці кожного виробу.
+        </p>
+      </li>
+      <li class="faq-list-item">
+        <div class="faq-list-item-thumb">
+          <p class="faq-item-title">
+            9. Чи є у вас програма лояльності або знижки для постійних клієнтів?
+          </p>
+          <button type="button" class="faq-acordion-btn">
+            <svg width="32" height="32">
+              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </div>
+        <p class="faq-accordion">
+          Так, ми цінуємо наших постійних клієнтів! Деталі нашої програми
+          лояльності та діючих акцій ви можете знайти на окремій сторінці нашого
+          сайту або уточнити у менеджера.
+        </p>
+      </li>
+      <li class="faq-list-item">
+        <div class="faq-list-item-thumb">
+          <p class="faq-item-title">
+            10. Що робити, якщо у мене є скарга або пропозиція?
+          </p>
+          <button type="button" class="faq-acordion-btn">
+            <svg width="32" height="32">
+              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </div>
+        <p class="faq-accordion">
+          Ми завжди раді зворотному зв'язку! Якщо у вас виникли питання, скарги
+          або пропозиції, будь ласка, напишіть нам на електронну пошту [Вказати
+          email] або зателефонуйте. Ваша думка допомагає нам ставати кращими.
+        </p>
       </li>
     </ul>
   </div>
-</article>
+</section>
 
     </main>
 
     <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
-      </a>
-    </p>
+  <div class="container footer-container">
+    <div class="footer-content">
+      <div class="footer-logo-soc-container">
+        <a
+          href="index.html"
+          class="footer-logo-link"
+          aria-label="Солодка майстерня"
+        >
+        </a>
+        <nav class="footer-nav">
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <a href="#desert-list" class="footer-nav-link">Солодощі</a>
+            </li>
+            <li class="footer-nav-item">
+              <a href="#about-us" class="footer-nav-link">Про нас</a>
+            </li>
+            <li class="footer-nav-item">
+              <a href="#feedback" class="footer-nav-link">Відгуки</a>
+            </li>
+            <li class="footer-nav-item">
+              <a href="#faq" class="footer-nav-link">Часті питання</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <ul class="footer-soc-list">
+        <li class="footer-soc-item">
+          <a
+            class="footer-soc-link"
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow us on Facebook"
+          >
+            <svg class="footer-svg" width="32" height="32">
+              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#Facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="footer-soc-item">
+          <a
+            class="footer-soc-link"
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow us on Instagram"
+          >
+            <svg class="footer-svg" width="32" height="32">
+              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#Instagram"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li class="footer-soc-item">
+          <a
+            class="footer-soc-link"
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit our YouTube channel"
+          >
+            <svg class="footer-svg" width="32" height="32">
+              <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#Youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="copypaste-container">
+      <p class="copypaste-text">
+        &copy; 2026 Солодка Майстерня. Усі права захищені
+      </p>
+    </div>
   </div>
 </footer>
 
+    <section class="burger">
+  <div class="burger-container">
+    <div class="burger-head">
+      <div class="logo">
+        <a href="index.html">
+          <svg height="63" width="150">
+            <use href="/ASYNC8-team-project/assets/logo-B7vVQ8nt.svg"></use>
+          </svg>
+        </a>
+      </div>
+
+      <svg width="24" height="24" class="btn-close">
+        <use href="/ASYNC8-team-project/assets/sprite-ByJCB0-d.svg#close"></use>
+      </svg>
+    </div>
+    <div class="burger-content">
+      <ul class="burger-menu">
+        <li class="burger-menu-item">
+          <a href="#desert-list" class="burger-menu-link">
+            <p class="menu-text">Солодощі</p>
+          </a>
+        </li>
+        <li class="burger-menu-item">
+          <a href="#about-us" class="burger-menu-link">
+            <p class="menu-text">Про нас</p>
+          </a>
+        </li>
+        <li class="burger-menu-item">
+          <a href="#feedback" class="burger-menu-link">
+            <p class="menu-text">Відгуки</p>
+          </a>
+        </li>
+        <li class="burger-menu-item">
+          <a href="#faq" class="burger-menu-link">
+            <p class="menu-text">Часті питання</p>
+          </a>
+        </li>
+      </ul>
+      <button class="button-menu">
+        <a href="#desert-list"> <p>До покупок</p></a>
+      </button>
+    </div>
+  </div>
+</section>
 
   </body>
 </html>
