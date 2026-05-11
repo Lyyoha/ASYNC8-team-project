@@ -48,8 +48,14 @@ export const onOrderFormSubmit = async event => {
     isValid = false;
   }
 
-  if (!form.elements.phone.value.trim()) {
+  const phoneValue = form.elements.phone.value.trim();
+  const phoneRegex = /^\+?[\d\s\-\(\)]{7,15}$/;
+
+  if (!phoneValue) {
     addFieldError(form.elements.phone, "Поле обов'язкове");
+    isValid = false;
+  } else if (!phoneRegex.test(phoneValue)) {
+    addFieldError(form.elements.phone, 'Введіть коректний номер телефону');
     isValid = false;
   }
 
