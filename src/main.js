@@ -118,7 +118,7 @@ const renderFeedbackList = async () => {
     console.log(error);
   }
 };
-
+renderFeedbackList();
 const initFeedbackSwiper = () => {
   if (feedbackSwiper) {
     feedbackSwiper.destroy(true, true);
