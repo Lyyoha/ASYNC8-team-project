@@ -81,7 +81,6 @@ export const onOrderFormSubmit = async event => {
   } catch (err) {
     console.error('Order submission failed:', err.response?.data || err);
     errorToast('Сталася помилка при створенні замовлення.');
-    closeOrderModal();
   }
 };
 
