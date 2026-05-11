@@ -129,9 +129,11 @@ const initFeedbackSwiper = () => {
     direction: 'horizontal',
     loop: false,
     spaceBetween: 24,
+
     pagination: {
       el: '.feedback-swiper-control .swiper-pagination',
       clickable: true,
+      dynamicBullets: true,
     },
     navigation: {
       nextEl: '.feedback-swiper-btn-next',
