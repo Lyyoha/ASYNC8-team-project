@@ -110,7 +110,7 @@
     border-radius: 100px;
     width: 48px;
     height: 48px;
-    background-color: transparent;
+    background-color: var(--color-scheme-1-foreground);
   }
   .about-us-section .about-us-container .swiper-button-prev {
     display: flex;
