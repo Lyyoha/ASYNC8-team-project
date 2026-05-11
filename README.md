@@ -6,7 +6,7 @@
 Сайт реалізований як Single Page Application (SPA) з використанням асинхронних
 запитів до бекенду.
 
-[**🔗 Жива сторінка проєкту (Demo)**](https://lyyoha.github.com/ASYNC8-team-project/)
+[**🔗 Жива сторінка проєкту (Demo)**](https://lyyoha.github.io/ASYNC8-team-project/index.html)
 
 ---
 
