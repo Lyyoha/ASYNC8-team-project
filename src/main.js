@@ -24,7 +24,9 @@ initDesserts();
 
 refs.burgerBtn.addEventListener('click', openBurger);
 refs.burgerBtnClose.addEventListener('click', closeBurger);
-refs.burgerMenuLink.addEventListener('click', closeBurger);
+refs.burgerMenuLink.forEach(link =>
+  link.addEventListener('click', closeBurger)
+);
 refs.burgerMenuBtn.addEventListener('click', closeBurger);
 
 //

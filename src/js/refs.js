@@ -9,7 +9,7 @@ export const refs = {
   burger: document.querySelector('.burger-container'),
   burgerBtn: document.querySelector('.burger-icon'),
   burgerBtnClose: document.querySelector('.btn-close'),
-  burgerMenuLink: document.querySelector('.burger-menu-link'),
+  burgerMenuLink: document.querySelectorAll('.burger-menu-link'),
   burgerMenuBtn: document.querySelector('.button-menu'),
   wrapper: document.querySelector('.about-us-list'),
   items: document.querySelectorAll('.about-us-item'),
