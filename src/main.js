@@ -15,7 +15,7 @@ import { getPopularProdacts } from './js/desserts-api';
 
 new Accordion('.faq-list', {
   elementClass: 'faq-list-item',
-  triggerClass: 'faq-acordion-btn',
+  triggerClass: 'faq-list-item-thumb',
   panelClass: 'faq-accordion',
 });
 initDesserts();
