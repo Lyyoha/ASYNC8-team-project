@@ -5,14 +5,9 @@ export const refs = {
   burger: document.querySelector('.burger-container'),
   burgerBtn: document.querySelector('.burger-icon'),
   burgerBtnClose: document.querySelector('.btn-close'),
-  burgerMenuLink: document.querySelector('.menu-link'),
-  burgerMenuBtn: document.querySelector('.button-menu'),
-  feedbackList: document.querySelector('.js-feedback-list'),
-  burger: document.querySelector('.burger-container'),
-  burgerBtn: document.querySelector('.burger-icon'),
-  burgerBtnClose: document.querySelector('.btn-close'),
   burgerMenuLink: document.querySelectorAll('.burger-menu-link'),
-  burgerMenuBtn: document.querySelector('.button-menu'),
+  burgerMenuBtn: document.querySelectorAll('.button-menu'),
+  feedbackList: document.querySelector('.js-feedback-list'),
 
   // ORDER MODAL
   orderBackdrop: document.querySelector('[data-order-backdrop]'),
