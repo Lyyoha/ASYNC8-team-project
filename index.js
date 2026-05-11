@@ -4,13 +4,13 @@ import{a as u,C as P,i as M,A as B,S as b,N as y,P as h}from"./assets/vendor-96x
         ${[1,2,3,4,5].map(()=>`
           <div class="star">
             <svg class="star-empty" style="fill: var(--color-scheme-1-text)">
-                <use href="/img/sprite.svg#star-empty"></use>
+                <use href="./img/sprite.svg#star-empty"></use>
             </svg>
              <svg class="star-half" style="fill: var(--color-scheme-1-text)">
-                <use href="/img/sprite.svg#star-half"></use>
+                <use href="./img/sprite.svg#star-half"></use>
             </svg>
             <svg class="star-filled" style="fill: var(--color-scheme-1-text)">
-                <use href="/img/sprite.svg#star-filled"></use>
+                <use href="./img/sprite.svg#star-filled"></use>
             </svg>
         </div>
         `).join("")}
@@ -31,7 +31,7 @@ import{a as u,C as P,i as M,A as B,S as b,N as y,P as h}from"./assets/vendor-96x
           <p class="desert-card-price">${o} грн</p>
           <button class="desert-card-arrow" type="button" aria-label="Переглянути ${c}">
             <svg class="desert-card-arrow-icon" width="24" height="24">
-              <use href="/img/sprite.svg#arrow_outward"></use>
+              <use href="./img/sprite.svg#arrow_outward"></use>
             </svg>
           </button>
         </div>
@@ -61,7 +61,7 @@ import{a as u,C as P,i as M,A as B,S as b,N as y,P as h}from"./assets/vendor-96x
             <span class="price">${n} грн</span>
             <button type="button" class="order-link-btn" aria-label="Детальна інформація">
               <svg width="20" height="20">
-                <use href="../img/sprite.svg#arrow_outward"></use>
+                <use href="./img/sprite.svg#arrow_outward"></use>
               </svg>
             </button>
           </div>
