@@ -362,14 +362,6 @@
   border: 1px solid var(--color-scheme-1-border);
   border-radius: 16px;
   cursor: pointer;
-  transition:
-    transform 0.2s,
-    box-shadow 0.2s;
-}
-
-.desert-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px var(--opacity-neutral-darkest-10);
 }
 
 .desert-card-img {
@@ -393,11 +385,6 @@ img.desert-card-img.is-loaded {
 .desert-card--skeleton {
   cursor: default;
   pointer-events: none;
-}
-
-.desert-card--skeleton:hover {
-  transform: none;
-  box-shadow: none;
 }
 
 .desert-skeleton-thumb {
@@ -444,8 +431,11 @@ img.desert-card-img.is-loaded {
 .desert-card-body {
   display: flex;
   flex-direction: column;
-  gap: 8px;
   flex: 1;
+}
+
+.desert-card--skeleton .desert-card-body {
+  gap: 12px;
 }
 
 .desert-card-footer {
@@ -454,7 +444,7 @@ img.desert-card-img.is-loaded {
   justify-content: space-between;
   gap: 8px;
   margin-top: auto;
-  padding-top: 8px;
+  padding-top: 24px;
 }
 
 .desert-card-arrow {
@@ -489,7 +479,7 @@ img.desert-card-img.is-loaded {
 }
 
 .desert-card-category {
-  margin: 0;
+  margin: 0 0 12px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
@@ -497,7 +487,7 @@ img.desert-card-img.is-loaded {
 }
 
 .desert-card-title {
-  margin: 0;
+  margin: 0 0 4px;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.5;
