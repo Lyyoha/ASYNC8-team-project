@@ -22,7 +22,7 @@
 
 .feedback-swiper-btn-next,
 .feedback-swiper-btn-prev {
-    transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,7 +41,7 @@
 
 .feedback-swiper-icon {
   display: block;
-  stroke: var(--color-scheme-1-text);
+  fill: var(--color-scheme-1-text);
 }
 
 .feedback-swiper-control .swiper-pagination {

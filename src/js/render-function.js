@@ -140,7 +140,7 @@ export const createCardMarkup = ({
           <div class="card-footer">
             <span class="price">${price} грн</span>
             <button type="button" class="order-link-btn" aria-label="Детальна інформація">
-              <svg width="20" height="20">
+              <svg width="24" height="24">
                 <use href="${spriteUrl}#arrow_outward"></use>
               </svg>
             </button>
