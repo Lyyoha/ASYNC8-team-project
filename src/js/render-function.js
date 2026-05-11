@@ -1,5 +1,6 @@
 import 'css-star-rating/css/star-rating.css';
 import { refs } from './refs';
+import spriteUrl from '../img/sprite.svg';
 
 const createRatingMarkup = rating => {
   const value = Math.floor(rating);
@@ -13,13 +14,13 @@ const createRatingMarkup = rating => {
             () => `
           <div class="star">
             <svg class="star-empty" style="fill: var(--color-scheme-1-text)">
-                <use href="/img/sprite.svg#star-empty"></use>
+               <use href="${spriteUrl}#star-empty"></use>
             </svg>
              <svg class="star-half" style="fill: var(--color-scheme-1-text)">
-                <use href="/img/sprite.svg#star-half"></use>
+                <use href="${spriteUrl}#star-half"></use>
             </svg>
             <svg class="star-filled" style="fill: var(--color-scheme-1-text)">
-                <use href="/img/sprite.svg#star-filled"></use>
+                <use href="${spriteUrl}#star-filled"></use>
             </svg>
         </div>
         `
