@@ -9,16 +9,13 @@ import {
   categoriesSelectTemplate,
   skeletonsTemplate,
 } from './render-function';
-<<<<<<< 015-Create-a-mobile-version-of-the-Dessert-Details-Modal
 import { fillProductModal } from './handlers';
 import { openProductModal } from './product-modal';
 // import { initDessertCardListeners } from './render-function.js';
-=======
 import {
   initCategorySelect,
   setCategorySelectValue,
 } from './category-select';
->>>>>>> dev
 
 const state = {
   page: 1,

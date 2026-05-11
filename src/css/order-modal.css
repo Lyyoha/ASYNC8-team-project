@@ -1,4 +1,4 @@
-/* BACKDROP */
+/* ─── BACKDROP ─── */
 
 .order-backdrop {
     position: fixed;
@@ -22,7 +22,7 @@
     pointer-events: auto;
 }
 
-/* MODAL */
+/* ─── MODAL ─── */
 
 .order-modal {
     width: 100%;
@@ -41,7 +41,7 @@
     transform: scale(1);
 }
 
-/* CLOSE BUTTON */
+/* ─── CLOSE BUTTON ─── */
 
 .order-close-btn {
     position: absolute;
@@ -68,7 +68,7 @@
     stroke: #080c0c;
 }
 
-/* TITLE */
+/* ─── TITLE ─── */
 
 .order-title {
     font-family: "Comfortaa", sans-serif;
@@ -81,7 +81,7 @@
     margin-bottom: 24px;
 }
 
-/* FORM */
+/* ─── FORM ─── */
 
 .order-form {
     display: flex;
@@ -89,24 +89,39 @@
     gap: 16px;
 }
 
-/* FLOATING FIELD WRAPPER */
+/* ─── FIELD WRAPPER ─── */
 
 .order-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     position: relative;
-    width: 100%;
     padding-bottom: 20px;
 }
 
-/* FLOATING INPUT */
+/* ─── LABEL ─── */
 
-.floating-input {
+.order-label {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #080c0c;
+}
+
+/* ─── INPUT ─── */
+
+.order-input {
     width: 100%;
-    padding: 22px 16px 8px;
+    height: 40px;
+    padding: 8px 16px;
     background: #fff;
     border-radius: 12px;
-    border: 2px solid #080c0c;;
+    border: 2px solid #080c0c;
+    box-sizing: border-box;
 
     font-family: "Work Sans", sans-serif;
+    font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     color: #080c0c;
@@ -115,26 +130,32 @@
     transition: border-color 0.2s ease;
 }
 
-.floating-input::placeholder {
-    color: transparent;
+.order-input::placeholder {
+    color: rgba(8, 12, 12, 0.6);
 }
 
-.floating-input:focus {
+.order-input:focus {
     border-color: #080c0c;
 }
 
-/* FLOATING TEXTAREA */
+.order-input.error {
+    border-color: #d50000;
+}
 
-.floating-textarea {
+/* ─── TEXTAREA ─── */
+
+.order-textarea {
     width: 100%;
     height: 120px;
-    padding: 22px 16px 8px;
+    padding: 8px 16px;
     background: #fff;
     border-radius: 12px;
-    border: 2px solid #080c0c;;
+    border: 2px solid #080c0c;
     resize: none;
+    box-sizing: border-box;
 
     font-family: "Work Sans", sans-serif;
+    font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     color: #080c0c;
@@ -143,74 +164,19 @@
     transition: border-color 0.2s ease;
 }
 
-.floating-textarea::placeholder {
-    color: transparent;
+.order-textarea::placeholder {
+    color: rgba(8, 12, 12, 0.6);
 }
 
-.floating-textarea:focus {
+.order-textarea:focus {
     border-color: #080c0c;
 }
 
-/* FLOATING LABEL */
-
-.floating-label {
-    position: absolute;
-    top: 50%;
-    left: 16px;
-    transform: translateY(-50%);
-
-    font-family: "Work Sans", sans-serif;
-    font-size: 16px;
-    line-height: 150%;
-    color: rgba(8, 12, 12, 0.6);
-
-    pointer-events: none;
-    transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
-}
-
-.floating-textarea~.floating-label {
-    top: 16px;
-    transform: none;
-}
-
-/* Піднятий стан label */
-
-.floating-input:focus+.floating-label,
-.floating-input:not(:placeholder-shown)+.floating-label {
-    top: 8px;
-    transform: none;
-    font-size: 11px;
-    color: rgba(8, 12, 12, 0.6);
-}
-
-.floating-textarea:focus+.floating-label,
-.floating-textarea:not(:placeholder-shown)+.floating-label {
-    top: 6px;
-    font-size: 11px;
-    color: rgba(8, 12, 12, 0.6);
-}
-
-/* ERROR стан */
-
-.floating-input.error,
-.floating-textarea.error {
+.order-textarea.error {
     border-color: #d50000;
-    color: #080c0c;
 }
 
-.floating-input.error+.floating-label,
-.floating-textarea.error+.floating-label {
-    top: 8px;
-    transform: none;
-    font-size: 11px;
-    color: #d50000;
-}
-
-.floating-textarea.error+.floating-label {
-    top: 6px;
-}
-
-/* ERROR TEXT */
+/* ─── ERROR TEXT ─── */
 
 .input-error-text,
 .textarea-error-text {
@@ -224,7 +190,7 @@
     color: #d50000;
 }
 
-/* SUBMIT BUTTON */
+/* ─── SUBMIT BUTTON ─── */
 
 .order-submit-btn {
     width: 100%;
@@ -267,7 +233,9 @@
     cursor: not-allowed;
 }
 
-/* !!! ПЛАНШЕТ (768px – 1439px) !!! */
+/* ================================================
+   ПЛАНШЕТ (768px – 1439px)
+   ================================================ */
 @media screen and (min-width: 768px) and (max-width: 1439px) {
     .order-modal {
         max-width: 704px;
@@ -284,7 +252,9 @@
     }
 }
 
-/* !!! ДЕСКТОП (1440px+) !!! */
+/* ================================================
+   ДЕСКТОП (1440px+)
+   ================================================ */
 @media screen and (min-width: 1440px) {
     .order-modal {
         max-width: 768px;

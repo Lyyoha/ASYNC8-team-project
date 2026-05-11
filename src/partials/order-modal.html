@@ -12,36 +12,39 @@
     <form class="order-form" data-order-form>
       <!-- NAME -->
       <div class="order-field">
+        <label class="order-label" for="order-name">Ім'я*</label>
         <input
+          id="order-name"
           type="text"
           name="name"
-          class="floating-input"
-          placeholder=" "
+          class="order-input"
+          placeholder="Вікторія"
           autocomplete="name"
         />
-        <label class="floating-label">Ім'я</label>
       </div>
 
       <!-- PHONE -->
       <div class="order-field">
+        <label class="order-label" for="order-phone">Телефон*</label>
         <input
+          id="order-phone"
           type="tel"
           name="phone"
-          class="floating-input"
-          placeholder=" "
+          class="order-input"
+          placeholder="38 0__ _______"
           autocomplete="tel"
         />
-        <label class="floating-label">Телефон</label>
       </div>
 
       <!-- COMMENT -->
       <div class="order-field">
+        <label class="order-label" for="order-comment">Коментар*</label>
         <textarea
+          id="order-comment"
           name="comment"
-          class="floating-textarea"
-          placeholder=" "
+          class="order-textarea"
+          placeholder="Ваш коментар"
         ></textarea>
-        <label class="floating-label">Коментар</label>
       </div>
 
       <!-- HIDDEN dessertId -->
