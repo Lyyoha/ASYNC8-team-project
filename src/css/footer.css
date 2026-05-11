@@ -26,11 +26,15 @@ footer {
 }
 .footer-logo-link {
   display: block;
-  width: 335px;
+  width: 250px;
   height: 130px;
   background: url('/img/footer-logo.svg') no-repeat left / contain;
   margin: 0 auto;
   margin-bottom: 32px;
+
+  @media screen and (min-width: 375px) {
+    width: 335px;
+  }
 }
 .footer-nav-list {
   display: flex;
