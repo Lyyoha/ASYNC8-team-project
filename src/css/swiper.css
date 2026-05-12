@@ -46,7 +46,6 @@
 
 .feedback-swiper-control .swiper-pagination {
   position: static;
-  margin-left: 30px;
   text-align: start;
   padding: 10px;
 }
@@ -56,9 +55,8 @@
 }
 
 @media screen and (min-width: 768px) {
-  .feedback-swiper-control .swiper-pagination {
-    position: absolute;
-    margin-left: 0;
+  .feedback-swiper-control {
+    justify-content: center;
   }
   .feedback-swiper-btn-prev {
     position: absolute;

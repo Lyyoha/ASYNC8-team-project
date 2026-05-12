@@ -60,6 +60,7 @@ const initSwiper = () => {
     pagination: {
       el: '.popular-pagination',
       clickable: true,
+      dynamicBullets: true,
     },
 
     navigation: {
@@ -117,7 +118,9 @@ const renderFeedbackList = async () => {
 
     initFeedbackSwiper();
   } catch (error) {
-    console.log(error);
+    console.error('Помилка рендерингу секції:', error);
+    refs.popularList.innerHTML =
+      '<p>Сталася помилка при завантаженні даних.</p>';
   }
 };
 renderFeedbackList();
