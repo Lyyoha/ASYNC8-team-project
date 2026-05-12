@@ -42,35 +42,28 @@
 .menu {
   display: flex;
   flex-direction: row;
-  font-weight: 400;
-  font-family: var(--font-family);
-  font-size: 16px;
-  line-height: 1.5;
-  color: #080c0c;
   gap: 16px;
   align-items: center;
 }
 
 .menu-link {
-  display: inline-block;
-  color: #080c0c;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-scheme-1-text);
   border-bottom: 1px solid transparent;
-
   transition:
     color 0.3s ease,
-    border-color 0.3s ease;
-  &:hover,
-  &:focus {
-    color: #080c0c;
-    border-bottom-color: #080c0c;
-  }
-  &:active {
-    color: #f19898;
-    border-bottom-color: transparent;
-  }
+    padding 0.3s ease,
+    border-bottom 0.3s ease;
 }
-
-.menu-link {
-  color: inherit;
-  margin: 0;
+.menu-link:hover,
+.menu-link:focus {
+  border-bottom: 1px solid #080c0c;
+  padding: 0 0 5px 0;
+}
+.menu-link:active {
+  color: var(--color-wewak);
+  text-decoration: underline;
+  border: none;
 }
