@@ -33,8 +33,10 @@ const createRatingMarkup = rating => {
 
 export const createFeedbackCard = ({ _id, rate, description, author }) => {
   return `<li class="swiper-slide feedback-item" data-id="${_id}">
+  <div class='feedback-thumb'>
   <div class="feedback-item-rate">${createRatingMarkup(rate)}</div>
   <p class="feedback-item-description">"${description}"</p>
+  </div>
   <h3 class="feedback-item-author">${author}</h3>
 </li>`;
 };
