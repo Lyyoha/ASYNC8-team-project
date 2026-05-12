@@ -5,11 +5,13 @@ import { fetchDessertById } from './desserts-api.js';
 function openProductModal() {
   refs.productBackdrop.classList.add('is-open');
   document.body.style.overflow = 'hidden';
+  document.addEventListener('keydown', onEscKey);
 }
 
 function closeProductModal() {
   refs.productBackdrop.classList.remove('is-open');
   document.body.style.overflow = '';
+  document.removeEventListener('keydown', onEscKey);
 }
 
 function onBackdropClick(e) {
@@ -48,7 +50,7 @@ function fillProductModal(d) {
 
   renderRatingStars(refs.productModal.querySelector('.product-rating'), d.rate);
 
-  // Зберегаю id для Order Modal
+  // Зберігаємо id для Order Modal
   refs.productModal.dataset.dessertId = d._id;
 }
 
@@ -65,14 +67,12 @@ export async function openProductModalById(id) {
 
 // !!! ІНІЦІАЛІЗАЦІЯ
 export function initProductModal() {
-  refs.productCloseBtn.addEventListener('click', closeProductModal);
-
   if (!refs.productCloseBtn || !refs.productBackdrop || !refs.productModal) {
     return;
   }
 
+  refs.productCloseBtn.addEventListener('click', closeProductModal);
   refs.productBackdrop.addEventListener('click', onBackdropClick);
-  window.addEventListener('keydown', onEscKey);
 
   // СЛУХАЧ ПОДІЇ ВІД КАРТОК
   document.addEventListener('dessert:open', e => {
@@ -82,7 +82,7 @@ export function initProductModal() {
 
 export { closeProductModal, openProductModal };
 
-// !!! ОЧИЩЕННЯ МОДАЛКИ (щоб не було видно попередні дані під час відкриття іншого продукту)
+// !!! ОЧИЩЕННЯ МОДАЛКИ
 function clearProductModal() {
   refs.productModal.querySelector('.product-img').src = '';
   refs.productModal.querySelector('.product-title').textContent = '';

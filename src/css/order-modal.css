@@ -62,10 +62,11 @@
 }
 
 .order-close-btn svg {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     fill: #080c0c;
     stroke: #080c0c;
+    stroke-width: 4;
 }
 
 /* ─── TITLE ─── */

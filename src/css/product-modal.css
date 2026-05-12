@@ -58,6 +58,13 @@
   color: #080c0c;
   transition: opacity 0.15s;
 }
+.order-close-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: #080c0c;
+  stroke: #080c0c;
+  stroke-width: 10;
+}
 
 .product-close-btn:hover {
   opacity: 0.6;
