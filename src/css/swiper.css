@@ -51,6 +51,11 @@
   padding: 10px;
 }
 
+.feedback-swiper-control
+  .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal.swiper-pagination-bullets-dynamic {
+  bottom: -14px;
+}
+
 .swiper-pagination .swiper-pagination-bullet-active {
   background: #000;
 }
@@ -63,13 +68,13 @@
   .feedback-swiper-btn-prev {
     position: absolute;
     z-index: 10;
-    top: 226px;
+    top: 280px;
     left: 4px;
   }
   .feedback-swiper-btn-next {
     position: absolute;
     z-index: 10;
-    top: 226px;
+    top: 280px;
     right: 4px;
   }
 }
@@ -146,6 +151,14 @@
   .about-us-section .about-us-container .swiper-pagination-bullet {
     background-color: var(--color-scheme-1-text);
   }
+}
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal
+  .swiper-wrapper.about-us-list {
+  margin-bottom: 0;
 }
 
 .about-us-slider .swiper-pagination {

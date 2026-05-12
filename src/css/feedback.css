@@ -1,5 +1,5 @@
 .feedback-section {
-  padding: 64px 0;
+  padding: 64px 0 80px;
   background: var(--color-scheme-1-background);
 }
 
@@ -8,17 +8,11 @@
 }
 
 .feedback-title {
-  font-family: var(--second-family);
   margin-bottom: 24px;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  text-align: center;
 }
 
 .feedback-text {
-  margin-bottom: 40px;
+  margin-bottom: 80px;
   font-size: 18px;
   text-align: center;
 }
@@ -57,7 +51,7 @@
 
 @media screen and (min-width: 768px) {
   .js-feedback-list {
-    margin-bottom: 48px;
+    margin-bottom: 62px;
   }
 
   .js-feedback-list .feedback-item {
