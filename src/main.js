@@ -34,7 +34,9 @@ refs.burgerBtnClose.addEventListener('click', closeBurger);
 refs.burgerMenuLink.forEach(link =>
   link.addEventListener('click', closeBurger)
 );
-refs.burgerMenuBtn.addEventListener('click', closeBurger);
+refs.burgerMenuBtn.forEach(button =>
+  button.addEventListener('click', closeBurger)
+);
 
 //
 
@@ -58,6 +60,7 @@ const initSwiper = () => {
     pagination: {
       el: '.popular-pagination',
       clickable: true,
+      dynamicBullets: true,
     },
 
     navigation: {
@@ -115,7 +118,9 @@ const renderFeedbackList = async () => {
 
     initFeedbackSwiper();
   } catch (error) {
-    console.log(error);
+    console.error('Помилка рендерингу секції:', error);
+    refs.popularList.innerHTML =
+      '<p>Сталася помилка при завантаженні даних.</p>';
   }
 };
 renderFeedbackList();
@@ -153,10 +158,7 @@ const initFeedbackSwiper = () => {
     },
   });
 };
-document.addEventListener('DOMContentLoaded', () => {
-  initDesserts();
-  initProductModal();
-});
+
 // about-us swiper
 
 const mediaQuery = window.matchMedia('(min-width: 768px)');

@@ -22,7 +22,7 @@
 
 .feedback-swiper-btn-next,
 .feedback-swiper-btn-prev {
-    transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,14 +41,18 @@
 
 .feedback-swiper-icon {
   display: block;
-  stroke: var(--color-scheme-1-text);
+  fill: var(--color-scheme-1-text);
 }
 
 .feedback-swiper-control .swiper-pagination {
   position: static;
-  margin-left: 30px;
   text-align: start;
   padding: 10px;
+}
+
+.feedback-swiper-control
+  .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal.swiper-pagination-bullets-dynamic {
+  bottom: -14px;
 }
 
 .swiper-pagination .swiper-pagination-bullet-active {
@@ -56,20 +60,19 @@
 }
 
 @media screen and (min-width: 768px) {
-  .feedback-swiper-control .swiper-pagination {
-    position: absolute;
-    margin-left: 0;
+  .feedback-swiper-control {
+    justify-content: center;
   }
   .feedback-swiper-btn-prev {
     position: absolute;
     z-index: 10;
-    top: 226px;
+    top: 280px;
     left: 4px;
   }
   .feedback-swiper-btn-next {
     position: absolute;
     z-index: 10;
-    top: 226px;
+    top: 280px;
     right: 4px;
   }
 }
@@ -110,6 +113,7 @@
     border-radius: 100px;
     width: 48px;
     height: 48px;
+    background-color: var(--color-scheme-1-foreground);
   }
   .about-us-section .about-us-container .swiper-button-prev {
     display: flex;
@@ -137,7 +141,7 @@
   }
 
   .swiper-icon {
-    stroke: var(--color-scheme-1-text);
+    fill: var(--color-scheme-1-text);
   }
   .about-us-section .about-us-container .swiper-pagination {
     display: block;
@@ -147,9 +151,17 @@
   }
 }
 
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal
+  .swiper-wrapper.about-us-list {
+  margin-bottom: 0;
+}
+
 .about-us-slider .swiper-pagination {
   position: relative;
-  margin-top: 48px;
+  margin-top: 24px;
   text-align: center;
 }
 

@@ -33,8 +33,10 @@ const createRatingMarkup = rating => {
 
 export const createFeedbackCard = ({ _id, rate, description, author }) => {
   return `<li class="swiper-slide feedback-item" data-id="${_id}">
+  <div class='feedback-thumb'>
   <div class="feedback-item-rate">${createRatingMarkup(rate)}</div>
   <p class="feedback-item-description">"${description}"</p>
+  </div>
   <h3 class="feedback-item-author">${author}</h3>
 </li>`;
 };
@@ -140,7 +142,7 @@ export const createCardMarkup = ({
           <div class="card-footer">
             <span class="price">${price} грн</span>
             <button type="button" class="order-link-btn" aria-label="Детальна інформація">
-              <svg width="20" height="20">
+              <svg width="24" height="24">
                 <use href="${spriteUrl}#arrow_outward"></use>
               </svg>
             </button>
