@@ -32,6 +32,5 @@ export const refs = {
   desertsCategoriesSelect: document.querySelector('.desert-categories-select'),
   desertsEmpty: document.querySelector('.desert-empty'),
   desertsLoadMore: document.querySelector('.desert-load-more'),
-  dessertListStyle: document.querySelector('.list-style-selector'),
   popularList: document.querySelector('.swiper-wrapper'),
 };

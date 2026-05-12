@@ -12,7 +12,10 @@ import {
 import { fillProductModal } from './handlers';
 import { openProductModal } from './product-modal';
 // import { initDessertCardListeners } from './render-function.js';
-import { initCategorySelect, setCategorySelectValue } from './category-select';
+import {
+  initCategorySelect,
+  setCategorySelectValue,
+} from './category-select';
 
 const state = {
   page: 1,
@@ -31,7 +34,6 @@ export async function initDesserts() {
   refs.desertsLoadMore?.addEventListener('click', onLoadMore);
   refs.desertsList.addEventListener('click', onCardClick);
   refs.desertsListPopular?.addEventListener('click', onCardClickPopular);
-  refs.dessertListStyle.addEventListener('click', onListStyleTypeClick);
 
   showSkeletons();
 
@@ -246,44 +248,3 @@ function notifyError(err) {
     position: 'topRight',
   });
 }
-
-const onListStyleTypeClick = async e => {
-  const btn = e.target.closest('.list-style-button');
-  if (!btn) return;
-  [...refs.dessertListStyle.children].forEach(el =>
-    el.classList.remove('isChoice')
-  );
-
-  if (btn.classList.contains('grid4x2')) {
-    state.limit = 8;
-    refs.desertsList.classList.remove('grid5x3');
-  }
-  if (btn.classList.contains('grid5x3')) {
-    state.limit = 15;
-    refs.desertsList.classList.add('grid5x3');
-  }
-
-  if (refs.desertsList.children.length < state.limit) {
-    try {
-      const data = await getDesserts({
-        page: state.page,
-        limit: state.limit,
-        category: state.category || null,
-      });
-
-      state.totalItems = data.totalItems;
-      state.loaded = data.desserts.length;
-
-      renderCards(data.desserts, 'replace');
-      updateEmpty();
-      updateLoadMore();
-    } catch (err) {
-      refs.desertsList.innerHTML = '';
-
-      updateEmpty();
-      notifyError(err);
-    }
-  }
-
-  btn.classList.add('isChoice');
-};

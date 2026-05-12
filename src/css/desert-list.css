@@ -340,18 +340,12 @@
     grid-template-columns: repeat(2, 1fr);
     column-gap: 16px;
     row-gap: 32px;
-    &.grid5x3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
   }
 
   @media screen and (min-width: 1440px) {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 24px;
     row-gap: 40px;
-    &.grid5x3 {
-      grid-template-columns: repeat(5, 1fr);
-    }
   }
 }
 
@@ -573,37 +567,4 @@ img.desert-card-img.is-loaded {
 .desert-load-more:disabled {
   opacity: 0.5;
   cursor: progress;
-}
-
-.list-style-selector {
-  display: none;
-  border: 1px solid black;
-  border-radius: 8px;
-  margin-bottom: 26px;
-  width: max-content;
-  margin-left: auto;
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-  }
-}
-
-.list-style-button {
-  width: 42px;
-  height: 42px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  cursor: pointer;
-  box-sizing: content-box;
-  &.grid4x2.isChoice {
-    border-right: 1px solid black;
-    background-color: var(--opacity-neutral-darkest-5);
-  }
-
-  &.grid5x3.isChoice {
-    border-left: 1px solid black;
-    background-color: var(--opacity-neutral-darkest-5);
-  }
 }
