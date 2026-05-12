@@ -13,6 +13,11 @@
   height: 64px;
 }
 
+.burger-btn {
+  background-color: transparent;
+  border-color: transparent;
+}
+
 .mobile-menu {
   width: 100%;
   align-items: center;
@@ -42,8 +47,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 16px;
-  @media screen and (min-width: 1440px) {
+  @media (min-width: 768px) {
+    gap: 16px;
+  }
+  @media (min-width: 1440px) {
     gap: 32px;
   }
 }
