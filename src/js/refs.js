@@ -16,6 +16,7 @@ export const refs = {
   orderForm: document.querySelector('[data-order-form]'),
   dessertIdInput: document.querySelector('[name="dessertId"]'),
   submitBtn: document.querySelector('.order-submit-btn'),
+  productModal: document.querySelector('.product-modal-inner'),
 
   // PRODUCT MODAL
   productBackdrop: document.querySelector('[data-product-backdrop]'),
