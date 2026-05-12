@@ -2,24 +2,27 @@
   <div class="container header_container">
     <div class="mobile-menu">
       <div class="logo">
-        <a href="index.html">
-          <svg height="63" width="150">
+        <a href="index.html" aria-label="Солодка майстерня — головна сторінка">
+          <svg height="63" width="150" aria-hidden="true">
             <use href="./img/logo.svg#icon-logo"></use>
           </svg>
         </a>
       </div>
 
-      <svg width="24" height="24" class="burger-icon">
-        <use href="./img/sprite.svg#menu"></use>
-      </svg>
+      <button type="button" class="burger-btn" aria-label="Відкрити меню">
+        <svg width="24" height="24" class="burger-icon" aria-hidden="true">
+          <use href="./img/sprite.svg#menu"></use>
+        </svg>
+      </button>
     </div>
 
     <div class="menu-content">
       <div class="logo">
-        <a href="index.html">
-          <svg height="63" width="150">
-            <use href="./img/logo.svg#icon-logo"></use></svg
-        ></a>
+        <a href="index.html" aria-label="Солодка майстерня — головна сторінка">
+          <svg height="63" width="150" aria-hidden="true">
+            <use href="./img/logo.svg#icon-logo"></use>
+          </svg>
+        </a>
       </div>
       <ul class="menu">
         <li class="menu-item">
@@ -35,7 +38,13 @@
           <a href="#faq" class="menu-link"> Часті питання </a>
         </li>
         <li class="menu-item">
-          <a href="#desert-list" class="button-menu"> До покупок</a>
+          <a
+            href="#desert-list"
+            class="button-menu"
+            aria-label="Перейти до списку десертів"
+          >
+            До покупок</a
+          >
         </li>
       </ul>
     </div>

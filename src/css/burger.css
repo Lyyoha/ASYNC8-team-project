@@ -28,6 +28,10 @@
   flex-direction: column;
   gap: 36px;
 }
+.btn-close {
+  background-color: transparent;
+  border-color: transparent;
+}
 
 .burger-menu {
   display: flex;
