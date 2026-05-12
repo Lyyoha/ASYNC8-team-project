@@ -3,7 +3,7 @@ export const refs = {
 
   // BURGER MENU
   burger: document.querySelector('.burger-container'),
-  burgerBtn: document.querySelector('.burger-icon'),
+  burgerBtn: document.querySelector('.burger-btn'),
   burgerBtnClose: document.querySelector('.btn-close'),
   burgerMenuBtn: document.querySelectorAll('.button-menu'),
   burgerMenuLink: document.querySelectorAll('.burger-menu-link'),

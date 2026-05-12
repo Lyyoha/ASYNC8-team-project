@@ -2,16 +2,17 @@
   <div class="burger-container">
     <div class="burger-head">
       <div class="logo">
-        <a href="index.html">
-          <svg height="63" width="150">
+        <a href="index.html" aria-label="Солодка майстерня — головна сторінка">
+          <svg height="63" width="150" aria-hidden="true">
             <use href="./img/logo.svg#icon-logo"></use>
           </svg>
         </a>
       </div>
-
-      <svg width="24" height="24" class="btn-close">
-        <use href="./img/sprite.svg#close"></use>
-      </svg>
+      <button type="button" class="btn-close" aria-label="Закрити меню">
+        <svg width="24" height="24" aria-hidden="true">
+          <use href="./img/sprite.svg#close"></use>
+        </svg>
+      </button>
     </div>
     <div class="burger-content">
       <ul class="burger-menu">
@@ -28,7 +29,13 @@
           <a href="#faq" class="burger-menu-link"> Часті питання </a>
         </li>
       </ul>
-      <a href="#desert-list" class="button-menu"> До покупок</a>
+      <a
+        href="#desert-list"
+        class="button-menu"
+        aria-label="Перейти до списку десертів"
+      >
+        До покупок</a
+      >
     </div>
   </div>
 </section>
