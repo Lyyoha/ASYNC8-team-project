@@ -1,5 +1,6 @@
 import { refs } from './refs';
 import { clearFieldError } from './validation';
+import { openProductModal, closeProductModal } from './product-modal.js';
 
 export const openBurger = () => {
   refs.burger.classList.add('is-open');
@@ -11,15 +12,13 @@ export const closeBurger = () => {
   refs.body.classList.remove('scroll-lock');
 };
 
-// ─── ORDER MODAL ───
+// !!! ORDER MODAL !!!
 
 function resetOrderForm() {
   if (!refs.orderForm) return;
 
-  // Скидаємо значення полів
   refs.orderForm.reset();
 
-  // Очищаємо помилки з усіх полів форми
   const fields = [
     refs.orderForm.elements.name,
     refs.orderForm.elements.phone,
@@ -30,14 +29,20 @@ function resetOrderForm() {
   });
 }
 
+function onOrderEscKey(e) {
+  if (e.key === 'Escape') closeOrderModal();
+}
+
 export const openOrderModal = () => {
   refs.orderBackdrop.classList.add('is-open');
   refs.body.style.overflow = 'hidden';
+  document.addEventListener('keydown', onOrderEscKey);
 };
 
 export const closeOrderModal = () => {
   refs.orderBackdrop.classList.remove('is-open');
   refs.body.style.overflow = '';
+  document.removeEventListener('keydown', onOrderEscKey);
   resetOrderForm();
 };
 
@@ -51,25 +56,7 @@ if (refs.orderBackdrop) {
   });
 }
 
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') {
-    if (refs.orderBackdrop?.classList.contains('is-open')) closeOrderModal();
-    if (refs.productBackdrop?.classList.contains('is-open'))
-      closeProductModal();
-  }
-});
-
-// ─── PRODUCT MODAL ───
-
-export const openProductModal = () => {
-  refs.productBackdrop.classList.add('is-open');
-  refs.body.style.overflow = 'hidden';
-};
-
-export const closeProductModal = () => {
-  refs.productBackdrop.classList.remove('is-open');
-  refs.body.style.overflow = '';
-};
+// !!! PRODUCT MODAL !!!
 
 if (refs.productCloseBtn) {
   refs.productCloseBtn.addEventListener('click', closeProductModal);
@@ -81,7 +68,7 @@ if (refs.productBackdrop) {
   });
 }
 
-// ─── OPEN ORDER FROM PRODUCT ───
+// !!! OPEN ORDER FROM PRODUCT !!!
 
 if (!refs.dessertIdInput) {
   const hiddenInput = document.createElement('input');
@@ -99,7 +86,7 @@ refs.orderOpenBtns.forEach(btn => {
   });
 });
 
-// ─── FILL PRODUCT MODAL ───
+// !!! FILL PRODUCT MODAL !!!
 
 export function fillProductModal(d) {
   const img = document.querySelector('.product-img');
