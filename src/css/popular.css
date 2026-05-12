@@ -142,7 +142,7 @@
   background-color: transparent;
   border: 2px solid var(--color-scheme-1-border);
   border-radius: 100px;
-  padding: 12px;
+  padding: 10px;
   width: 48px;
   height: 48px;
   transition: background-color 0.3s ease;

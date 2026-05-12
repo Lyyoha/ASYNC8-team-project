@@ -34,7 +34,9 @@ refs.burgerBtnClose.addEventListener('click', closeBurger);
 refs.burgerMenuLink.forEach(link =>
   link.addEventListener('click', closeBurger)
 );
-refs.burgerMenuBtn.addEventListener('click', closeBurger);
+refs.burgerMenuBtn.forEach(button =>
+  button.addEventListener('click', closeBurger)
+);
 
 //
 
