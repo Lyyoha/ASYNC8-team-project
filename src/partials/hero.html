@@ -1,5 +1,35 @@
 <section class="hero">
   <div class="container hero-container">
+    <picture class="hero-bg">
+      <source
+        media="(min-width: 1440px) and (min-resolution: 192dpi)"
+        srcset="./img/hero/hero-desktop@2x.jpg"
+      />
+      <source
+        media="(min-width: 1440px)"
+        srcset="./img/hero/hero-desktop.jpg"
+      />
+      <source
+        media="(min-width: 768px) and (min-resolution: 192dpi)"
+        srcset="./img/hero/hero-tablet@2x.jpg"
+      />
+      <source media="(min-width: 768px)" srcset="./img/hero/hero-tablet.jpg" />
+      <source
+        media="(min-resolution: 192dpi)"
+        srcset="./img/hero/hero-mobile@2x.jpg"
+      />
+      <img
+        class="hero-img"
+        src="./img/hero/hero-mobile.jpg"
+        alt=""
+        width="390"
+        height="824"
+        fetchpriority="high"
+        loading="eager"
+        aria-hidden="true"
+      />
+    </picture>
+    <div class="hero-overlay"></div>
     <h1 class="hero-title">Ласкаво просимо до Солодкої Майстерні</h1>
     <p class="hero-description">
       Відкрийте для себе наші неперевершені десерти, приготовані з любов'ю та
