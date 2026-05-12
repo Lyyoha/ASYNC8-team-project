@@ -46,7 +46,6 @@
 .menu {
   display: flex;
   flex-direction: row;
-  gap: 16px;
   align-items: center;
   @media (min-width: 1440px) {
     gap: 32px;
