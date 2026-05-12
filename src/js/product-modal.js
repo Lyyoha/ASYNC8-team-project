@@ -21,51 +21,35 @@ function onEscKey(e) {
 }
 
 // !!! РЕНДЕР ЗІРОЧОК
-function renderRatingStars(rate) {
+function renderRatingStars(container, rate) {
+  container.innerHTML = '';
+
   const max = 5;
   const value = Number(rate) || 0;
 
-  return Array.from({ length: max }, (_, index) => {
-    const isFilled = index + 1 <= value;
-    return `<span>${isFilled ? '★' : '☆'}</span>`;
-  }).join('');
+  for (let i = 1; i <= max; i++) {
+    const star = document.createElement('span');
+    star.textContent = i <= value ? '★' : '☆';
+    container.appendChild(star);
+  }
 }
 
 // !!! ЗАПОВНЕННЯ МОДАЛКИ
-export function fillProductModal(d) {
-  if (!d) return;
-  let modal = `  <!-- IMAGE -->
-      <div class="product-img-wrapper">
-        <img src="${d.image}" alt="${d.name}" class="product-img" />
-      </div>
+function fillProductModal(d) {
+  refs.productModal.querySelector('.product-img').src = d.image;
+  refs.productModal.querySelector('.product-img').alt = d.name;
 
-      <!-- CONTENT -->
-      <div class="product-content">
-        <!-- TITLE -->
-        <h2 class="product-title">${d.name}</h2>
+  refs.productModal.querySelector('.product-title').textContent = d.name;
+  refs.productModal.querySelector('.product-price').textContent =
+    `${d.price} грн`;
+  refs.productModal.querySelector('.product-desc').textContent = d.description;
+  refs.productModal.querySelector('.composition-value').textContent =
+    d.composition;
 
-        <!-- PRICE -->
-        <p class="product-price">${d.price} грн</p>
+  renderRatingStars(refs.productModal.querySelector('.product-rating'), d.rate);
 
-        <!-- RATING -->
-        <div class="product-rating">${renderRatingStars(d.rate)}</div>
-
-        <!-- DESCRIPTION -->
-        <p class="product-desc">${d.description}</p>
-
-        <!-- COMPOSITION -->
-        <p class="product-composition">
-          <span class="composition-label">Склад:</span>
-          <span class="composition-value">${d.composition}</span>
-        </p>
-
-        <!-- ORDER BUTTON WRAPPER -->
-        <div class="order-btn-wrapper">
-          <button class="order-btn" data-order-open data-dessert-id="${d._id}">
-            Перейти до замовлення
-          </button>
-        </div> </div>`;
-  refs.productModal.innerHTML = modal;
+  // Зберегаю id для Order Modal
+  refs.productModal.dataset.dessertId = d._id;
 }
 
 // !!! ГОЛОВНА ФУНКЦІЯ
