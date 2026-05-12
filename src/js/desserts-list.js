@@ -9,13 +9,10 @@ import {
   categoriesSelectTemplate,
   skeletonsTemplate,
 } from './render-function';
-import { fillProductModal } from './handlers';
-import { openProductModal } from './product-modal';
+
+import { fillProductModal, openProductModal } from './product-modal';
 // import { initDessertCardListeners } from './render-function.js';
-import {
-  initCategorySelect,
-  setCategorySelectValue,
-} from './category-select';
+import { initCategorySelect, setCategorySelectValue } from './category-select';
 
 const state = {
   page: 1,
