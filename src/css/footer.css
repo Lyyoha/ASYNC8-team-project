@@ -1,21 +1,33 @@
 footer {
   background: var(--color-scheme-3-background);
   padding-top: 48px;
-  padding-bottom: 0;
+  padding-bottom: 48px;
   max-width: 1440px;
   margin: 0 auto;
+
+  @media screen and (min-width: 1440px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 .footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 40px;
   @media screen and (min-width: 1440px) {
-    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
 }
 .footer-logo-soc-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
   @media screen and (min-width: 1440px) {
-    display: flex;
-    align-items: center;
+    flex-direction: row;
     gap: 152px;
   }
 }
@@ -29,8 +41,6 @@ footer {
   width: 250px;
   height: 130px;
   background: url('/img/footer-logo.svg') no-repeat left / contain;
-  margin: 0 auto;
-  margin-bottom: 32px;
 
   @media screen and (min-width: 375px) {
     width: 335px;
@@ -41,7 +51,6 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 32px;
-  margin-bottom: 32px;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -53,6 +62,11 @@ footer {
   font-size: 18px;
   color: var(--color-scheme-3-text);
   padding: 15px;
+  border-bottom: 1px solid transparent;
+  transition:
+    color 0.3s ease,
+    padding 0.3s ease,
+    border-bottom 0.3s ease;
 
   @media screen and (min-width: 768px) {
     padding: 15px 0 15px 0;
@@ -65,7 +79,8 @@ footer {
     padding: 15px 0 15px 0;
   }
 }
-.footer-nav-link:hover {
+.footer-nav-link:hover,
+.footer-nav-link:focus {
   border-bottom: 1px solid #080c0c;
   padding: 15px 0 5px 0;
 }
@@ -79,7 +94,6 @@ footer {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 40px;
 
   @media screen and (min-width: 1440px) {
     gap: 0;
@@ -115,7 +129,6 @@ footer {
   line-height: 1.5;
   color: var(--color-scheme-3-text);
   padding-top: 32px;
-  padding-bottom: 48px;
   border-top: 2px solid var(--color-scheme-3-border);
 
   @media screen and (min-width: 768px) {
