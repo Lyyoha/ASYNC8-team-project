@@ -41,6 +41,7 @@
   @media screen and (min-width: 768px) {
     flex-direction: row;
     gap: 0px;
+    margin-bottom: 48px;
   }
 }
 .about-us-item {

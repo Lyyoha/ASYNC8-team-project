@@ -58,6 +58,7 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  min-height: 40px;
 }
 
 .card-footer {
@@ -113,11 +114,6 @@
   text-align: start;
 }
 
-.swiper-wrapper {
-  @media (min-width: 768px) {
-    margin-bottom: 48px;
-  }
-}
 .nav-wrapper {
   display: flex;
   gap: 16px;
@@ -197,4 +193,7 @@
     margin-bottom: 8px;
     min-height: 40px;
   }
+}
+.popular-list {
+  margin-bottom: 24px;
 }
