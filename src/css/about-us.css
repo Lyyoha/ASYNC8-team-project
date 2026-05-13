@@ -19,13 +19,17 @@
 }
 
 .about-us-section-text {
-  max-width: 319px;
+  max-width: 305px;
   margin-bottom: 40px;
   text-align: center;
   font-size: 18px;
 
   @media screen and (min-width: 768px) {
-    max-width: 718px;
+    max-width: 660px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 740px;
   }
 }
 .about-us-list {

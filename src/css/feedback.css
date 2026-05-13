@@ -12,7 +12,7 @@
 }
 
 .feedback-text {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   font-size: 18px;
   text-align: center;
 }
@@ -51,7 +51,7 @@
 
 @media screen and (min-width: 768px) {
   .js-feedback-list {
-    margin-bottom: 62px;
+    margin-bottom: 48px;
   }
 
   .js-feedback-list .feedback-item {
@@ -61,6 +61,9 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .feedback-text {
+    margin-bottom: 80px;
+  }
   .feedback-section {
     padding: 80px 0;
   }
